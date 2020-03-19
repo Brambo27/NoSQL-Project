@@ -1,5 +1,6 @@
 ﻿using Model;
 using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -31,23 +32,12 @@ namespace View
                 UserId = "2"
             };
 
-            User user5 = new User();
-           
-            user5.Id = new ObjectId("5e73b428f90ddd4604f2e45a");
-            user5 = user5.get();
+            User user = new User() {
+                Id = new ObjectId("5e73ec82f90ddd05b4cd074e")
+            };
 
-
-            List<dynamic> users = new List<dynamic>();
-            users.Add(user3);
-            users.Add(user4);
-
-            users = User.getAll();
-
-            users = Model.Model.getAll("Users");
-
-            //Model.Model.insertIntoCollection(Model.Model.getCollection("Users"), Model.Model.toBsonDocumentArray(users));
-
-            Console.WriteLine("User5: " + user5.Name);
+            var update = Builders<BsonDocument>.Update.Set("Name", "TEST 2");
+            User.updateDocument("Users", user.get().toBsonDocument(), update);
 
 
             //Application.EnableVisualStyles();

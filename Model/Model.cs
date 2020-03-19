@@ -39,9 +39,34 @@ namespace Model
             collection.InsertOne(data);
         }
 
+        public static void insertIntoCollection(string collection, BsonDocument data)
+        {
+            insertIntoCollection(getCollection(collection), data);
+        }
+
+        public static void insertIntoCollection(string collection, BsonDocument[] data)
+        {
+            insertIntoCollection(getCollection(collection), data);
+        }
+
         public void insertIntoCollection(IMongoCollection<BsonDocument> collection)
         {
-            collection.InsertOne(toBsonDocument());
+            insertIntoCollection(collection, toBsonDocument());
+        }
+
+        public void insertIntoCollection(string collection)
+        {
+            insertIntoCollection(getCollection(collection), toBsonDocument());
+        }
+
+        public void insertIntoCollection()
+        {
+            insertIntoCollection(getCollection(CollectionName), toBsonDocument());
+        }
+
+        public static void updateDocument(string collection, BsonDocument document, UpdateDefinition<BsonDocument> update)
+        {
+            getCollection(collection).UpdateOne(document, update);
         }
 
         public BsonDocument toBsonDocument()
@@ -65,17 +90,7 @@ namespace Model
 
         public dynamic getById(string field, string value)
         {
-            var filter = Builders<BsonDocument>.Filter.Eq(field, value);
-
-            BsonDocument document = getCollection(CollectionName).Find(filter).FirstOrDefault();
-
-            if (document != null)
-            {
-                dynamic ding = deserialize(document);
-
-                return ding;
-            }
-            return null;
+            return getById(field, value, CollectionName);
         }
 
         public abstract dynamic deserialize(BsonDocument document);
@@ -128,5 +143,7 @@ namespace Model
 
             return documents.ToArray();
         }
+
+
     }
 }
