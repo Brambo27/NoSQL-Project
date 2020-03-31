@@ -22,14 +22,16 @@ namespace View
             {
                 Name = "bram Bos",
                 Email = "BramBos27@gmail.com",
-                UserId = "1"
+                UserId = "1",
+                Password = "bram123"
             };
 
             User user4 = new User()
             {
                 Name = "Soo Young",
                 Email = "test@email.com",
-                UserId = "2"
+                UserId = "2",
+                Password = "test123"
             };
 
             User user = new User() {
@@ -38,6 +40,8 @@ namespace View
 
             var update = Builders<BsonDocument>.Update.Set("Name", "TEST 2");
             User.updateDocument("Users", user.get().toBsonDocument(), update);
+            
+            Application.Run(new Login());
 
 
             //Application.EnableVisualStyles();

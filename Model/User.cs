@@ -16,17 +16,19 @@ namespace Model
         public string UserId;
         public string Name;
         public string Email;
+        public string Password;
 
         public static List<dynamic> getAll()
         {
             return getAll("Users");
         }
 
-        public User(string user_Id, string name, string email)
+        public User(string user_Id, string name, string email,string password)
         {
             UserId = user_Id;
             Name = name;
             Email = email;
+            Password = password;
         }
 
         public User(string user_Id)
