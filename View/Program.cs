@@ -16,9 +16,13 @@ namespace View
         [STAThread]
         static void Main()
         {
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
             //User user1 = new User("10");
 
-            User user3 = new User()
+            /*User user3 = new User()
             {
                 Name = "bram Bos",
                 Email = "BramBos27@gmail.com",
@@ -37,7 +41,7 @@ namespace View
             };
 
             var update = Builders<BsonDocument>.Update.Set("Name", "TEST 2");
-            User.updateDocument("Users", user.get().toBsonDocument(), update);
+            User.updateDocument("Users", user.get().toBsonDocument(), update);*/
 
 
             //Application.EnableVisualStyles();
