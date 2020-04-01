@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class UserManagementController
+    public class UserManagementController
     {
         Model.UserManagementModel db = new Model.UserManagementModel();
 
 
 
-        public void addUser(string[] data)
+        public void addUser(List<dynamic> data)
         {
             UserManagementModel user = new UserManagementModel();
             user.FirstName = data[0];
@@ -23,7 +23,12 @@ namespace Controller
             user.PhoneNumber = data[4];
             user.Location = data[5];
 
-            db.insertIntoCollection(db.getCollection, user);
+            Model.Model.insertIntoCollection(db.CollectionName, Model.Model.toBsonDocumentArray(data));
+        }
+
+        public List<dynamic> getUsers()
+        {
+            return Model.Model.getAll(db.CollectionName);
         }
     }
 }

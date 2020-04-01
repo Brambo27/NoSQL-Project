@@ -39,9 +39,9 @@ namespace View
             };
 
             var update = Builders<BsonDocument>.Update.Set("Name", "TEST 2");
-            User.updateDocument("Users", user.get().toBsonDocument(), update);
+            User.updateDocument("Users", user.toBsonDocument(), update);
             
-            Application.Run(new Login());
+            Application.Run(new Form1());
 
 
             //Application.EnableVisualStyles();

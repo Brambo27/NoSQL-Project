@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
+using Model;
 
 namespace View
 {
@@ -18,14 +19,20 @@ namespace View
             InitializeComponent();
         }
 
+        Controller.UserManagementController userManagementController = new Controller.UserManagementController();
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        DataTable dt = getTable();
+
+        private void Form1_Load_1(object sender, EventArgs e)
         {
             showPanel("userManagement");
+            
+            dataGridView_users.DataSource = dt;
         }
 
         private void showPanel(string panelName)
@@ -57,75 +64,75 @@ namespace View
         private void confirmAddUser_btn_Click(object sender, EventArgs e)
         {
             string[] data = new string[6];
+            List<dynamic> datas = new List<dynamic>();
 
-            // see if firstname is empty
+            // 
             if(firstName_txt.Text == "")
             {
                 UMError_lbl.Text = "Please enter a First name.";
-                showPanel("userManagement");
-            } else
-            {
-                data[0] = firstName_txt.Text;
-            }
-
-            // see if lastname is empty
-            if (lastName_txt.Text == "")
+            } else if (lastName_txt.Text == "")
             {
                 UMError_lbl.Text = "Please enter a Last name.";
-                showPanel("userManagement");
             }
-            else
-            {
-                data[1] = lastName_txt.Text;
-            }
-
-            // see if usertype is empty
-            if (comboBox_userType.Text == "")
+            else if (comboBox_userType.Text == "")
             {
                 UMError_lbl.Text = "Please enter a User type.";
-                showPanel("userManagement");
             }
-            else
-            {
-                data[2] = comboBox_userType.Text;
-            }
-
-            // see if email is empty
-            if (email_txt.Text == "")
+            else if (email_txt.Text == "")
             {
                 UMError_lbl.Text = "Please enter a Email address.";
-                showPanel("userManagement");
             }
-            else
-            {
-                data[3] = email_txt.Text;
-            }
-
-            // see if phone number is empty
-            if (phone_txt.Text == "")
+            else if (phone_txt.Text == "")
             {
                 UMError_lbl.Text = "Please enter a Phone number.";
-                showPanel("userManagement");
             }
-            else
-            {
-                data[4] = phone_txt.Text;
-            }
-
-            // see if location/branche is empty
-            if (comboBox_location.Text == "")
+            else if (comboBox_location.Text == "")
             {
                 UMError_lbl.Text = "Please enter a Location/branche.";
-                showPanel("userManagement");
             }
-            else
+
+            if(UMError_lbl.Text == "")
             {
-                data[5] = comboBox_location.Text;
+                datas.Add(firstName_txt.Text);
+                datas.Add(lastName_txt.Text);
+                datas.Add(comboBox_userType.Text);
+                datas.Add(email_txt.Text);
+                datas.Add(phone_txt.Text);
+                datas.Add(comboBox_location.Text);
+                
+                userManagementController.addUser(datas);
+            } else
+            {
+                showPanel("addUser");
+            }
+        }
+
+        private void filter_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)13)
+            {
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = string.Format("email like '%{0}%'", filter_txt.Text);
+                dataGridView_users.DataSource = dv.ToTable();
+            }
+        }
+
+        static DataTable getTable()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Email", typeof(string));
+            table.Columns.Add("First Name", typeof(string));
+            table.Columns.Add("Last Name", typeof(string));
+
+            List<dynamic> users = Model.Model.getAll("Users");
+
+            foreach(User u in users)
+            {
+                table.Rows.Add(u.UserId, u.Email, u.Name);
             }
 
-            Controller.UserManagementController userManagementController = new Controller.UserManagementController(); 
-            userManagementController.addUser(data);
-
+            return table;
         }
     }
 }

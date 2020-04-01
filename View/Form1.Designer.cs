@@ -34,6 +34,7 @@
             this.dataGridView_users = new System.Windows.Forms.DataGridView();
             this.userManagement_lbl = new System.Windows.Forms.Label();
             this.panel_addUser = new System.Windows.Forms.Panel();
+            this.UMError_lbl = new System.Windows.Forms.Label();
             this.confirmAddUser_btn = new System.Windows.Forms.Button();
             this.cancelAddUser_btn = new System.Windows.Forms.Button();
             this.comboBox_location = new System.Windows.Forms.ComboBox();
@@ -51,7 +52,6 @@
             this.lastName_lbl = new System.Windows.Forms.Label();
             this.firstName_lbl = new System.Windows.Forms.Label();
             this.CreateUser_lbl = new System.Windows.Forms.Label();
-            this.UMError_lbl = new System.Windows.Forms.Label();
             this.panel_userManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_users)).BeginInit();
             this.panel_addUser.SuspendLayout();
@@ -92,16 +92,20 @@
             this.filter_txt.Size = new System.Drawing.Size(239, 22);
             this.filter_txt.TabIndex = 2;
             this.filter_txt.Text = "Filter by email";
+            this.filter_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.filter_txt_KeyPress);
             // 
             // dataGridView_users
             // 
             this.dataGridView_users.AllowUserToAddRows = false;
+            this.dataGridView_users.AllowUserToDeleteRows = false;
             this.dataGridView_users.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_users.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView_users.Location = new System.Drawing.Point(11, 78);
             this.dataGridView_users.Name = "dataGridView_users";
+            this.dataGridView_users.ReadOnly = true;
             this.dataGridView_users.Size = new System.Drawing.Size(788, 335);
             this.dataGridView_users.TabIndex = 1;
             // 
@@ -140,6 +144,17 @@
             this.panel_addUser.Size = new System.Drawing.Size(799, 416);
             this.panel_addUser.TabIndex = 4;
             // 
+            // UMError_lbl
+            // 
+            this.UMError_lbl.AutoSize = true;
+            this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UMError_lbl.ForeColor = System.Drawing.Color.Red;
+            this.UMError_lbl.Location = new System.Drawing.Point(222, 26);
+            this.UMError_lbl.Name = "UMError_lbl";
+            this.UMError_lbl.Size = new System.Drawing.Size(66, 24);
+            this.UMError_lbl.TabIndex = 17;
+            this.UMError_lbl.Text = "label1";
+            // 
             // confirmAddUser_btn
             // 
             this.confirmAddUser_btn.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -168,6 +183,7 @@
             // 
             // comboBox_location
             // 
+            this.comboBox_location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_location.FormattingEnabled = true;
             this.comboBox_location.Items.AddRange(new object[] {
             "Haarlem",
@@ -181,6 +197,7 @@
             // 
             // comboBox_userType
             // 
+            this.comboBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_userType.FormattingEnabled = true;
             this.comboBox_userType.Items.AddRange(new object[] {
             "Employee",
@@ -313,17 +330,6 @@
             this.CreateUser_lbl.TabIndex = 0;
             this.CreateUser_lbl.Text = "Create new User";
             // 
-            // UMError_lbl
-            // 
-            this.UMError_lbl.AutoSize = true;
-            this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UMError_lbl.ForeColor = System.Drawing.Color.Red;
-            this.UMError_lbl.Location = new System.Drawing.Point(222, 26);
-            this.UMError_lbl.Name = "UMError_lbl";
-            this.UMError_lbl.Size = new System.Drawing.Size(66, 24);
-            this.UMError_lbl.TabIndex = 17;
-            this.UMError_lbl.Text = "label1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,6 +339,7 @@
             this.Controls.Add(this.panel_userManagement);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.panel_userManagement.ResumeLayout(false);
             this.panel_userManagement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_users)).EndInit();
