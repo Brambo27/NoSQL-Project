@@ -78,11 +78,9 @@ namespace Model
             getCollection(CollectionName).ReplaceOne(originalDocument, updateDocument);
         }
 
-        public void update(Array updateString)
+        public BsonDocument SelectWhere(FilterDefinition<BsonDocument> filter)
         {
-
-
-            
+            return getCollection(CollectionName).Find(filter).FirstOrDefault();
         }
 
         public BsonDocument GetByObjectId(ObjectId objectId)
