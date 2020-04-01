@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -51,17 +52,17 @@ namespace Model
 
         public void insertIntoCollection(IMongoCollection<BsonDocument> collection)
         {
-            insertIntoCollection(collection, toBsonDocument());
+            insertIntoCollection(collection, this.ToBsonDocument());
         }
 
         public void insertIntoCollection(string collection)
         {
-            insertIntoCollection(getCollection(collection), toBsonDocument());
+            insertIntoCollection(getCollection(collection), this.ToBsonDocument());
         }
 
         public void insertIntoCollection()
         {
-            insertIntoCollection(getCollection(CollectionName), toBsonDocument());
+            insertIntoCollection(getCollection(CollectionName), this.ToBsonDocument());
         }
 
         public static void updateDocument(string collection, BsonDocument document, UpdateDefinition<BsonDocument> update)
@@ -69,9 +70,24 @@ namespace Model
             getCollection(collection).UpdateOne(document, update);
         }
 
-        public BsonDocument toBsonDocument()
+        public void update()
         {
-            return this.ToBsonDocument();
+            BsonDocument originalDocument = GetByObjectId(Id);
+            BsonDocument updateDocument = this.ToBsonDocument();
+
+            getCollection(CollectionName).UpdateOne(originalDocument, updateDocument);
+        }
+
+        public void update(Array updateString)
+        {
+
+
+            
+        }
+
+        public BsonDocument GetByObjectId(ObjectId objectId)
+        {
+            return getCollection(CollectionName).Find(new BsonDocument { { "_id", objectId } }).First();
         }
 
         public dynamic getById(string field, string value, string collectionName)
@@ -95,12 +111,14 @@ namespace Model
 
         public abstract dynamic deserialize(BsonDocument document);
 
-        public static List<dynamic> getAll(string collectionName)
+        public static List<T> getAll<T>(string collectionName)
         {
             var documents = getCollection(collectionName).Find(new BsonDocument()).ToList();
-            List<dynamic> objects = new List<dynamic>();
+
+            List<T> objects = new List<T>();
             foreach (BsonDocument document in documents)
             {
+                Console.WriteLine(BsonSerializer.Deserialize<dynamic>(document).GetType());
                 objects.Add(BsonSerializer.Deserialize<dynamic>(document));
             }
 
@@ -143,7 +161,5 @@ namespace Model
 
             return documents.ToArray();
         }
-
-
     }
 }
