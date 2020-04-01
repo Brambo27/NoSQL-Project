@@ -44,6 +44,19 @@ namespace Model
             }
         }
 
+        public User(ObjectId id)
+        {
+            var user = GetByObjectId<User>(id);
+
+            if (user != null)
+            {
+                this.Name = user.Name;
+                this.Email = user.Email;
+                this.UserId = user.UserId;
+                this.Password = user.Password;
+            }
+        }
+
         public User()
         {
 
