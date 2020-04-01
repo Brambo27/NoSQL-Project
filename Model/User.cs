@@ -3,6 +3,8 @@ using MongoDB.Bson.Serialization;
 using Model;
 using System.Collections.Generic;
 using MongoDB.Driver;
+using System;
+using System.Collections;
 
 namespace Model
 {
@@ -18,9 +20,9 @@ namespace Model
         public string Email;
         public string Password;
 
-        public static List<dynamic> getAll()
+        public static List<User> getAll()
         {
-            return getAll("Users");
+            return getAll<User>("Users");
         }
 
         public User(string user_Id, string name, string email,string password)
