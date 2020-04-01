@@ -118,8 +118,7 @@ namespace Model
             List<T> objects = new List<T>();
             foreach (BsonDocument document in documents)
             {
-                Console.WriteLine(BsonSerializer.Deserialize<dynamic>(document).GetType());
-                objects.Add(BsonSerializer.Deserialize<dynamic>(document));
+                objects.Add(BsonSerializer.Deserialize<T>(document));
             }
 
             return objects;
