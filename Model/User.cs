@@ -10,20 +10,23 @@ namespace Model
 {
     public class User : Model
     {
-        ObjectId _id;
+        public enum UserType
+        {
+            User,
+            Employee,
+            Admin
+        }
+
         public override string primaryKey { get => null; }
-        public override ObjectId Id { get => _id; set => _id = value; }
+        public override ObjectId Id { get => id; set => id = value; }
         public override string CollectionName { get => "Users"; }
 
         public string UserId;
         public string Name;
         public string Email;
         public string Password;
-
-        public static List<User> getAll()
-        {
-            return getAll<User>("Users");
-        }
+        public UserType type;
+        private ObjectId id;
 
         public User(string user_Id, string name, string email,string password)
         {
@@ -60,6 +63,11 @@ namespace Model
         public User()
         {
 
+        }
+
+        public static List<User> getAll()
+        {
+            return getAll<User>("Users");
         }
 
         public override dynamic deserialize(BsonDocument document)
