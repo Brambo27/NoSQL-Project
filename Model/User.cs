@@ -11,7 +11,7 @@ namespace Model
     public class User : Model
     {
         ObjectId _id;
-        public override string primaryKey { get => null; }
+        public override string primaryKey { get; }
         public override ObjectId Id { get => _id; set => _id = value; }
         public override string CollectionName { get => "Users"; }
 
@@ -19,6 +19,11 @@ namespace Model
         public string Name;
         public string Email;
         public string Password;
+        public string UserType;
+        public int PhoneNumber;
+        public string Location;
+        public string FirstName;
+        public string LastName;
 
         public static List<User> getAll()
         {

@@ -24,22 +24,25 @@ namespace View
         private void button_RequestPass_Click(object sender, EventArgs e)
         {
             string requestEmail = textBox_ForgotEmail.Text;
-            List<dynamic> users = Model.Model.getAll("Users");
+            List<User> users = Model.Model.getAll<User>("Users");
    
-            foreach (User c in users)
+            foreach (User u in users)
             {
-                if(c.Email == textBox_ForgotEmail.Text)
+                if (u.Email == textBox_ForgotEmail.Text)
                 {
-                    label_ForgotWarning.Text = "email gevonden";
-                    Model.Email.emailPassword();
+                    label_ForgotWarning.Text = "We've send you an email with an updated password.";
+                    Model.Email.emailPassword(u.Email,u.Name);
                 }
                 else
                 {
-                    label_ForgotWarning.Text = "niet gevonden";
+                    label_ForgotWarning.Text = "Email not found, please try again.";
                 }
             }
+        }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
