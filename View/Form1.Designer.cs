@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_userManagement = new System.Windows.Forms.Panel();
             this.addUser_btn = new System.Windows.Forms.Button();
             this.filter_txt = new System.Windows.Forms.TextBox();
@@ -54,9 +54,16 @@
             this.lastName_lbl = new System.Windows.Forms.Label();
             this.firstName_lbl = new System.Windows.Forms.Label();
             this.CreateUser_lbl = new System.Windows.Forms.Label();
+            this.menuDashboard_btn = new System.Windows.Forms.Button();
+            this.menuIncident_btn = new System.Windows.Forms.Button();
+            this.menuUser_btn = new System.Windows.Forms.Button();
+            this.licensed_lbl = new System.Windows.Forms.Label();
+            this.NoDesk_lbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_userManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_users)).BeginInit();
             this.panel_addUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_userManagement
@@ -65,9 +72,9 @@
             this.panel_userManagement.Controls.Add(this.filter_txt);
             this.panel_userManagement.Controls.Add(this.dataGridView_users);
             this.panel_userManagement.Controls.Add(this.userManagement_lbl);
-            this.panel_userManagement.Location = new System.Drawing.Point(0, 36);
+            this.panel_userManagement.Location = new System.Drawing.Point(1, 61);
             this.panel_userManagement.Name = "panel_userManagement";
-            this.panel_userManagement.Size = new System.Drawing.Size(799, 416);
+            this.panel_userManagement.Size = new System.Drawing.Size(799, 390);
             this.panel_userManagement.TabIndex = 0;
             // 
             // addUser_btn
@@ -103,28 +110,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_users.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_users.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_users.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_users.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_users.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_users.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView_users.Location = new System.Drawing.Point(51, 81);
             this.dataGridView_users.Name = "dataGridView_users";
             this.dataGridView_users.ReadOnly = true;
-            this.dataGridView_users.Size = new System.Drawing.Size(697, 335);
+            this.dataGridView_users.Size = new System.Drawing.Size(697, 309);
             this.dataGridView_users.TabIndex = 1;
             // 
             // userManagement_lbl
@@ -157,9 +164,9 @@
             this.panel_addUser.Controls.Add(this.lastName_lbl);
             this.panel_addUser.Controls.Add(this.firstName_lbl);
             this.panel_addUser.Controls.Add(this.CreateUser_lbl);
-            this.panel_addUser.Location = new System.Drawing.Point(0, 33);
+            this.panel_addUser.Location = new System.Drawing.Point(1, 74);
             this.panel_addUser.Name = "panel_addUser";
-            this.panel_addUser.Size = new System.Drawing.Size(799, 416);
+            this.panel_addUser.Size = new System.Drawing.Size(799, 380);
             this.panel_addUser.TabIndex = 4;
             // 
             // UMError_lbl
@@ -169,9 +176,8 @@
             this.UMError_lbl.ForeColor = System.Drawing.Color.Red;
             this.UMError_lbl.Location = new System.Drawing.Point(222, 26);
             this.UMError_lbl.Name = "UMError_lbl";
-            this.UMError_lbl.Size = new System.Drawing.Size(66, 24);
+            this.UMError_lbl.Size = new System.Drawing.Size(0, 24);
             this.UMError_lbl.TabIndex = 17;
-            this.UMError_lbl.Text = "label1";
             // 
             // confirmAddUser_btn
             // 
@@ -348,22 +354,88 @@
             this.CreateUser_lbl.TabIndex = 0;
             this.CreateUser_lbl.Text = "Create new User";
             // 
+            // menuDashboard_btn
+            // 
+            this.menuDashboard_btn.Location = new System.Drawing.Point(1, 38);
+            this.menuDashboard_btn.Name = "menuDashboard_btn";
+            this.menuDashboard_btn.Size = new System.Drawing.Size(267, 23);
+            this.menuDashboard_btn.TabIndex = 5;
+            this.menuDashboard_btn.Text = "Dashboard";
+            this.menuDashboard_btn.UseVisualStyleBackColor = true;
+            this.menuDashboard_btn.Click += new System.EventHandler(this.menuDashboard_btn_Click);
+            // 
+            // menuIncident_btn
+            // 
+            this.menuIncident_btn.Location = new System.Drawing.Point(264, 38);
+            this.menuIncident_btn.Name = "menuIncident_btn";
+            this.menuIncident_btn.Size = new System.Drawing.Size(267, 23);
+            this.menuIncident_btn.TabIndex = 7;
+            this.menuIncident_btn.Text = "Incident Management";
+            this.menuIncident_btn.UseVisualStyleBackColor = true;
+            this.menuIncident_btn.Click += new System.EventHandler(this.menuIncident_btn_Click);
+            // 
+            // menuUser_btn
+            // 
+            this.menuUser_btn.Location = new System.Drawing.Point(530, 38);
+            this.menuUser_btn.Name = "menuUser_btn";
+            this.menuUser_btn.Size = new System.Drawing.Size(267, 23);
+            this.menuUser_btn.TabIndex = 8;
+            this.menuUser_btn.Text = "User Management";
+            this.menuUser_btn.UseVisualStyleBackColor = true;
+            this.menuUser_btn.Click += new System.EventHandler(this.menuUser_btn_Click);
+            // 
+            // licensed_lbl
+            // 
+            this.licensed_lbl.AutoSize = true;
+            this.licensed_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.licensed_lbl.Location = new System.Drawing.Point(610, 25);
+            this.licensed_lbl.Name = "licensed_lbl";
+            this.licensed_lbl.Size = new System.Drawing.Size(186, 13);
+            this.licensed_lbl.TabIndex = 9;
+            this.licensed_lbl.Text = "Licensed to: The Garden Group";
+            // 
+            // NoDesk_lbl
+            // 
+            this.NoDesk_lbl.AutoSize = true;
+            this.NoDesk_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoDesk_lbl.Location = new System.Drawing.Point(716, 5);
+            this.NoDesk_lbl.Name = "NoDesk_lbl";
+            this.NoDesk_lbl.Size = new System.Drawing.Size(72, 20);
+            this.NoDesk_lbl.TabIndex = 10;
+            this.NoDesk_lbl.Text = "NoDesk";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(1, -12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.licensed_lbl);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.NoDesk_lbl);
+            this.Controls.Add(this.menuUser_btn);
+            this.Controls.Add(this.menuIncident_btn);
+            this.Controls.Add(this.menuDashboard_btn);
             this.Controls.Add(this.panel_userManagement);
             this.Controls.Add(this.panel_addUser);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "NoSQL application";
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.panel_userManagement.ResumeLayout(false);
             this.panel_userManagement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_users)).EndInit();
             this.panel_addUser.ResumeLayout(false);
             this.panel_addUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -393,5 +465,11 @@
         private System.Windows.Forms.Button cancelAddUser_btn;
         private System.Windows.Forms.ComboBox comboBox_location;
         private System.Windows.Forms.Label UMError_lbl;
+        private System.Windows.Forms.Button menuDashboard_btn;
+        private System.Windows.Forms.Button menuIncident_btn;
+        private System.Windows.Forms.Button menuUser_btn;
+        private System.Windows.Forms.Label licensed_lbl;
+        private System.Windows.Forms.Label NoDesk_lbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

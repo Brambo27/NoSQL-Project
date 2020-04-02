@@ -30,7 +30,7 @@ namespace View
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            showPanel("userManagement");
+            showPanel("dashboard");
             
             dataGridView_users.DataSource = dt;
         }
@@ -42,7 +42,9 @@ namespace View
 
             switch (panelName)
             {
-                case "Login": ;
+                case "dashboard":;
+                    break;
+                case "incidentManagement":;
                     break;
                 case "userManagement": panel_userManagement.Show();
                     break;
@@ -66,7 +68,7 @@ namespace View
             List<dynamic> user = new List<dynamic>();
             UMError_lbl.Text = "";
 
-            // 
+            // error checks
             if (firstName_txt.Text == "")
             {
                 UMError_lbl.Text = "Please enter a First name.";
@@ -127,6 +129,7 @@ namespace View
             table.Columns.Add("Email", typeof(string));
             table.Columns.Add("First Name", typeof(string));
             table.Columns.Add("Last Name", typeof(string));
+            table.Columns.Add("# Tickets", typeof(string));
 
             List<User> users = Model.Model.getAll<User>("Users");
 
@@ -144,10 +147,25 @@ namespace View
                     first = nameArray[0];
                     last = nameArray[1];
                 }
-                table.Rows.Add(u.UserId, u.Email, first, last);
+                table.Rows.Add(u.UserId, u.Email, first, last, u.Tickets);
             }
 
             return table;
+        }
+
+        private void menuDashboard_btn_Click(object sender, EventArgs e)
+        {
+            showPanel("dashboard");
+        }
+
+        private void menuIncident_btn_Click(object sender, EventArgs e)
+        {
+            showPanel("incidentManagement");
+        }
+
+        private void menuUser_btn_Click(object sender, EventArgs e)
+        {
+            showPanel("userManagement");
         }
     }
 }

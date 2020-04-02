@@ -15,7 +15,8 @@ namespace Controller
         public void addUser(List<dynamic> data)
         {
             List<User> users = Model.Model.getAll<User>("Users");
-            List<dynamic> tickets = Model.Model.getAll<dynamic>("Incidents");
+            var selectFilter = Builders<BsonDocument>.Filter.Eq("Name", data[0]);
+            List<dynamic> tickets = Model.Model.selectAllWhere<dynamic>("Incidents", selectFilter);
             int userID = users.Count + 1;
             var user1 = new BsonDocument
             {
@@ -27,7 +28,8 @@ namespace Controller
                 {"UserType", data[2] },
                 {"Email", data[3] },
                 {"PhoneNumber", data[4] },
-                {"Location", data[5] }
+                {"Location", data[5] },
+                {"Tickets", tickets.Count.ToString() }
             };
 
             Model.Model.insertIntoCollection("Users", user1);

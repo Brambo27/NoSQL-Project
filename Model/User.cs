@@ -24,7 +24,7 @@ namespace Model
         public string Password;
         public string PhoneNumber;
         public string Location;
-        public string Tickets;
+        public string Tickets = "0";
         
 
         public static List<User> getAll()

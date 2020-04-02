@@ -43,12 +43,12 @@ namespace View
             var deleteFilter = Builders<BsonDocument>.Filter.Eq("UserId", 5);
             //Model.Model.deleteDocument("Users", deleteFilter);
             
-            Application.Run(new Form1());
+            //Application.Run(new Login());
 
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new Form1());
         }
     }
 }
