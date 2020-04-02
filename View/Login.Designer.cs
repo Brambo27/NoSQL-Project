@@ -38,6 +38,8 @@
             this.textBox_Password = new System.Windows.Forms.TextBox();
             this.textBox_Username = new System.Windows.Forms.TextBox();
             this.label_login = new System.Windows.Forms.Label();
+            this.button_close = new System.Windows.Forms.Button();
+            this.label_register = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +69,7 @@
             this.button_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Login.Location = new System.Drawing.Point(316, 304);
+            this.button_Login.Location = new System.Drawing.Point(303, 334);
             this.button_Login.Name = "button_Login";
             this.button_Login.Size = new System.Drawing.Size(152, 41);
             this.button_Login.TabIndex = 19;
@@ -79,7 +81,7 @@
             // linkLabel_Forgot
             // 
             this.linkLabel_Forgot.AutoSize = true;
-            this.linkLabel_Forgot.Location = new System.Drawing.Point(463, 281);
+            this.linkLabel_Forgot.Location = new System.Drawing.Point(464, 279);
             this.linkLabel_Forgot.Name = "linkLabel_Forgot";
             this.linkLabel_Forgot.Size = new System.Drawing.Size(124, 15);
             this.linkLabel_Forgot.TabIndex = 18;
@@ -152,11 +154,32 @@
             this.label_login.Text = "NoDesk: TGG";
             this.label_login.UseWaitCursor = true;
             // 
+            // button_close
+            // 
+            this.button_close.BackColor = System.Drawing.Color.Red;
+            this.button_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_close.Location = new System.Drawing.Point(728, 12);
+            this.button_close.Name = "button_close";
+            this.button_close.Size = new System.Drawing.Size(60, 57);
+            this.button_close.TabIndex = 22;
+            this.button_close.Text = "X";
+            this.button_close.UseVisualStyleBackColor = false;
+            this.button_close.Click += new System.EventHandler(this.button_close_Click);
+            // 
+            // label_register
+            // 
+            this.label_register.Location = new System.Drawing.Point(0, 0);
+            this.label_register.Name = "label_register";
+            this.label_register.Size = new System.Drawing.Size(100, 23);
+            this.label_register.TabIndex = 0;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label_register);
+            this.Controls.Add(this.button_close);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Warning);
             this.Controls.Add(this.button_Login);
@@ -187,5 +210,7 @@
         private System.Windows.Forms.TextBox textBox_Password;
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.Label label_login;
+        private System.Windows.Forms.Button button_close;
+        private System.Windows.Forms.LinkLabel label_register;
     }
 }

@@ -33,6 +33,7 @@
             this.textBox_ForgotEmail = new System.Windows.Forms.TextBox();
             this.button_RequestPass = new System.Windows.Forms.Button();
             this.label_ForgotWarning = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_ForgotHeader
@@ -80,11 +81,23 @@
             this.label_ForgotWarning.Size = new System.Drawing.Size(0, 15);
             this.label_ForgotWarning.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(713, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 65);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ForgotLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label_ForgotWarning);
             this.Controls.Add(this.button_RequestPass);
             this.Controls.Add(this.textBox_ForgotEmail);
@@ -105,5 +118,6 @@
         private System.Windows.Forms.TextBox textBox_ForgotEmail;
         private System.Windows.Forms.Button button_RequestPass;
         private System.Windows.Forms.Label label_ForgotWarning;
+        private System.Windows.Forms.Button button1;
     }
 }

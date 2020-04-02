@@ -21,13 +21,20 @@ namespace Model
         public override ObjectId Id { get => id; set => id = value; }
         public override string CollectionName { get => "Users"; }
 
-        public string userId;
-        public string name;
-        public string email;
-        public string phoneNumber;
-        public string password;
-        public UserType type;
-        private ObjectId id;
+        public string UserId;
+        public string Name;
+        public string Email;
+        public string Password;
+        public string UserType;
+        public int PhoneNumber;
+        public string Location;
+        public string FirstName;
+        public string LastName;
+
+        public static List<User> getAll()
+        {
+            return getAll<User>("Users");
+        }
 
         public User(string user_Id, string name, string email,string password)
         {
@@ -64,11 +71,6 @@ namespace Model
         public User()
         {
 
-        }
-
-        public static List<User> getAll()
-        {
-            return getAll<User>("Users");
         }
 
         public override dynamic deserialize(BsonDocument document)

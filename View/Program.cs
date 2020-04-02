@@ -34,13 +34,16 @@ namespace View
                 Password = "test123"
             };
 
-            User user = new User() {
+            User user = new User()
+            {
                 Id = new ObjectId("5e73ec82f90ddd05b4cd074e")
             };
 
-            var update = Builders<BsonDocument>.Update.Set("Name", "TEST 2");
-            User.updateDocument("Users", user.get().toBsonDocument(), update);
             
+           //Dit zorgde voor runtime error
+           // var update = Builders<BsonDocument>.Update.Set("Name", "TEST 2");
+           // User.updateDocument("Users", user.get().toBsonDocument(), update);
+
             Application.Run(new Login());
 
 
