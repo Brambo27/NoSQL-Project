@@ -75,14 +75,12 @@ namespace Model
             BsonDocument originalDocument = GetByObjectId(Id);
             BsonDocument updateDocument = this.ToBsonDocument();
 
-            getCollection(CollectionName).UpdateOne(originalDocument, updateDocument);
+            getCollection(CollectionName).ReplaceOne(originalDocument, updateDocument);
         }
 
-        public void update(Array updateString)
+        public BsonDocument SelectWhere(FilterDefinition<BsonDocument> filter)
         {
-
-
-            
+            return getCollection(CollectionName).Find(filter).FirstOrDefault();
         }
 
         public static void deleteDocument(string collection, FilterDefinition<BsonDocument> filter)
@@ -93,6 +91,11 @@ namespace Model
         public BsonDocument GetByObjectId(ObjectId objectId)
         {
             return getCollection(CollectionName).Find(new BsonDocument { { "_id", objectId } }).First();
+        }
+
+        public T GetByObjectId<T>(ObjectId objectId)
+        {
+            return BsonSerializer.Deserialize<T>(getCollection(CollectionName).Find(new BsonDocument { { "_id", objectId } }).First());
         }
 
         public dynamic getById(string field, string value, string collectionName)
