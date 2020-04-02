@@ -39,7 +39,9 @@ namespace View
             };
 
             var update = Builders<BsonDocument>.Update.Set("Name", "TEST 2");
-            User.updateDocument("Users", user.toBsonDocument(), update);
+            //User.updateDocument("Users", user.toBsonDocument(), update);
+            var deleteFilter = Builders<BsonDocument>.Filter.Eq("UserId", 5);
+            //Model.Model.deleteDocument("Users", deleteFilter);
             
             Application.Run(new Form1());
 

@@ -63,14 +63,15 @@ namespace View
 
         private void confirmAddUser_btn_Click(object sender, EventArgs e)
         {
-            string[] data = new string[6];
-            List<dynamic> datas = new List<dynamic>();
+            List<dynamic> user = new List<dynamic>();
+            UMError_lbl.Text = "";
 
             // 
-            if(firstName_txt.Text == "")
+            if (firstName_txt.Text == "")
             {
                 UMError_lbl.Text = "Please enter a First name.";
-            } else if (lastName_txt.Text == "")
+            } 
+            else if (lastName_txt.Text == "")
             {
                 UMError_lbl.Text = "Please enter a Last name.";
             }
@@ -93,14 +94,16 @@ namespace View
 
             if(UMError_lbl.Text == "")
             {
-                datas.Add(firstName_txt.Text);
-                datas.Add(lastName_txt.Text);
-                datas.Add(comboBox_userType.Text);
-                datas.Add(email_txt.Text);
-                datas.Add(phone_txt.Text);
-                datas.Add(comboBox_location.Text);
+                user.Add(firstName_txt.Text);
+                user.Add(lastName_txt.Text);
+                user.Add(comboBox_userType.Text);
+                user.Add(email_txt.Text);
+                user.Add(phone_txt.Text);
+                user.Add(comboBox_location.Text);
                 
-                userManagementController.addUser(datas);
+                userManagementController.addUser(user);
+                dt = getTable();
+                showPanel("userManagement");
             } else
             {
                 showPanel("addUser");
@@ -125,11 +128,23 @@ namespace View
             table.Columns.Add("First Name", typeof(string));
             table.Columns.Add("Last Name", typeof(string));
 
-            List<dynamic> users = Model.Model.getAll("Users");
+            List<User> users = Model.Model.getAll<User>("Users");
 
-            foreach(User u in users)
+            char[] c = { ' ' };
+            string[] nameArray;
+
+            foreach (User u in users)
             {
-                table.Rows.Add(u.UserId, u.Email, u.Name);
+                string first = u.FirstName;
+                string last = u.LastName;
+
+                if (u.Name != null)
+                {
+                    nameArray = u.Name.Split(c, 2);
+                    first = nameArray[0];
+                    last = nameArray[1];
+                }
+                table.Rows.Add(u.UserId, u.Email, first, last);
             }
 
             return table;

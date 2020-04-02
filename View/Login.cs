@@ -17,7 +17,7 @@ namespace View
     {
 
         static int attempts = 3;
-        List<dynamic> userList = Model.Model.getAll("Users");
+        List<User> userList = Model.Model.getAll<User>("Users");
 
         public Login()
         {

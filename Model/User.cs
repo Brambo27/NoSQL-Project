@@ -17,8 +17,15 @@ namespace Model
 
         public string UserId;
         public string Name;
+        public string FirstName;
+        public string LastName;
+        public string UserType;
         public string Email;
         public string Password;
+        public string PhoneNumber;
+        public string Location;
+        public string Tickets;
+        
 
         public static List<User> getAll()
         {

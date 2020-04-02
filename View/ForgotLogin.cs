@@ -24,7 +24,7 @@ namespace View
         private void button_RequestPass_Click(object sender, EventArgs e)
         {
             string requestEmail = textBox_ForgotEmail.Text;
-            List<dynamic> users = Model.Model.getAll("Users");
+            List<User> users = Model.Model.getAll<User>("Users");
    
             foreach (User c in users)
             {

@@ -85,6 +85,11 @@ namespace Model
             
         }
 
+        public static void deleteDocument(string collection, FilterDefinition<BsonDocument> filter)
+        {
+            getCollection(collection).DeleteOne(filter);
+        }
+
         public BsonDocument GetByObjectId(ObjectId objectId)
         {
             return getCollection(CollectionName).Find(new BsonDocument { { "_id", objectId } }).First();

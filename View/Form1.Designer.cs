@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_userManagement = new System.Windows.Forms.Panel();
             this.addUser_btn = new System.Windows.Forms.Button();
             this.filter_txt = new System.Windows.Forms.TextBox();
@@ -87,11 +89,10 @@
             // filter_txt
             // 
             this.filter_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filter_txt.Location = new System.Drawing.Point(17, 50);
+            this.filter_txt.Location = new System.Drawing.Point(51, 47);
             this.filter_txt.Name = "filter_txt";
             this.filter_txt.Size = new System.Drawing.Size(239, 22);
             this.filter_txt.TabIndex = 2;
-            this.filter_txt.Text = "Filter by email";
             this.filter_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.filter_txt_KeyPress);
             // 
             // dataGridView_users
@@ -101,19 +102,36 @@
             this.dataGridView_users.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_users.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_users.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_users.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_users.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView_users.Location = new System.Drawing.Point(11, 78);
+            this.dataGridView_users.Location = new System.Drawing.Point(51, 81);
             this.dataGridView_users.Name = "dataGridView_users";
             this.dataGridView_users.ReadOnly = true;
-            this.dataGridView_users.Size = new System.Drawing.Size(788, 335);
+            this.dataGridView_users.Size = new System.Drawing.Size(697, 335);
             this.dataGridView_users.TabIndex = 1;
             // 
             // userManagement_lbl
             // 
             this.userManagement_lbl.AutoSize = true;
             this.userManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userManagement_lbl.Location = new System.Drawing.Point(12, 12);
+            this.userManagement_lbl.Location = new System.Drawing.Point(46, 9);
             this.userManagement_lbl.Name = "userManagement_lbl";
             this.userManagement_lbl.Size = new System.Drawing.Size(203, 25);
             this.userManagement_lbl.TabIndex = 0;
@@ -335,8 +353,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel_addUser);
             this.Controls.Add(this.panel_userManagement);
+            this.Controls.Add(this.panel_addUser);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load_1);
