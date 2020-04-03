@@ -28,10 +28,10 @@ namespace View
    
             foreach (User u in users)
             {
-                if (u.Email == textBox_ForgotEmail.Text)
+                if (u.email == textBox_ForgotEmail.Text)
                 {
                     label_ForgotWarning.Text = "We've send you an email with an updated password.";
-                    Model.Email.emailPassword(u.Email,u.Name);
+                    Model.Email.emailPassword(u.email,u.name);
                 }
                 else
                 {

@@ -41,7 +41,7 @@ namespace View
             {
                 foreach (User u in userList)
                 {
-                    if (u.Name == inputUsername && u.Password == inputPassword)
+                    if (u.name == inputUsername && u.password == inputPassword)
                     {
                         warning = "Success";
                         this.Close();

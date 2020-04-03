@@ -26,7 +26,7 @@ namespace Model
         public string email;
         public string password;
         public UserType userType;
-        public int phoneNumber;
+        public string phoneNumber;
         public string location;
         public string firstName;
         public string lastName;
