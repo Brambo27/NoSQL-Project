@@ -1,10 +1,12 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
@@ -172,6 +174,19 @@ namespace Model
             }
 
             return documents.ToArray();
+        }
+
+        public static void BackupDocuments<T>(string backupLocation, string collection)
+        {
+            List<T> items = getAll<T>(collection);
+
+            //open file stream
+            using (StreamWriter file = File.CreateText(backupLocation))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                //serialize object directly into file stream
+                serializer.Serialize(file, items);
+            }
         }
     }
 }
