@@ -16,39 +16,36 @@ namespace View
         [STAThread]
         static void Main()
         {
-            //User user1 = new User("10");
 
-            User user3 = new User()
-            {
-                Name = "bram Bos",
-                Email = "BramBos27@gmail.com",
-                UserId = "1",
-                Password = "bram123"
-            };
 
-            User user4 = new User()
-            {
-                Name = "Soo Young",
-                Email = "test@email.com",
-                UserId = "2",
-                Password = "test123"
-            };
 
-            User user = new User() {
-                Id = new ObjectId("5e73ec82f90ddd05b4cd074e")
-            };
+        //Random rand = new Random(); // we need a random variable to select names randomly
 
-            var update = Builders<BsonDocument>.Update.Set("Name", "TEST 2");
-            //User.updateDocument("Users", user.toBsonDocument(), update);
-            var deleteFilter = Builders<BsonDocument>.Filter.Eq("UserId", 5);
-            //Model.Model.deleteDocument("Users", deleteFilter);
-            
-            //Application.Run(new Login());
+        //RandomName nameGen = new RandomName(rand); // create a new instance of the RandomName class
 
+        //string[] email = { "gmail.com", "hotmail.com", "yahoo.com", "student.inholland.nl", "hotmale.com" };
+
+        //List<string> names = nameGen.RandomNames(100, 0);
+        //    for (int i = 0; i < 100; i++)
+        //    {
+
+        //        User user = new User()
+        //        {
+        //            name = names[i],
+        //            email = names[i].Replace(" ", "") + "@" + email[rand.Next(0, 4)],
+        //            password = names[i].Replace(" ", "") + rand.Next(1000, 99999).ToString(),
+        //            userId = (i + 1).ToString(),
+        //            phoneNumber = rand.Next(100000000, 999999999).ToString(),
+        //        };
+
+        //        user.insertIntoCollection();
+        //    }
+
+            Application.Run(new Login());
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
         }
     }
 }

@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{B1B87951-A581-4751-BA83-485F6E21206A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{E6C1E849-2A67-49FE-8B54-F33EEE8C1334}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{62B56E85-BA35-40FD-8223-F2472A3CD10B}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{B1B87951-A581-4751-BA83-485F6E21206A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B87951-A581-4751-BA83-485F6E21206A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B87951-A581-4751-BA83-485F6E21206A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6C1E849-2A67-49FE-8B54-F33EEE8C1334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6C1E849-2A67-49FE-8B54-F33EEE8C1334}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6C1E849-2A67-49FE-8B54-F33EEE8C1334}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6C1E849-2A67-49FE-8B54-F33EEE8C1334}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62B56E85-BA35-40FD-8223-F2472A3CD10B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62B56E85-BA35-40FD-8223-F2472A3CD10B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62B56E85-BA35-40FD-8223-F2472A3CD10B}.Release|Any CPU.ActiveCfg = Release|Any CPU

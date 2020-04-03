@@ -10,9 +10,32 @@ namespace Model
 {
     public abstract class Email : Model
     {
-        public static void emailPassword()
+        public static void emailPassword(string Email,string User)
         {
-            //
+            //Generated passwoord bijvoegen en updaten in db
+            var fromAddress = new MailAddress("testing69php@gmail.com", "NoDesk Support");
+            var toAddress = new MailAddress(Email, User);
+            const string fromPassword = "phpisheelleuk12";
+            const string subject = "New Password for your account";
+            const string body = "Hello, we've updated your password to: test";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
         }
     }
 }

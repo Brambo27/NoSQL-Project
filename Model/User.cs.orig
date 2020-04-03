@@ -10,6 +10,7 @@ namespace Model
 {
     public class User : Model
     {
+<<<<<<< HEAD
         public enum UserType
         {
             User,
@@ -24,13 +25,31 @@ namespace Model
         public string userId;
         public string name;
         public string email;
-        public string password;
-        public UserType userType;
         public string phoneNumber;
-        public string location;
-        public string firstName;
-        public string lastName;
+        public string password;
+        public UserType type;
         private ObjectId id;
+=======
+        ObjectId _id;
+        public override string primaryKey { get; }
+        public override ObjectId Id { get => _id; set => _id = value; }
+        public override string CollectionName { get => "Users"; }
+
+        public string UserId;
+        public string Name;
+        public string Email;
+        public string Password;
+        public string UserType;
+        public int PhoneNumber;
+        public string Location;
+        public string FirstName;
+        public string LastName;
+
+        public static List<User> getAll()
+        {
+            return getAll<User>("Users");
+        }
+>>>>>>> a6ab7725bc630764ad5baea7dc92cdeae438c476
 
         public User(string user_Id, string name, string email,string password)
         {

@@ -132,6 +132,11 @@ namespace Model
 
         public abstract dynamic deserialize(BsonDocument document);
 
+        public dynamic deserialize<T>(BsonDocument document)
+        {
+            return BsonSerializer.Deserialize<T>(document);
+        }
+
         public static List<T> getAll<T>(string collectionName)
         {
             var documents = getCollection(collectionName).Find(new BsonDocument()).ToList();
@@ -143,6 +148,11 @@ namespace Model
             }
 
             return objects;
+        }
+
+        public virtual List<T> getAll<T>()
+        {
+            return getAll<T>(CollectionName);
         }
 
         public dynamic get()
