@@ -2,13 +2,16 @@
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Model
 {
@@ -18,28 +21,36 @@ namespace Model
         public abstract string CollectionName { get; }
         public abstract ObjectId Id { get; set; }
 
-        public static IMongoCollection<BsonDocument> getCollection(string collectionName)
+        public static IMongoDatabase GetDatabase()
         {
             MongoClient client = new MongoClient("mongodb+srv://dbUser:Pret9999@cluster0-iiugx.azure.mongodb.net/test?retryWrites=true&w=majority");
-            IMongoDatabase database = client.GetDatabase("NOSQL");
-            return database.GetCollection<BsonDocument>(collectionName);
+            return client.GetDatabase("NOSQL");
+        }
+
+        public static IMongoCollection<BsonDocument> getCollection(string collectionName)
+        {
+            return GetDatabase().GetCollection<BsonDocument>(collectionName);
         }
 
         public IMongoCollection<BsonDocument> getCollection()
         {
-            MongoClient client = new MongoClient("mongodb+srv://dbUser:Pret9999@cluster0-iiugx.azure.mongodb.net/test?retryWrites=true&w=majority");
-            IMongoDatabase database = client.GetDatabase("NOSQL");
-            return database.GetCollection<BsonDocument>(CollectionName);
+            return GetDatabase().GetCollection<BsonDocument>(CollectionName);
         }
 
         public static void insertIntoCollection(IMongoCollection<BsonDocument> collection, BsonDocument[] data)
         {
-            collection.InsertMany(data);
+            if(data != null)
+            {
+               collection.InsertMany(data);
+            }
         }
 
         public static void insertIntoCollection(IMongoCollection<BsonDocument> collection, BsonDocument data)
         {
-            collection.InsertOne(data);
+            if (data != null)
+            {
+                collection.InsertOne(data);
+            }
         }
 
         public static void insertIntoCollection(string collection, BsonDocument data)
@@ -83,6 +94,11 @@ namespace Model
         public BsonDocument SelectWhere(FilterDefinition<BsonDocument> filter)
         {
             return getCollection(CollectionName).Find(filter).FirstOrDefault();
+        }
+
+        public T SelectWhere<T>(FilterDefinition<BsonDocument> filter)
+        {
+            return BsonSerializer.Deserialize<T>(getCollection(CollectionName).Find(filter).FirstOrDefault());
         }
 
         public static List<T> selectAllWhere<T>(string collectionName, FilterDefinition<BsonDocument> filter)
@@ -152,9 +168,9 @@ namespace Model
             return objects;
         }
 
-        public virtual List<T> getAll<T>()
+        public static List<BsonDocument> getAllDocuments(string collectionName)
         {
-            return getAll<T>(CollectionName);
+            return getCollection(collectionName).Find(new BsonDocument()).ToList();
         }
 
         public dynamic get()
@@ -194,17 +210,55 @@ namespace Model
             return documents.ToArray();
         }
 
-        public static void BackupDocuments<T>(string backupLocation, string collection)
+        public static void BackupDocuments(string backupLocation, string collection)
         {
-            List<T> items = getAll<T>(collection);
+            List<BsonDocument> items = getAllDocuments(collection);
 
             //open file stream
-            using (StreamWriter file = File.CreateText(backupLocation))
+            using (StreamWriter file = File.CreateText(backupLocation + "/" + collection + "_backup.txt"))
             {
+                file.WriteLine("{\"collectionName\": \"" + collection + "\"}");
                 JsonSerializer serializer = new JsonSerializer();
                 //serialize object directly into file stream
-                serializer.Serialize(file, items);
+                serializer.Serialize(file, items.ConvertAll(BsonTypeMapper.MapToDotNetValue));
             }
+        }
+
+        public static void InsertFromBackup(string backupLocation)
+        {
+            using (StreamReader r = new StreamReader(backupLocation))
+            {
+                //Type type = Type.GetType("Model." + collection.Remove(collection.Length - 1));
+                string collectionJson = r.ReadLine();
+                string json = r.ReadToEnd();
+                //List<dynamic> items = JsonConvert.DeserializeObject<List<dynamic>>(json);
+                List<BsonDocument> items = BsonSerializer.Deserialize<List<BsonDocument>>(json);
+
+                dynamic collectionNameJson = JObject.Parse(collectionJson);
+                string collectionName = collectionNameJson.collectionName;
+
+                if (getCollection(collectionName).Find<BsonDocument>("{}").CountDocuments() == 0)
+                {
+                    insertIntoCollection(getCollection(collectionName), items.ToArray());
+                }
+                else
+                {
+                    throw new Exception("Database is not empty. Database needs to be empty to insert from backup");
+                }
+            }
+        }
+
+        public static List<string> getAllCollectionNames()
+        {
+            List<string> collections = new List<string>();
+
+            foreach (BsonDocument collection in GetDatabase().ListCollectionsAsync().Result.ToListAsync<BsonDocument>().Result)
+            {
+                string name = collection["name"].AsString;
+                collections.Add(name);
+            }
+
+            return collections;
         }
     }
 }
