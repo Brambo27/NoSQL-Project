@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using Model;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace View
 {
@@ -39,17 +41,22 @@ namespace View
             }
             else
             {
-                foreach (User u in userList)
+                FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("Name", inputUsername);
+                User user = new User().SelectWhere<User>(filter);
+                if(user == null)
                 {
-                    if (u.name == inputUsername && u.password == inputPassword)
+                    warning = "User not found.";
+                    textBox_Username.Text = "";
+                }
+                else
+                {
+                    if(user.password == inputPassword)
                     {
-                        warning = "Success";
-                        this.Close();
-                        //OPEN NIEUW WINDOW
+                        warning = "Success.";
                     }
                     else
                     {
-                        warning = "Invalid credentials, please try again.";
+                        warning = "Password incorrect.";
                     }
                 }
 
@@ -65,24 +72,49 @@ namespace View
                     Properties.Settings.Default.Username = "";
                     Properties.Settings.Default.Save();
                 }
-                label_Warning.Text = warning;
-                textBox_Password.Text = "";
             }
+            textBox_Password.Text = "";
+            label_Warning.Text = warning;
         }
 
         private void linkLabel_Forgot_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ForgotLogin forget = new ForgotLogin();
-            forget.ShowDialog();
-            this.Close();
-            /*
-            
-            */
+            panel_forgot.Show();
         }
 
         private void button_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_RequestPass_Click(object sender, EventArgs e)
+        {
+            string requestEmail = textBox_ForgotEmail.Text;
+            FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("Email", requestEmail);
+            User user = new User().SelectWhere<User>(filter);
+            if (user == null)
+            {
+                label_Warning.Text = "Email not found, please try again.";
+            }
+            else
+            {
+                panel_forgot.Hide();
+                string newPass = CreatePassword(10);
+                label_Warning.Text = "We've send you an email with an updated password.";
+                Model.Email.emailPassword(user.email, user.name, newPass);
+            }
+        }
+
+        private string CreatePassword(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
         }
     }
 }

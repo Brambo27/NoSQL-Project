@@ -10,14 +10,14 @@ namespace Model
 {
     public abstract class Email : Model
     {
-        public static void emailPassword(string Email,string User)
+        public static void emailPassword(string Email,string User,string Password)
         {
-            //Generated passwoord bijvoegen en updaten in db
+           
             var fromAddress = new MailAddress("testing69php@gmail.com", "NoDesk Support");
             var toAddress = new MailAddress(Email, User);
             const string fromPassword = "phpisheelleuk12";
             const string subject = "New Password for your account";
-            const string body = "Hello, we've updated your password to: test";
+            string body = "Hello, we've updated your noDesk password to: " + Password + "."; 
 
             var smtp = new SmtpClient
             {

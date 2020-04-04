@@ -35,7 +35,8 @@ namespace View
 
         private void progressValues()
         {
-            //Daadwerkelijke waarden missen nog
+            List<Incident>incidents = Incident.getAll();
+            progress_deadline.Text = incidents.Count.ToString();
             progress_deadline.Value = 2;
             progress_unresolved.Value = 5;
 

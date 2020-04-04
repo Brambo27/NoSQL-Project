@@ -98,7 +98,19 @@ namespace Model
 
         public T SelectWhere<T>(FilterDefinition<BsonDocument> filter)
         {
-            return BsonSerializer.Deserialize<T>(getCollection(CollectionName).Find(filter).FirstOrDefault());
+            T item = default(T);
+            try
+            {
+                item = BsonSerializer.Deserialize<T>(getCollection(CollectionName).Find(filter).FirstOrDefault());
+            }
+            catch (ArgumentNullException e)
+            {
+                if (e.InnerException is ArgumentNullException)
+                    Console.WriteLine("Null");
+                else
+                    Console.WriteLine("Exception");
+            }
+            return item;
         }
 
         public static List<T> selectAllWhere<T>(string collectionName, FilterDefinition<BsonDocument> filter)
@@ -260,5 +272,7 @@ namespace Model
 
             return collections;
         }
+
+       
     }
 }
