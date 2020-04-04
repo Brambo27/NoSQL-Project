@@ -30,6 +30,7 @@ namespace Model
         public string location;
         public string firstName;
         public string lastName;
+        public string tickets = "0";
         private ObjectId id;
 
         public User(string user_Id, string name, string email,string password)

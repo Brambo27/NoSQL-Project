@@ -83,6 +83,24 @@ namespace Model
             return getCollection(CollectionName).Find(filter).FirstOrDefault();
         }
 
+        public static List<T> selectAllWhere<T>(string collectionName, FilterDefinition<BsonDocument> filter)
+        {
+            var documents = getCollection(collectionName).Find(filter).ToList();
+
+            List<T> objects = new List<T>();
+            foreach (BsonDocument document in documents)
+            {
+                objects.Add(BsonSerializer.Deserialize<T>(document));
+            }
+
+            return objects;
+        }
+
+        public static void deleteDocument(string collection, FilterDefinition<BsonDocument> filter)
+        {
+            getCollection(collection).DeleteOne(filter);
+        }
+
         public BsonDocument GetByObjectId(ObjectId objectId)
         {
             return getCollection(CollectionName).Find(new BsonDocument { { "_id", objectId } }).First();
