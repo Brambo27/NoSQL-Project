@@ -17,7 +17,7 @@ namespace View
 {
     public partial class Login : Form
     {
-        //Initializing and setting user data in app settings if remember was checked on previous login
+        //Initializing and setting user data in app settings if remember me was checked on previous login
         public Login()
         {
             InitializeComponent();
@@ -73,18 +73,6 @@ namespace View
             label_Warning.Text = warning;
         }
 
-        //Enabling visability for forgotLogin panel
-        private void linkLabel_Forgot_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            panel_forgot.Show();
-        }
-
-        //Closing the application
-        private void button_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         //Checking email input, getting database information and calling password creation method
         private void button_RequestPass_Click(object sender, EventArgs e)
         {
@@ -122,6 +110,18 @@ namespace View
         private void button_hide_Click(object sender, EventArgs e)
         {
             panel_forgot.Hide();
+        }
+
+        //Enabling visability for forgotLogin panel
+        private void linkLabel_Forgot_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            panel_forgot.Show();
+        }
+
+        //Closing the application
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

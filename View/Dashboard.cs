@@ -36,9 +36,22 @@ namespace View
         private void progressValues()
         {
             List<Incident>incidents = Incident.getAll();
+            int incidentsPastDeadline = 0;
+            int incidentsUnresolved = 0;
+            foreach(Incident i in incidents)
+            {
+                if(i.deadline > DateTime.Now)
+                {
+                    incidentsPastDeadline++;
+                }
+                //Unresolved aantal mist nog
+            }
             progress_deadline.Text = incidents.Count.ToString();
-            progress_deadline.Value = 2;
-            progress_unresolved.Value = 5;
+            progress_deadline.Maximum = incidents.Count;
+            progress_unresolved.Maximum = incidents.Count;
+
+            progress_deadline.Value = incidentsPastDeadline;
+            progress_unresolved.Value = incidentsUnresolved;
 
         }
 
@@ -222,6 +235,39 @@ namespace View
         private void incidentManagement_lbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_LowPrior_Click(object sender, EventArgs e)
+        {
+            label_Prior.Text = "Low priority Incidents";
+            circularProgressBar_Prior.Value = amountPriorityIncidents("Low");
+        }
+
+        private void button_MedPrior_Click(object sender, EventArgs e)
+        {
+            label_Prior.Text = "Medium priority Incidents";
+            circularProgressBar_Prior.Value = amountPriorityIncidents("Medium");
+        }
+
+        private void button_HighPrior_Click(object sender, EventArgs e)
+        {
+            label_Prior.Text = "High priority Incidents";
+            circularProgressBar_Prior.Value = amountPriorityIncidents("High");
+        }
+
+        
+        private int amountPriorityIncidents(string priorityStatus)
+        {
+            int amount = 0;
+            List<Incident>incidents = Incident.getAll();
+            foreach(Incident i in incidents)
+            {
+                if(Enum.TryParse(priorityStatus, out i.priority))
+                {
+                    amount++;
+                }
+            }
+            return amount;
         }
     }
 }

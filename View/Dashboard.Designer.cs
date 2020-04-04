@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_dashboard = new System.Windows.Forms.Label();
             this.progress_unresolved = new CircularProgressBar.CircularProgressBar();
             this.progress_deadline = new CircularProgressBar.CircularProgressBar();
@@ -72,6 +72,11 @@
             this.createIncident_lbl = new System.Windows.Forms.Label();
             this.NoDesk_lbl = new System.Windows.Forms.Label();
             this.licensed_lbl = new System.Windows.Forms.Label();
+            this.circularProgressBar_Prior = new CircularProgressBar.CircularProgressBar();
+            this.label_Prior = new System.Windows.Forms.Label();
+            this.button_LowPrior = new System.Windows.Forms.Button();
+            this.button_MedPrior = new System.Windows.Forms.Button();
+            this.button_HighPrior = new System.Windows.Forms.Button();
             this.userManagement_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).BeginInit();
             this.createUser_panel.SuspendLayout();
@@ -99,7 +104,7 @@
             this.progress_unresolved.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.progress_unresolved.InnerMargin = 2;
             this.progress_unresolved.InnerWidth = -1;
-            this.progress_unresolved.Location = new System.Drawing.Point(85, 108);
+            this.progress_unresolved.Location = new System.Drawing.Point(23, 108);
             this.progress_unresolved.MarqueeAnimationSpeed = 2000;
             this.progress_unresolved.Name = "progress_unresolved";
             this.progress_unresolved.OuterColor = System.Drawing.Color.Gray;
@@ -108,7 +113,7 @@
             this.progress_unresolved.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.progress_unresolved.ProgressWidth = 25;
             this.progress_unresolved.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.progress_unresolved.Size = new System.Drawing.Size(255, 255);
+            this.progress_unresolved.Size = new System.Drawing.Size(201, 199);
             this.progress_unresolved.StartAngle = 270;
             this.progress_unresolved.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progress_unresolved.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -130,7 +135,7 @@
             this.progress_deadline.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.progress_deadline.InnerMargin = 2;
             this.progress_deadline.InnerWidth = -1;
-            this.progress_deadline.Location = new System.Drawing.Point(445, 108);
+            this.progress_deadline.Location = new System.Drawing.Point(271, 95);
             this.progress_deadline.MarqueeAnimationSpeed = 2000;
             this.progress_deadline.Name = "progress_deadline";
             this.progress_deadline.OuterColor = System.Drawing.Color.Gray;
@@ -139,7 +144,7 @@
             this.progress_deadline.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.progress_deadline.ProgressWidth = 25;
             this.progress_deadline.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.progress_deadline.Size = new System.Drawing.Size(255, 255);
+            this.progress_deadline.Size = new System.Drawing.Size(211, 212);
             this.progress_deadline.StartAngle = 270;
             this.progress_deadline.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progress_deadline.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -167,7 +172,7 @@
             // label_unresolved
             // 
             this.label_unresolved.AutoSize = true;
-            this.label_unresolved.Location = new System.Drawing.Point(159, 77);
+            this.label_unresolved.Location = new System.Drawing.Point(69, 77);
             this.label_unresolved.Name = "label_unresolved";
             this.label_unresolved.Size = new System.Drawing.Size(121, 15);
             this.label_unresolved.TabIndex = 24;
@@ -176,7 +181,7 @@
             // label_deadline
             // 
             this.label_deadline.AutoSize = true;
-            this.label_deadline.Location = new System.Drawing.Point(500, 77);
+            this.label_deadline.Location = new System.Drawing.Point(294, 77);
             this.label_deadline.Name = "label_deadline";
             this.label_deadline.Size = new System.Drawing.Size(168, 15);
             this.label_deadline.TabIndex = 25;
@@ -189,7 +194,7 @@
             this.userManagement_panel.Controls.Add(this.userFilter_lbl);
             this.userManagement_panel.Controls.Add(this.dataGridView_userManagement);
             this.userManagement_panel.Controls.Add(this.userManagement_lbl);
-            this.userManagement_panel.Location = new System.Drawing.Point(2, 105);
+            this.userManagement_panel.Location = new System.Drawing.Point(3, 102);
             this.userManagement_panel.Name = "userManagement_panel";
             this.userManagement_panel.Size = new System.Drawing.Size(800, 452);
             this.userManagement_panel.TabIndex = 26;
@@ -234,23 +239,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_userManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_userManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_userManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_userManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_userManagement.Location = new System.Drawing.Point(34, 111);
             this.dataGridView_userManagement.Name = "dataGridView_userManagement";
             this.dataGridView_userManagement.ReadOnly = true;
@@ -287,7 +292,7 @@
             this.createUser_panel.Controls.Add(this.lastName_lbl);
             this.createUser_panel.Controls.Add(this.firstName_lbl);
             this.createUser_panel.Controls.Add(this.addUser_lbl);
-            this.createUser_panel.Location = new System.Drawing.Point(2, 105);
+            this.createUser_panel.Location = new System.Drawing.Point(0, 102);
             this.createUser_panel.Name = "createUser_panel";
             this.createUser_panel.Size = new System.Drawing.Size(800, 449);
             this.createUser_panel.TabIndex = 27;
@@ -501,12 +506,17 @@
             // 
             // dashboard_panel
             // 
+            this.dashboard_panel.Controls.Add(this.button_HighPrior);
+            this.dashboard_panel.Controls.Add(this.button_MedPrior);
+            this.dashboard_panel.Controls.Add(this.button_LowPrior);
+            this.dashboard_panel.Controls.Add(this.label_Prior);
+            this.dashboard_panel.Controls.Add(this.circularProgressBar_Prior);
             this.dashboard_panel.Controls.Add(this.label1);
             this.dashboard_panel.Controls.Add(this.label_deadline);
             this.dashboard_panel.Controls.Add(this.label_unresolved);
             this.dashboard_panel.Controls.Add(this.progress_deadline);
             this.dashboard_panel.Controls.Add(this.progress_unresolved);
-            this.dashboard_panel.Location = new System.Drawing.Point(3, 105);
+            this.dashboard_panel.Location = new System.Drawing.Point(0, 104);
             this.dashboard_panel.Name = "dashboard_panel";
             this.dashboard_panel.Size = new System.Drawing.Size(799, 450);
             this.dashboard_panel.TabIndex = 27;
@@ -591,22 +601,95 @@
             this.licensed_lbl.TabIndex = 32;
             this.licensed_lbl.Text = "Licensed to: The Garden Group";
             // 
+            // circularProgressBar_Prior
+            // 
+            this.circularProgressBar_Prior.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar_Prior.AnimationSpeed = 500;
+            this.circularProgressBar_Prior.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar_Prior.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.circularProgressBar_Prior.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar_Prior.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.circularProgressBar_Prior.InnerMargin = 2;
+            this.circularProgressBar_Prior.InnerWidth = -1;
+            this.circularProgressBar_Prior.Location = new System.Drawing.Point(515, 95);
+            this.circularProgressBar_Prior.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar_Prior.Name = "circularProgressBar_Prior";
+            this.circularProgressBar_Prior.OuterColor = System.Drawing.Color.Gray;
+            this.circularProgressBar_Prior.OuterMargin = -25;
+            this.circularProgressBar_Prior.OuterWidth = 26;
+            this.circularProgressBar_Prior.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.circularProgressBar_Prior.ProgressWidth = 25;
+            this.circularProgressBar_Prior.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.circularProgressBar_Prior.Size = new System.Drawing.Size(211, 212);
+            this.circularProgressBar_Prior.StartAngle = 270;
+            this.circularProgressBar_Prior.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar_Prior.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar_Prior.SubscriptText = ".23";
+            this.circularProgressBar_Prior.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar_Prior.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.circularProgressBar_Prior.SuperscriptText = "°C";
+            this.circularProgressBar_Prior.TabIndex = 27;
+            this.circularProgressBar_Prior.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar_Prior.Value = 68;
+            // 
+            // label_Prior
+            // 
+            this.label_Prior.AutoSize = true;
+            this.label_Prior.Location = new System.Drawing.Point(570, 77);
+            this.label_Prior.Name = "label_Prior";
+            this.label_Prior.Size = new System.Drawing.Size(96, 15);
+            this.label_Prior.TabIndex = 28;
+            this.label_Prior.Text = "Priority Incidents\r\n";
+            // 
+            // button_LowPrior
+            // 
+            this.button_LowPrior.BackColor = System.Drawing.Color.Yellow;
+            this.button_LowPrior.Location = new System.Drawing.Point(544, 326);
+            this.button_LowPrior.Name = "button_LowPrior";
+            this.button_LowPrior.Size = new System.Drawing.Size(40, 23);
+            this.button_LowPrior.TabIndex = 29;
+            this.button_LowPrior.Text = "Low";
+            this.button_LowPrior.UseVisualStyleBackColor = false;
+            this.button_LowPrior.Click += new System.EventHandler(this.button_LowPrior_Click);
+            // 
+            // button_MedPrior
+            // 
+            this.button_MedPrior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button_MedPrior.Location = new System.Drawing.Point(605, 326);
+            this.button_MedPrior.Name = "button_MedPrior";
+            this.button_MedPrior.Size = new System.Drawing.Size(40, 23);
+            this.button_MedPrior.TabIndex = 30;
+            this.button_MedPrior.Text = "Med";
+            this.button_MedPrior.UseVisualStyleBackColor = false;
+            this.button_MedPrior.Click += new System.EventHandler(this.button_MedPrior_Click);
+            // 
+            // button_HighPrior
+            // 
+            this.button_HighPrior.BackColor = System.Drawing.Color.Red;
+            this.button_HighPrior.Location = new System.Drawing.Point(663, 326);
+            this.button_HighPrior.Name = "button_HighPrior";
+            this.button_HighPrior.Size = new System.Drawing.Size(44, 23);
+            this.button_HighPrior.TabIndex = 31;
+            this.button_HighPrior.Text = "High";
+            this.button_HighPrior.UseVisualStyleBackColor = false;
+            this.button_HighPrior.Click += new System.EventHandler(this.button_HighPrior_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 559);
             this.Controls.Add(this.menuIncidentManagement_btn);
+            this.Controls.Add(this.dashboard_panel);
             this.Controls.Add(this.menuUserManagement_btn);
             this.Controls.Add(this.menuDashboard_btn);
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.label_dashboard);
             this.Controls.Add(this.licensed_lbl);
-            this.Controls.Add(this.NoDesk_lbl);
             this.Controls.Add(this.createUser_panel);
-            this.Controls.Add(this.userManagement_panel);
-            this.Controls.Add(this.dashboard_panel);
+            this.Controls.Add(this.NoDesk_lbl);
             this.Controls.Add(this.incidentManagement_panel);
+            this.Controls.Add(this.userManagement_panel);
             this.Controls.Add(this.createIncident_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
@@ -672,5 +755,10 @@
         private System.Windows.Forms.ComboBox comboBox_location;
         private System.Windows.Forms.Label UMError_lbl;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_HighPrior;
+        private System.Windows.Forms.Button button_MedPrior;
+        private System.Windows.Forms.Button button_LowPrior;
+        private System.Windows.Forms.Label label_Prior;
+        private CircularProgressBar.CircularProgressBar circularProgressBar_Prior;
     }
 }
