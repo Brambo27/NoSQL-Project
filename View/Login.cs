@@ -17,8 +17,7 @@ namespace View
 {
     public partial class Login : Form
     {
-        List<User> userList = Model.Model.getAll<User>("Users");
-
+        //Initializing and setting user data in app settings if remember was checked on previous login
         public Login()
         {
             InitializeComponent();
@@ -29,6 +28,7 @@ namespace View
             }
         }
 
+        //Handling user input and checking for valid fields in database for confirmation
         private void button_Login_Click_1(object sender, EventArgs e)
         {
             string warning = "";
@@ -51,13 +51,9 @@ namespace View
                 else
                 {
                     if(user.password == inputPassword)
-                    {
                         warning = "Success.";
-                    }
                     else
-                    {
                         warning = "Password incorrect.";
-                    }
                 }
 
                 if (checkBox_Remember.Checked)
@@ -77,16 +73,19 @@ namespace View
             label_Warning.Text = warning;
         }
 
+        //Enabling visability for forgotLogin panel
         private void linkLabel_Forgot_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             panel_forgot.Show();
         }
 
+        //Closing the application
         private void button_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Checking email input, getting database information and calling password creation method
         private void button_RequestPass_Click(object sender, EventArgs e)
         {
             string requestEmail = textBox_ForgotEmail.Text;
@@ -102,9 +101,11 @@ namespace View
                 string newPass = CreatePassword(10);
                 label_Warning.Text = "We've send you an email with an updated password.";
                 Model.Email.emailPassword(user.email, user.name, newPass);
+                panel_forgot.Hide();
             }
         }
 
+        //Creating a new password for user
         private string CreatePassword(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -115,6 +116,12 @@ namespace View
                 res.Append(valid[rnd.Next(valid.Length)]);
             }
             return res.ToString();
+        }
+
+        //Hides forgotLogin panel
+        private void button_hide_Click(object sender, EventArgs e)
+        {
+            panel_forgot.Hide();
         }
     }
 }

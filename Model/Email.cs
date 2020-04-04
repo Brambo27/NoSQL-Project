@@ -10,9 +10,9 @@ namespace Model
 {
     public abstract class Email : Model
     {
+        //Sends an email to a user requesting a new password
         public static void emailPassword(string Email,string User,string Password)
-        {
-           
+        { 
             var fromAddress = new MailAddress("testing69php@gmail.com", "NoDesk Support");
             var toAddress = new MailAddress(Email, User);
             const string fromPassword = "phpisheelleuk12";
