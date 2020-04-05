@@ -20,9 +20,9 @@ namespace View
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-           User.GenerateRandom(1);
+           
 
-            //Application.Run(new Login());
+            Application.Run(new Login());
         }
     }
 }

@@ -51,8 +51,8 @@ namespace View
                         if(Auth.checkPassword(u.password, inputPassword))
                         {
                             Dashboard dashboard = new Dashboard(u);
-                            this.Close();
                             dashboard.Show();
+                            this.Close();
                             break;
                         }
                         else
