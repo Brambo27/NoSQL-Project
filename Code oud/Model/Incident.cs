@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Incident : Model
+    public class Incident : Model
     {
         public enum IncidentPriority
         {
