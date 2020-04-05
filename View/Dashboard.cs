@@ -22,6 +22,8 @@ namespace View
         {
             InitializeComponent();
             this.currentUser = currentUser;
+<<<<<<< HEAD
+=======
 
             if (currentUser.userType == User.UserType.Admin)
             {
