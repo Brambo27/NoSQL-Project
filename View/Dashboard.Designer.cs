@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> cfb73121685a9d086d4194b145939bec38c27115
             this.label_dashboard = new System.Windows.Forms.Label();
             this.progress_unresolved = new CircularProgressBar.CircularProgressBar();
             this.progress_deadline = new CircularProgressBar.CircularProgressBar();
@@ -73,6 +68,8 @@
             this.addUser_lbl = new System.Windows.Forms.Label();
             this.incidentManagement_panel = new System.Windows.Forms.Panel();
             this.addNewIncidentBtn = new System.Windows.Forms.Button();
+            this.filterByEmailTextBox = new System.Windows.Forms.TextBox();
+            this.filterByEmail_Lbl = new System.Windows.Forms.Label();
             this.dataGridView_incidentManagement = new System.Windows.Forms.DataGridView();
             this.incidentManagement_lbl = new System.Windows.Forms.Label();
             this.dashboard_panel = new System.Windows.Forms.Panel();
@@ -96,6 +93,7 @@
             this.priorityComboBox = new System.Windows.Forms.ComboBox();
             this.reportedByComboBox = new System.Windows.Forms.ComboBox();
             this.selectTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.selectDataComboBox = new System.Windows.Forms.ComboBox();
             this.description_Lbl = new System.Windows.Forms.Label();
             this.deadlineFollowup_Lbl = new System.Windows.Forms.Label();
             this.priority_Lbl = new System.Windows.Forms.Label();
@@ -106,18 +104,7 @@
             this.createIncident_lbl = new System.Windows.Forms.Label();
             this.NoDesk_lbl = new System.Windows.Forms.Label();
             this.licensed_lbl = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.dateReportedDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.filterByEmail_Lbl = new System.Windows.Forms.Label();
-            this.filterByEmailTextBox = new System.Windows.Forms.TextBox();
-=======
-            this.editUserConfirm_btn = new System.Windows.Forms.Button();
-            this.userId_txt = new System.Windows.Forms.TextBox();
->>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
-=======
             this.openBackupToolBtn = new System.Windows.Forms.Button();
->>>>>>> cfb73121685a9d086d4194b145939bec38c27115
             this.userManagement_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).BeginInit();
             this.createUser_panel.SuspendLayout();
@@ -321,25 +308,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_userManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-<<<<<<< HEAD
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_userManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.dataGridView_userManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle20;
-=======
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,7 +325,6 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle4;
->>>>>>> cfb73121685a9d086d4194b145939bec38c27115
             this.dataGridView_userManagement.Location = new System.Drawing.Point(34, 111);
             this.dataGridView_userManagement.MultiSelect = false;
             this.dataGridView_userManagement.Name = "dataGridView_userManagement";
@@ -539,15 +506,6 @@
             // 
             // sendPW_lbl
             // 
-<<<<<<< HEAD
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(36, 293);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 16);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Send password?";
-=======
             this.sendPW_lbl.AutoSize = true;
             this.sendPW_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendPW_lbl.Location = new System.Drawing.Point(36, 293);
@@ -555,7 +513,6 @@
             this.sendPW_lbl.Size = new System.Drawing.Size(109, 16);
             this.sendPW_lbl.TabIndex = 7;
             this.sendPW_lbl.Text = "Send password?";
->>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
             // 
             // location_lbl
             // 
@@ -652,8 +609,6 @@
             this.addNewIncidentBtn.UseVisualStyleBackColor = false;
             this.addNewIncidentBtn.Click += new System.EventHandler(this.addNewIncidentBtn_Click);
             // 
-<<<<<<< HEAD
-=======
             // filterByEmailTextBox
             // 
             this.filterByEmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -672,7 +627,6 @@
             this.filterByEmail_Lbl.TabIndex = 2;
             this.filterByEmail_Lbl.Text = "Filter by email:";
             // 
->>>>>>> cfb73121685a9d086d4194b145939bec38c27115
             // dataGridView_incidentManagement
             // 
             this.dataGridView_incidentManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -838,7 +792,6 @@
             // 
             // createIncident_panel
             // 
-            this.createIncident_panel.Controls.Add(this.dateReportedDateTimePicker);
             this.createIncident_panel.Controls.Add(this.IMError_lbl);
             this.createIncident_panel.Controls.Add(this.addIncidentBtn);
             this.createIncident_panel.Controls.Add(this.cancelIncidentCreateBtn);
@@ -848,6 +801,7 @@
             this.createIncident_panel.Controls.Add(this.priorityComboBox);
             this.createIncident_panel.Controls.Add(this.reportedByComboBox);
             this.createIncident_panel.Controls.Add(this.selectTypeComboBox);
+            this.createIncident_panel.Controls.Add(this.selectDataComboBox);
             this.createIncident_panel.Controls.Add(this.description_Lbl);
             this.createIncident_panel.Controls.Add(this.deadlineFollowup_Lbl);
             this.createIncident_panel.Controls.Add(this.priority_Lbl);
@@ -964,6 +918,17 @@
             this.selectTypeComboBox.Size = new System.Drawing.Size(246, 21);
             this.selectTypeComboBox.TabIndex = 10;
             // 
+            // selectDataComboBox
+            // 
+            this.selectDataComboBox.FormattingEnabled = true;
+            this.selectDataComboBox.Items.AddRange(new object[] {
+            "random",
+            "random2"});
+            this.selectDataComboBox.Location = new System.Drawing.Point(185, 68);
+            this.selectDataComboBox.Name = "selectDataComboBox";
+            this.selectDataComboBox.Size = new System.Drawing.Size(246, 21);
+            this.selectDataComboBox.TabIndex = 9;
+            // 
             // description_Lbl
             // 
             this.description_Lbl.AutoSize = true;
@@ -1063,48 +1028,6 @@
             this.licensed_lbl.TabIndex = 32;
             this.licensed_lbl.Text = "Licensed to: The Garden Group";
             // 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            // dateReportedDateTimePicker
-            // 
-            this.dateReportedDateTimePicker.CustomFormat = "dd/MM/yyyy hh:mm:ss";
-            this.dateReportedDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateReportedDateTimePicker.Location = new System.Drawing.Point(183, 69);
-            this.dateReportedDateTimePicker.Name = "dateReportedDateTimePicker";
-            this.dateReportedDateTimePicker.Size = new System.Drawing.Size(248, 20);
-            this.dateReportedDateTimePicker.TabIndex = 20;
-            this.dateReportedDateTimePicker.Value = new System.DateTime(2020, 4, 5, 22, 6, 20, 0);
-            // 
-            // filterByEmail_Lbl
-            // 
-            this.filterByEmail_Lbl.AutoSize = true;
-            this.filterByEmail_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.filterByEmail_Lbl.Location = new System.Drawing.Point(39, 73);
-            this.filterByEmail_Lbl.Name = "filterByEmail_Lbl";
-            this.filterByEmail_Lbl.Size = new System.Drawing.Size(94, 16);
-            this.filterByEmail_Lbl.TabIndex = 2;
-            this.filterByEmail_Lbl.Text = "Filter by email:";
-            // 
-            // filterByEmailTextBox
-            // 
-            this.filterByEmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.filterByEmailTextBox.Location = new System.Drawing.Point(134, 70);
-            this.filterByEmailTextBox.Name = "filterByEmailTextBox";
-            this.filterByEmailTextBox.Size = new System.Drawing.Size(241, 22);
-            this.filterByEmailTextBox.TabIndex = 3;
-=======
-            // userId_txt
-            // 
-            this.userId_txt.Enabled = false;
-            this.userId_txt.Location = new System.Drawing.Point(34, 344);
-            this.userId_txt.Name = "userId_txt";
-            this.userId_txt.ReadOnly = true;
-            this.userId_txt.Size = new System.Drawing.Size(100, 20);
-            this.userId_txt.TabIndex = 20;
-            this.userId_txt.Text = "[hidden textbox]";
-            this.userId_txt.Visible = false;
->>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
-=======
             // openBackupToolBtn
             // 
             this.openBackupToolBtn.Location = new System.Drawing.Point(16, 46);
@@ -1115,7 +1038,6 @@
             this.openBackupToolBtn.UseVisualStyleBackColor = true;
             this.openBackupToolBtn.Visible = false;
             this.openBackupToolBtn.Click += new System.EventHandler(this.openBackupToolBtn_Click);
->>>>>>> cfb73121685a9d086d4194b145939bec38c27115
             // 
             // Dashboard
             // 
@@ -1129,21 +1051,12 @@
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.label_dashboard);
             this.Controls.Add(this.licensed_lbl);
-            this.Controls.Add(this.NoDesk_lbl);
-<<<<<<< HEAD
-            this.Controls.Add(this.createIncident_panel);
-            this.Controls.Add(this.dashboard_panel);
             this.Controls.Add(this.createUser_panel);
-            this.Controls.Add(this.incidentManagement_panel);
-=======
->>>>>>> cfb73121685a9d086d4194b145939bec38c27115
+            this.Controls.Add(this.NoDesk_lbl);
             this.Controls.Add(this.userManagement_panel);
-<<<<<<< HEAD
-=======
             this.Controls.Add(this.dashboard_panel);
             this.Controls.Add(this.incidentManagement_panel);
             this.Controls.Add(this.createIncident_panel);
->>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -1211,6 +1124,8 @@
         private System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.Button addNewIncidentBtn;
+        private System.Windows.Forms.TextBox filterByEmailTextBox;
+        private System.Windows.Forms.Label filterByEmail_Lbl;
         private System.Windows.Forms.DataGridView dataGridView_incidentManagement;
         private System.Windows.Forms.Label description_Lbl;
         private System.Windows.Forms.Label deadlineFollowup_Lbl;
@@ -1225,6 +1140,7 @@
         private System.Windows.Forms.ComboBox priorityComboBox;
         private System.Windows.Forms.ComboBox reportedByComboBox;
         private System.Windows.Forms.ComboBox selectTypeComboBox;
+        private System.Windows.Forms.ComboBox selectDataComboBox;
         private System.Windows.Forms.Button addIncidentBtn;
         private System.Windows.Forms.Button cancelIncidentCreateBtn;
         private System.Windows.Forms.Label IMError_lbl;
@@ -1234,11 +1150,6 @@
         private System.Windows.Forms.Button button_LowPrior;
         private System.Windows.Forms.Label label_Prior;
         private CircularProgressBar.CircularProgressBar progress_priority;
-<<<<<<< HEAD
-        private System.Windows.Forms.DateTimePicker dateReportedDateTimePicker;
-        private System.Windows.Forms.TextBox filterByEmailTextBox;
-        private System.Windows.Forms.Label filterByEmail_Lbl;
-=======
 
         private System.Windows.Forms.Label dashboardCurrentIncidents_lbl;
         private System.Windows.Forms.Button editUser_btn;
@@ -1246,10 +1157,6 @@
         private System.Windows.Forms.Button viewUser_btn;
         private System.Windows.Forms.Button editUserConfirm_btn;
         private System.Windows.Forms.TextBox userId_txt;
-<<<<<<< HEAD
->>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
-=======
         private System.Windows.Forms.Button openBackupToolBtn;
->>>>>>> cfb73121685a9d086d4194b145939bec38c27115
     }
 }
