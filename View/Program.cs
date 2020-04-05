@@ -47,7 +47,10 @@ namespace View
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+            User u = new User();
+            Application.Run(new Dashboard(u));
+            
+          
         }
     }
 }

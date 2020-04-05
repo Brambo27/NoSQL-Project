@@ -17,7 +17,7 @@ namespace Model
             Admin
         }
 
-        public override string primaryKey { get => null; }
+        public override string primaryKey { get => "userId"; }
         public override ObjectId Id { get => id; set => id = value; }
         public override string CollectionName { get => "Users"; }
 
@@ -47,8 +47,12 @@ namespace Model
 
             if (user != null)
             {
-                this.name = user.Name;
-                this.email = user.Email;
+                this.Id = user.Id;
+                this.name = user.name;
+                this.email = user.email;
+                this.userId = user.userId;
+                this.phoneNumber = user.phoneNumber;
+                this.password = user.password;
             }
         }
 
@@ -78,6 +82,30 @@ namespace Model
         public override dynamic deserialize(BsonDocument document)
         {
             return BsonSerializer.Deserialize<User>(document);
+        }
+
+       public static void GenerateRandom()
+        {
+            Random rand = new Random(); // we need a random variable to select names randomly
+
+            RandomName nameGen = new RandomName(rand); // create a new instance of the RandomName class
+
+            string[] email = { "gmail.com", "hotmail.com", "yahoo.com", "student.inholland.nl", "hotmale.com" };
+
+            List<string> names = nameGen.RandomNames(100, 0);
+            for (int i = 0; i < 100; i++)
+            {
+                User user = new User()
+                {
+                    name = names[i],
+                    email = names[i].Replace(" ", "") + "@" + email[rand.Next(email.Length)],
+                    password = Auth.encryptPassword(names[i].Replace(" ", "") + rand.Next(1000, 99999).ToString()),
+                    userId = (i + 1).ToString(),
+                    phoneNumber = rand.Next(100000000, 999999999).ToString(),
+                };
+
+                user.insertIntoCollection();
+            }
         }
     }
 }

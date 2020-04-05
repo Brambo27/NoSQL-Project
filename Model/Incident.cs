@@ -25,6 +25,13 @@ namespace Model
             Assistance_Request
         }
 
+        public enum IncidentStatus
+        {
+            Resolved,
+            Unresolved
+        }
+
+
         public override string primaryKey => null;
 
         public override string CollectionName => "Incidents";
@@ -37,7 +44,7 @@ namespace Model
             Incident incident = GetByObjectId<Incident>(id);
         }
 
-        public Incident(DateTime createdAt, string subject, IncidentType type, User reportedBy, IncidentPriority priority, DateTime deadline, string description)
+        public Incident(DateTime createdAt, string subject, IncidentType type, User reportedBy, IncidentPriority priority, DateTime deadline, string description,IncidentStatus status)
         {
             this.createdAt = createdAt;
             this.subject = subject;
@@ -56,6 +63,7 @@ namespace Model
         public DateTime deadline;
         public string description;
         private ObjectId id;
+        public IncidentStatus status;
 
         public static List<Incident> getAll()
         {
@@ -65,6 +73,47 @@ namespace Model
         public override dynamic deserialize(BsonDocument document)
         {
             return BsonSerializer.Deserialize<Incident>(document);
+        }
+
+        public static void GenerateRandom()
+        {
+            Random rand = new Random(); // we need a random variable to select names randomly
+
+            RandomName nameGen = new RandomName(rand); // create a new instance of the RandomName class
+
+            Array incidentTypes = Enum.GetValues(typeof(IncidentType));
+            Array pritorty = Enum.GetValues(typeof(IncidentPriority));
+
+            List<string> names = nameGen.RandomNames(100, 0);
+            for (int i = 0; i < 100; i++)
+            {
+                var createdAt = RandomDay(rand);
+                Incident incident = new Incident()
+                {
+                    subject = "",
+                    type = (IncidentType)incidentTypes.GetValue(rand.Next(incidentTypes.Length)),
+                    reportedBy = new User(rand.Next(100).ToString()),
+                    priority = (IncidentPriority)pritorty.GetValue(rand.Next(pritorty.Length)),
+                    createdAt = createdAt,
+                    deadline = RandomDay(createdAt, rand),
+                    description = "",
+                };
+
+                incident.insertIntoCollection();
+            }
+        }
+
+        private static DateTime RandomDay(Random rand)
+        {
+            DateTime start = new DateTime(2020, 1, 25);
+            int range = (DateTime.Today - start).Days;
+            return start.AddDays(rand.Next(range));
+        }
+
+        private static DateTime RandomDay(DateTime start, Random rand)
+        {
+            int range = (DateTime.Today - start).Days;
+            return start.AddDays(rand.Next(range));
         }
     }
 
