@@ -129,10 +129,6 @@
     <Compile Include="View.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controller\Controller.csproj">
-      <Project>{e6c1e849-2a67-49fe-8b54-f33eee8c1334}</Project>
-      <Name>Controller</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{62B56E85-BA35-40FD-8223-F2472A3CD10B}</Project>
       <Name>Model</Name>

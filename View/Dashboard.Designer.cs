@@ -37,41 +37,46 @@
             this.label_unresolved = new System.Windows.Forms.Label();
             this.label_deadline = new System.Windows.Forms.Label();
             this.userManagement_panel = new System.Windows.Forms.Panel();
-            this.userManagement_lbl = new System.Windows.Forms.Label();
+            this.editUser_btn = new System.Windows.Forms.Button();
+            this.deleteUser_btn = new System.Windows.Forms.Button();
+            this.viewUser_btn = new System.Windows.Forms.Button();
+            this.addUser_btn = new System.Windows.Forms.Button();
+            this.userFilter_txt = new System.Windows.Forms.TextBox();
+            this.userFilter_lbl = new System.Windows.Forms.Label();
             this.dataGridView_userManagement = new System.Windows.Forms.DataGridView();
+            this.userManagement_lbl = new System.Windows.Forms.Label();
             this.createUser_panel = new System.Windows.Forms.Panel();
+            this.UMError_lbl = new System.Windows.Forms.Label();
+            this.createUserConfirm_btn = new System.Windows.Forms.Button();
+            this.createUserCancel_btn = new System.Windows.Forms.Button();
+            this.checkBox_sendPW = new System.Windows.Forms.CheckBox();
+            this.comboBox_location = new System.Windows.Forms.ComboBox();
+            this.comboBox_userType = new System.Windows.Forms.ComboBox();
+            this.phoneNumber_txt = new System.Windows.Forms.TextBox();
+            this.email_txt = new System.Windows.Forms.TextBox();
+            this.lastName_txt = new System.Windows.Forms.TextBox();
+            this.firstName_txt = new System.Windows.Forms.TextBox();
+            this.sendPW_lbl = new System.Windows.Forms.Label();
+            this.location_lbl = new System.Windows.Forms.Label();
+            this.phoneNumber_lbl = new System.Windows.Forms.Label();
+            this.email_lbl = new System.Windows.Forms.Label();
+            this.userType_lbl = new System.Windows.Forms.Label();
+            this.lastName_lbl = new System.Windows.Forms.Label();
+            this.firstName_lbl = new System.Windows.Forms.Label();
             this.addUser_lbl = new System.Windows.Forms.Label();
             this.incidentManagement_panel = new System.Windows.Forms.Panel();
+            this.incidentManagement_lbl = new System.Windows.Forms.Label();
             this.dashboard_panel = new System.Windows.Forms.Panel();
+            this.dashboardCurrentIncidents_lbl = new System.Windows.Forms.Label();
             this.menuDashboard_btn = new System.Windows.Forms.Button();
             this.menuUserManagement_btn = new System.Windows.Forms.Button();
             this.menuIncidentManagement_btn = new System.Windows.Forms.Button();
             this.createIncident_panel = new System.Windows.Forms.Panel();
             this.createIncident_lbl = new System.Windows.Forms.Label();
-            this.incidentManagement_lbl = new System.Windows.Forms.Label();
             this.NoDesk_lbl = new System.Windows.Forms.Label();
             this.licensed_lbl = new System.Windows.Forms.Label();
-            this.userFilter_lbl = new System.Windows.Forms.Label();
-            this.userFilter_txt = new System.Windows.Forms.TextBox();
-            this.addUser_btn = new System.Windows.Forms.Button();
-            this.firstName_lbl = new System.Windows.Forms.Label();
-            this.lastName_lbl = new System.Windows.Forms.Label();
-            this.userType_lbl = new System.Windows.Forms.Label();
-            this.email_lbl = new System.Windows.Forms.Label();
-            this.phoneNumber_lbl = new System.Windows.Forms.Label();
-            this.location_lbl = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.firstName_txt = new System.Windows.Forms.TextBox();
-            this.lastName_txt = new System.Windows.Forms.TextBox();
-            this.email_txt = new System.Windows.Forms.TextBox();
-            this.phoneNumber_txt = new System.Windows.Forms.TextBox();
-            this.comboBox_userType = new System.Windows.Forms.ComboBox();
-            this.comboBox_location = new System.Windows.Forms.ComboBox();
-            this.checkBox_sendPW = new System.Windows.Forms.CheckBox();
-            this.createUserCancel_btn = new System.Windows.Forms.Button();
-            this.createUserConfirm_btn = new System.Windows.Forms.Button();
-            this.UMError_lbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.editUserConfirm_btn = new System.Windows.Forms.Button();
+            this.userId_txt = new System.Windows.Forms.TextBox();
             this.userManagement_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).BeginInit();
             this.createUser_panel.SuspendLayout();
@@ -184,6 +189,9 @@
             // 
             // userManagement_panel
             // 
+            this.userManagement_panel.Controls.Add(this.editUser_btn);
+            this.userManagement_panel.Controls.Add(this.deleteUser_btn);
+            this.userManagement_panel.Controls.Add(this.viewUser_btn);
             this.userManagement_panel.Controls.Add(this.addUser_btn);
             this.userManagement_panel.Controls.Add(this.userFilter_txt);
             this.userManagement_panel.Controls.Add(this.userFilter_lbl);
@@ -194,15 +202,74 @@
             this.userManagement_panel.Size = new System.Drawing.Size(800, 452);
             this.userManagement_panel.TabIndex = 26;
             // 
-            // userManagement_lbl
+            // editUser_btn
             // 
-            this.userManagement_lbl.AutoSize = true;
-            this.userManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userManagement_lbl.Location = new System.Drawing.Point(29, 25);
-            this.userManagement_lbl.Name = "userManagement_lbl";
-            this.userManagement_lbl.Size = new System.Drawing.Size(203, 25);
-            this.userManagement_lbl.TabIndex = 0;
-            this.userManagement_lbl.Text = "User Management";
+            this.editUser_btn.BackColor = System.Drawing.Color.Khaki;
+            this.editUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editUser_btn.Location = new System.Drawing.Point(180, 401);
+            this.editUser_btn.Name = "editUser_btn";
+            this.editUser_btn.Size = new System.Drawing.Size(108, 30);
+            this.editUser_btn.TabIndex = 7;
+            this.editUser_btn.Text = "Edit User";
+            this.editUser_btn.UseVisualStyleBackColor = false;
+            this.editUser_btn.Click += new System.EventHandler(this.editUser_btn_Click);
+            // 
+            // deleteUser_btn
+            // 
+            this.deleteUser_btn.BackColor = System.Drawing.Color.Red;
+            this.deleteUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteUser_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.deleteUser_btn.Location = new System.Drawing.Point(314, 401);
+            this.deleteUser_btn.Name = "deleteUser_btn";
+            this.deleteUser_btn.Size = new System.Drawing.Size(108, 30);
+            this.deleteUser_btn.TabIndex = 6;
+            this.deleteUser_btn.Text = "Delete User";
+            this.deleteUser_btn.UseVisualStyleBackColor = false;
+            this.deleteUser_btn.Click += new System.EventHandler(this.deleteUser_btn_Click);
+            // 
+            // viewUser_btn
+            // 
+            this.viewUser_btn.BackColor = System.Drawing.Color.SkyBlue;
+            this.viewUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewUser_btn.Location = new System.Drawing.Point(37, 401);
+            this.viewUser_btn.Name = "viewUser_btn";
+            this.viewUser_btn.Size = new System.Drawing.Size(108, 30);
+            this.viewUser_btn.TabIndex = 5;
+            this.viewUser_btn.Text = "View User";
+            this.viewUser_btn.UseVisualStyleBackColor = false;
+            this.viewUser_btn.Click += new System.EventHandler(this.viewUser_btn_Click);
+            // 
+            // addUser_btn
+            // 
+            this.addUser_btn.BackColor = System.Drawing.Color.Chartreuse;
+            this.addUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addUser_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addUser_btn.Location = new System.Drawing.Point(611, 54);
+            this.addUser_btn.Name = "addUser_btn";
+            this.addUser_btn.Size = new System.Drawing.Size(154, 43);
+            this.addUser_btn.TabIndex = 4;
+            this.addUser_btn.Text = "+ ADD NEW USER";
+            this.addUser_btn.UseVisualStyleBackColor = false;
+            this.addUser_btn.Click += new System.EventHandler(this.addUser_btn_Click);
+            // 
+            // userFilter_txt
+            // 
+            this.userFilter_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userFilter_txt.Location = new System.Drawing.Point(134, 63);
+            this.userFilter_txt.Name = "userFilter_txt";
+            this.userFilter_txt.Size = new System.Drawing.Size(348, 22);
+            this.userFilter_txt.TabIndex = 3;
+            this.userFilter_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userFilter_txt_KeyPress);
+            // 
+            // userFilter_lbl
+            // 
+            this.userFilter_lbl.AutoSize = true;
+            this.userFilter_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userFilter_lbl.Location = new System.Drawing.Point(34, 66);
+            this.userFilter_lbl.Name = "userFilter_lbl";
+            this.userFilter_lbl.Size = new System.Drawing.Size(94, 16);
+            this.userFilter_lbl.TabIndex = 2;
+            this.userFilter_lbl.Text = "Filter by email:";
             // 
             // dataGridView_userManagement
             // 
@@ -230,13 +297,27 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_userManagement.Location = new System.Drawing.Point(34, 111);
+            this.dataGridView_userManagement.MultiSelect = false;
             this.dataGridView_userManagement.Name = "dataGridView_userManagement";
             this.dataGridView_userManagement.ReadOnly = true;
-            this.dataGridView_userManagement.Size = new System.Drawing.Size(720, 331);
+            this.dataGridView_userManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_userManagement.Size = new System.Drawing.Size(720, 284);
             this.dataGridView_userManagement.TabIndex = 1;
+            // 
+            // userManagement_lbl
+            // 
+            this.userManagement_lbl.AutoSize = true;
+            this.userManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userManagement_lbl.Location = new System.Drawing.Point(29, 25);
+            this.userManagement_lbl.Name = "userManagement_lbl";
+            this.userManagement_lbl.Size = new System.Drawing.Size(203, 25);
+            this.userManagement_lbl.TabIndex = 0;
+            this.userManagement_lbl.Text = "User Management";
             // 
             // createUser_panel
             // 
+            this.createUser_panel.Controls.Add(this.userId_txt);
+            this.createUser_panel.Controls.Add(this.editUserConfirm_btn);
             this.createUser_panel.Controls.Add(this.UMError_lbl);
             this.createUser_panel.Controls.Add(this.createUserConfirm_btn);
             this.createUser_panel.Controls.Add(this.createUserCancel_btn);
@@ -247,7 +328,7 @@
             this.createUser_panel.Controls.Add(this.email_txt);
             this.createUser_panel.Controls.Add(this.lastName_txt);
             this.createUser_panel.Controls.Add(this.firstName_txt);
-            this.createUser_panel.Controls.Add(this.label7);
+            this.createUser_panel.Controls.Add(this.sendPW_lbl);
             this.createUser_panel.Controls.Add(this.location_lbl);
             this.createUser_panel.Controls.Add(this.phoneNumber_lbl);
             this.createUser_panel.Controls.Add(this.email_lbl);
@@ -255,10 +336,188 @@
             this.createUser_panel.Controls.Add(this.lastName_lbl);
             this.createUser_panel.Controls.Add(this.firstName_lbl);
             this.createUser_panel.Controls.Add(this.addUser_lbl);
-            this.createUser_panel.Location = new System.Drawing.Point(2, 105);
+            this.createUser_panel.Location = new System.Drawing.Point(2, 103);
             this.createUser_panel.Name = "createUser_panel";
             this.createUser_panel.Size = new System.Drawing.Size(800, 449);
             this.createUser_panel.TabIndex = 27;
+            // 
+            // UMError_lbl
+            // 
+            this.UMError_lbl.AutoSize = true;
+            this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UMError_lbl.ForeColor = System.Drawing.Color.Red;
+            this.UMError_lbl.Location = new System.Drawing.Point(247, 25);
+            this.UMError_lbl.Name = "UMError_lbl";
+            this.UMError_lbl.Size = new System.Drawing.Size(0, 24);
+            this.UMError_lbl.TabIndex = 18;
+            // 
+            // createUserConfirm_btn
+            // 
+            this.createUserConfirm_btn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.createUserConfirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createUserConfirm_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.createUserConfirm_btn.Location = new System.Drawing.Point(390, 342);
+            this.createUserConfirm_btn.Name = "createUserConfirm_btn";
+            this.createUserConfirm_btn.Size = new System.Drawing.Size(107, 55);
+            this.createUserConfirm_btn.TabIndex = 16;
+            this.createUserConfirm_btn.Text = "ADD USER";
+            this.createUserConfirm_btn.UseVisualStyleBackColor = false;
+            this.createUserConfirm_btn.Click += new System.EventHandler(this.createUserConfirm_btn_Click);
+            // 
+            // createUserCancel_btn
+            // 
+            this.createUserCancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createUserCancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createUserCancel_btn.Location = new System.Drawing.Point(251, 342);
+            this.createUserCancel_btn.Name = "createUserCancel_btn";
+            this.createUserCancel_btn.Size = new System.Drawing.Size(108, 55);
+            this.createUserCancel_btn.TabIndex = 15;
+            this.createUserCancel_btn.Text = "CANCEL";
+            this.createUserCancel_btn.UseVisualStyleBackColor = true;
+            this.createUserCancel_btn.Click += new System.EventHandler(this.createUserCancel_btn_Click);
+            // 
+            // checkBox_sendPW
+            // 
+            this.checkBox_sendPW.AutoSize = true;
+            this.checkBox_sendPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_sendPW.Location = new System.Drawing.Point(222, 292);
+            this.checkBox_sendPW.Name = "checkBox_sendPW";
+            this.checkBox_sendPW.Size = new System.Drawing.Size(297, 20);
+            this.checkBox_sendPW.TabIndex = 14;
+            this.checkBox_sendPW.Text = "yes, a password e-mail will be sent to the user";
+            this.checkBox_sendPW.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_location
+            // 
+            this.comboBox_location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_location.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_location.FormattingEnabled = true;
+            this.comboBox_location.Items.AddRange(new object[] {
+            "Haarlem",
+            "Amsterdam",
+            "Knuppeldam",
+            "Headquarters (HQ)"});
+            this.comboBox_location.Location = new System.Drawing.Point(222, 253);
+            this.comboBox_location.Name = "comboBox_location";
+            this.comboBox_location.Size = new System.Drawing.Size(297, 24);
+            this.comboBox_location.TabIndex = 13;
+            // 
+            // comboBox_userType
+            // 
+            this.comboBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_userType.FormattingEnabled = true;
+            this.comboBox_userType.Items.AddRange(new object[] {
+            "Employee",
+            "Admin"});
+            this.comboBox_userType.Location = new System.Drawing.Point(222, 143);
+            this.comboBox_userType.Name = "comboBox_userType";
+            this.comboBox_userType.Size = new System.Drawing.Size(297, 24);
+            this.comboBox_userType.TabIndex = 12;
+            this.comboBox_userType.SelectedIndexChanged += new System.EventHandler(this.comboBox_userType_SelectedIndexChanged);
+            // 
+            // phoneNumber_txt
+            // 
+            this.phoneNumber_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumber_txt.Location = new System.Drawing.Point(222, 214);
+            this.phoneNumber_txt.Name = "phoneNumber_txt";
+            this.phoneNumber_txt.Size = new System.Drawing.Size(297, 22);
+            this.phoneNumber_txt.TabIndex = 11;
+            // 
+            // email_txt
+            // 
+            this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.Location = new System.Drawing.Point(222, 180);
+            this.email_txt.Name = "email_txt";
+            this.email_txt.Size = new System.Drawing.Size(297, 22);
+            this.email_txt.TabIndex = 10;
+            // 
+            // lastName_txt
+            // 
+            this.lastName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName_txt.Location = new System.Drawing.Point(222, 108);
+            this.lastName_txt.Name = "lastName_txt";
+            this.lastName_txt.Size = new System.Drawing.Size(297, 22);
+            this.lastName_txt.TabIndex = 9;
+            // 
+            // firstName_txt
+            // 
+            this.firstName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName_txt.Location = new System.Drawing.Point(222, 68);
+            this.firstName_txt.Name = "firstName_txt";
+            this.firstName_txt.Size = new System.Drawing.Size(297, 22);
+            this.firstName_txt.TabIndex = 8;
+            // 
+            // sendPW_lbl
+            // 
+            this.sendPW_lbl.AutoSize = true;
+            this.sendPW_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendPW_lbl.Location = new System.Drawing.Point(36, 293);
+            this.sendPW_lbl.Name = "sendPW_lbl";
+            this.sendPW_lbl.Size = new System.Drawing.Size(109, 16);
+            this.sendPW_lbl.TabIndex = 7;
+            this.sendPW_lbl.Text = "Send password?";
+            // 
+            // location_lbl
+            // 
+            this.location_lbl.AutoSize = true;
+            this.location_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.location_lbl.Location = new System.Drawing.Point(36, 256);
+            this.location_lbl.Name = "location_lbl";
+            this.location_lbl.Size = new System.Drawing.Size(104, 16);
+            this.location_lbl.TabIndex = 6;
+            this.location_lbl.Text = "Location/branch";
+            // 
+            // phoneNumber_lbl
+            // 
+            this.phoneNumber_lbl.AutoSize = true;
+            this.phoneNumber_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumber_lbl.Location = new System.Drawing.Point(34, 217);
+            this.phoneNumber_lbl.Name = "phoneNumber_lbl";
+            this.phoneNumber_lbl.Size = new System.Drawing.Size(98, 16);
+            this.phoneNumber_lbl.TabIndex = 5;
+            this.phoneNumber_lbl.Text = "Phone number:";
+            // 
+            // email_lbl
+            // 
+            this.email_lbl.AutoSize = true;
+            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_lbl.Location = new System.Drawing.Point(36, 183);
+            this.email_lbl.Name = "email_lbl";
+            this.email_lbl.Size = new System.Drawing.Size(102, 16);
+            this.email_lbl.TabIndex = 4;
+            this.email_lbl.Text = "E-mail address:";
+            // 
+            // userType_lbl
+            // 
+            this.userType_lbl.AutoSize = true;
+            this.userType_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userType_lbl.Location = new System.Drawing.Point(34, 146);
+            this.userType_lbl.Name = "userType_lbl";
+            this.userType_lbl.Size = new System.Drawing.Size(83, 16);
+            this.userType_lbl.TabIndex = 3;
+            this.userType_lbl.Text = "Type of user";
+            // 
+            // lastName_lbl
+            // 
+            this.lastName_lbl.AutoSize = true;
+            this.lastName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName_lbl.Location = new System.Drawing.Point(34, 111);
+            this.lastName_lbl.Name = "lastName_lbl";
+            this.lastName_lbl.Size = new System.Drawing.Size(73, 16);
+            this.lastName_lbl.TabIndex = 2;
+            this.lastName_lbl.Text = "Last name:";
+            // 
+            // firstName_lbl
+            // 
+            this.firstName_lbl.AutoSize = true;
+            this.firstName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName_lbl.Location = new System.Drawing.Point(34, 71);
+            this.firstName_lbl.Name = "firstName_lbl";
+            this.firstName_lbl.Size = new System.Drawing.Size(73, 16);
+            this.firstName_lbl.TabIndex = 1;
+            this.firstName_lbl.Text = "First name:";
             // 
             // addUser_lbl
             // 
@@ -273,14 +532,25 @@
             // incidentManagement_panel
             // 
             this.incidentManagement_panel.Controls.Add(this.incidentManagement_lbl);
-            this.incidentManagement_panel.Location = new System.Drawing.Point(2, 105);
+            this.incidentManagement_panel.Location = new System.Drawing.Point(-1, 103);
             this.incidentManagement_panel.Name = "incidentManagement_panel";
             this.incidentManagement_panel.Size = new System.Drawing.Size(800, 452);
             this.incidentManagement_panel.TabIndex = 1;
             // 
+            // incidentManagement_lbl
+            // 
+            this.incidentManagement_lbl.AutoSize = true;
+            this.incidentManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incidentManagement_lbl.Location = new System.Drawing.Point(32, 25);
+            this.incidentManagement_lbl.Name = "incidentManagement_lbl";
+            this.incidentManagement_lbl.Size = new System.Drawing.Size(192, 25);
+            this.incidentManagement_lbl.TabIndex = 0;
+            this.incidentManagement_lbl.Text = "Overview Tickets";
+            this.incidentManagement_lbl.Click += new System.EventHandler(this.incidentManagement_lbl_Click);
+            // 
             // dashboard_panel
             // 
-            this.dashboard_panel.Controls.Add(this.label1);
+            this.dashboard_panel.Controls.Add(this.dashboardCurrentIncidents_lbl);
             this.dashboard_panel.Controls.Add(this.label_deadline);
             this.dashboard_panel.Controls.Add(this.label_unresolved);
             this.dashboard_panel.Controls.Add(this.progress_deadline);
@@ -289,6 +559,16 @@
             this.dashboard_panel.Name = "dashboard_panel";
             this.dashboard_panel.Size = new System.Drawing.Size(799, 450);
             this.dashboard_panel.TabIndex = 27;
+            // 
+            // dashboardCurrentIncidents_lbl
+            // 
+            this.dashboardCurrentIncidents_lbl.AutoSize = true;
+            this.dashboardCurrentIncidents_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardCurrentIncidents_lbl.Location = new System.Drawing.Point(33, 24);
+            this.dashboardCurrentIncidents_lbl.Name = "dashboardCurrentIncidents_lbl";
+            this.dashboardCurrentIncidents_lbl.Size = new System.Drawing.Size(192, 25);
+            this.dashboardCurrentIncidents_lbl.TabIndex = 26;
+            this.dashboardCurrentIncidents_lbl.Text = "Current incidents";
             // 
             // menuDashboard_btn
             // 
@@ -326,7 +606,7 @@
             // createIncident_panel
             // 
             this.createIncident_panel.Controls.Add(this.createIncident_lbl);
-            this.createIncident_panel.Location = new System.Drawing.Point(2, 105);
+            this.createIncident_panel.Location = new System.Drawing.Point(3, 103);
             this.createIncident_panel.Name = "createIncident_panel";
             this.createIncident_panel.Size = new System.Drawing.Size(800, 452);
             this.createIncident_panel.TabIndex = 1;
@@ -340,17 +620,6 @@
             this.createIncident_lbl.Size = new System.Drawing.Size(224, 25);
             this.createIncident_lbl.TabIndex = 0;
             this.createIncident_lbl.Text = "Create New Incident";
-            // 
-            // incidentManagement_lbl
-            // 
-            this.incidentManagement_lbl.AutoSize = true;
-            this.incidentManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incidentManagement_lbl.Location = new System.Drawing.Point(32, 25);
-            this.incidentManagement_lbl.Name = "incidentManagement_lbl";
-            this.incidentManagement_lbl.Size = new System.Drawing.Size(192, 25);
-            this.incidentManagement_lbl.TabIndex = 0;
-            this.incidentManagement_lbl.Text = "Overview Tickets";
-            this.incidentManagement_lbl.Click += new System.EventHandler(this.incidentManagement_lbl_Click);
             // 
             // NoDesk_lbl
             // 
@@ -371,225 +640,31 @@
             this.licensed_lbl.TabIndex = 32;
             this.licensed_lbl.Text = "Licensed to: The Garden Group";
             // 
-            // userFilter_lbl
+            // editUserConfirm_btn
             // 
-            this.userFilter_lbl.AutoSize = true;
-            this.userFilter_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userFilter_lbl.Location = new System.Drawing.Point(34, 66);
-            this.userFilter_lbl.Name = "userFilter_lbl";
-            this.userFilter_lbl.Size = new System.Drawing.Size(94, 16);
-            this.userFilter_lbl.TabIndex = 2;
-            this.userFilter_lbl.Text = "Filter by email:";
+            this.editUserConfirm_btn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.editUserConfirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editUserConfirm_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.editUserConfirm_btn.Location = new System.Drawing.Point(390, 342);
+            this.editUserConfirm_btn.Name = "editUserConfirm_btn";
+            this.editUserConfirm_btn.Size = new System.Drawing.Size(107, 55);
+            this.editUserConfirm_btn.TabIndex = 19;
+            this.editUserConfirm_btn.Text = "EDIT USER";
+            this.editUserConfirm_btn.UseVisualStyleBackColor = false;
+            this.editUserConfirm_btn.Visible = false;
+            this.editUserConfirm_btn.Click += new System.EventHandler(this.editUserConfirm_btn_Click);
             // 
-            // userFilter_txt
+            // userId_txt
             // 
-            this.userFilter_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userFilter_txt.Location = new System.Drawing.Point(134, 63);
-            this.userFilter_txt.Name = "userFilter_txt";
-            this.userFilter_txt.Size = new System.Drawing.Size(348, 22);
-            this.userFilter_txt.TabIndex = 3;
-            this.userFilter_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userFilter_txt_KeyPress);
-            // 
-            // addUser_btn
-            // 
-            this.addUser_btn.BackColor = System.Drawing.Color.Chartreuse;
-            this.addUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addUser_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addUser_btn.Location = new System.Drawing.Point(611, 54);
-            this.addUser_btn.Name = "addUser_btn";
-            this.addUser_btn.Size = new System.Drawing.Size(154, 43);
-            this.addUser_btn.TabIndex = 4;
-            this.addUser_btn.Text = "+ ADD NEW USER";
-            this.addUser_btn.UseVisualStyleBackColor = false;
-            this.addUser_btn.Click += new System.EventHandler(this.addUser_btn_Click);
-            // 
-            // firstName_lbl
-            // 
-            this.firstName_lbl.AutoSize = true;
-            this.firstName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstName_lbl.Location = new System.Drawing.Point(34, 71);
-            this.firstName_lbl.Name = "firstName_lbl";
-            this.firstName_lbl.Size = new System.Drawing.Size(73, 16);
-            this.firstName_lbl.TabIndex = 1;
-            this.firstName_lbl.Text = "First name:";
-            // 
-            // lastName_lbl
-            // 
-            this.lastName_lbl.AutoSize = true;
-            this.lastName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastName_lbl.Location = new System.Drawing.Point(34, 111);
-            this.lastName_lbl.Name = "lastName_lbl";
-            this.lastName_lbl.Size = new System.Drawing.Size(73, 16);
-            this.lastName_lbl.TabIndex = 2;
-            this.lastName_lbl.Text = "Last name:";
-            // 
-            // userType_lbl
-            // 
-            this.userType_lbl.AutoSize = true;
-            this.userType_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userType_lbl.Location = new System.Drawing.Point(34, 146);
-            this.userType_lbl.Name = "userType_lbl";
-            this.userType_lbl.Size = new System.Drawing.Size(83, 16);
-            this.userType_lbl.TabIndex = 3;
-            this.userType_lbl.Text = "Type of user";
-            // 
-            // email_lbl
-            // 
-            this.email_lbl.AutoSize = true;
-            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email_lbl.Location = new System.Drawing.Point(36, 183);
-            this.email_lbl.Name = "email_lbl";
-            this.email_lbl.Size = new System.Drawing.Size(102, 16);
-            this.email_lbl.TabIndex = 4;
-            this.email_lbl.Text = "E-mail address:";
-            // 
-            // phoneNumber_lbl
-            // 
-            this.phoneNumber_lbl.AutoSize = true;
-            this.phoneNumber_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumber_lbl.Location = new System.Drawing.Point(34, 217);
-            this.phoneNumber_lbl.Name = "phoneNumber_lbl";
-            this.phoneNumber_lbl.Size = new System.Drawing.Size(98, 16);
-            this.phoneNumber_lbl.TabIndex = 5;
-            this.phoneNumber_lbl.Text = "Phone number:";
-            // 
-            // location_lbl
-            // 
-            this.location_lbl.AutoSize = true;
-            this.location_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.location_lbl.Location = new System.Drawing.Point(36, 256);
-            this.location_lbl.Name = "location_lbl";
-            this.location_lbl.Size = new System.Drawing.Size(104, 16);
-            this.location_lbl.TabIndex = 6;
-            this.location_lbl.Text = "Location/branch";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(36, 293);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 16);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Send password?";
-            // 
-            // firstName_txt
-            // 
-            this.firstName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstName_txt.Location = new System.Drawing.Point(222, 68);
-            this.firstName_txt.Name = "firstName_txt";
-            this.firstName_txt.Size = new System.Drawing.Size(297, 22);
-            this.firstName_txt.TabIndex = 8;
-            // 
-            // lastName_txt
-            // 
-            this.lastName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastName_txt.Location = new System.Drawing.Point(222, 108);
-            this.lastName_txt.Name = "lastName_txt";
-            this.lastName_txt.Size = new System.Drawing.Size(297, 22);
-            this.lastName_txt.TabIndex = 9;
-            // 
-            // email_txt
-            // 
-            this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email_txt.Location = new System.Drawing.Point(222, 180);
-            this.email_txt.Name = "email_txt";
-            this.email_txt.Size = new System.Drawing.Size(297, 22);
-            this.email_txt.TabIndex = 10;
-            // 
-            // phoneNumber_txt
-            // 
-            this.phoneNumber_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumber_txt.Location = new System.Drawing.Point(222, 214);
-            this.phoneNumber_txt.Name = "phoneNumber_txt";
-            this.phoneNumber_txt.Size = new System.Drawing.Size(297, 22);
-            this.phoneNumber_txt.TabIndex = 11;
-            // 
-            // comboBox_userType
-            // 
-            this.comboBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_userType.FormattingEnabled = true;
-            this.comboBox_userType.Items.AddRange(new object[] {
-            "Employee",
-            "Service desk employee"});
-            this.comboBox_userType.Location = new System.Drawing.Point(222, 143);
-            this.comboBox_userType.Name = "comboBox_userType";
-            this.comboBox_userType.Size = new System.Drawing.Size(297, 24);
-            this.comboBox_userType.TabIndex = 12;
-            this.comboBox_userType.SelectedIndexChanged += new System.EventHandler(this.comboBox_userType_SelectedIndexChanged);
-            // 
-            // comboBox_location
-            // 
-            this.comboBox_location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_location.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_location.FormattingEnabled = true;
-            this.comboBox_location.Items.AddRange(new object[] {
-            "Haarlem",
-            "Amsterdam",
-            "Knuppeldam",
-            "Headquarters (HQ)"});
-            this.comboBox_location.Location = new System.Drawing.Point(222, 253);
-            this.comboBox_location.Name = "comboBox_location";
-            this.comboBox_location.Size = new System.Drawing.Size(297, 24);
-            this.comboBox_location.TabIndex = 13;
-            // 
-            // checkBox_sendPW
-            // 
-            this.checkBox_sendPW.AutoSize = true;
-            this.checkBox_sendPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_sendPW.Location = new System.Drawing.Point(222, 292);
-            this.checkBox_sendPW.Name = "checkBox_sendPW";
-            this.checkBox_sendPW.Size = new System.Drawing.Size(297, 20);
-            this.checkBox_sendPW.TabIndex = 14;
-            this.checkBox_sendPW.Text = "yes, a password e-mail will be sent to the user";
-            this.checkBox_sendPW.UseVisualStyleBackColor = true;
-            // 
-            // createUserCancel_btn
-            // 
-            this.createUserCancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createUserCancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createUserCancel_btn.Location = new System.Drawing.Point(251, 342);
-            this.createUserCancel_btn.Name = "createUserCancel_btn";
-            this.createUserCancel_btn.Size = new System.Drawing.Size(108, 55);
-            this.createUserCancel_btn.TabIndex = 15;
-            this.createUserCancel_btn.Text = "CANCEL";
-            this.createUserCancel_btn.UseVisualStyleBackColor = true;
-            this.createUserCancel_btn.Click += new System.EventHandler(this.createUserCancel_btn_Click);
-            // 
-            // createUserConfirm_btn
-            // 
-            this.createUserConfirm_btn.BackColor = System.Drawing.SystemColors.Highlight;
-            this.createUserConfirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createUserConfirm_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.createUserConfirm_btn.Location = new System.Drawing.Point(390, 342);
-            this.createUserConfirm_btn.Name = "createUserConfirm_btn";
-            this.createUserConfirm_btn.Size = new System.Drawing.Size(107, 55);
-            this.createUserConfirm_btn.TabIndex = 16;
-            this.createUserConfirm_btn.Text = "ADD USER";
-            this.createUserConfirm_btn.UseVisualStyleBackColor = false;
-            this.createUserConfirm_btn.Click += new System.EventHandler(this.createUserConfirm_btn_Click);
-            // 
-            // UMError_lbl
-            // 
-            this.UMError_lbl.AutoSize = true;
-            this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UMError_lbl.ForeColor = System.Drawing.Color.Red;
-            this.UMError_lbl.Location = new System.Drawing.Point(247, 25);
-            this.UMError_lbl.Name = "UMError_lbl";
-            this.UMError_lbl.Size = new System.Drawing.Size(0, 24);
-            this.UMError_lbl.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 25);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Current incidents";
+            this.userId_txt.Enabled = false;
+            this.userId_txt.Location = new System.Drawing.Point(34, 344);
+            this.userId_txt.Name = "userId_txt";
+            this.userId_txt.ReadOnly = true;
+            this.userId_txt.Size = new System.Drawing.Size(100, 20);
+            this.userId_txt.TabIndex = 20;
+            this.userId_txt.Text = "[hidden textbox]";
+            this.userId_txt.Visible = false;
             // 
             // Dashboard
             // 
@@ -659,7 +734,7 @@
         private System.Windows.Forms.TextBox email_txt;
         private System.Windows.Forms.TextBox lastName_txt;
         private System.Windows.Forms.TextBox firstName_txt;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label sendPW_lbl;
         private System.Windows.Forms.Label location_lbl;
         private System.Windows.Forms.Label phoneNumber_lbl;
         private System.Windows.Forms.Label email_lbl;
@@ -671,6 +746,11 @@
         private System.Windows.Forms.CheckBox checkBox_sendPW;
         private System.Windows.Forms.ComboBox comboBox_location;
         private System.Windows.Forms.Label UMError_lbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label dashboardCurrentIncidents_lbl;
+        private System.Windows.Forms.Button editUser_btn;
+        private System.Windows.Forms.Button deleteUser_btn;
+        private System.Windows.Forms.Button viewUser_btn;
+        private System.Windows.Forms.Button editUserConfirm_btn;
+        private System.Windows.Forms.TextBox userId_txt;
     }
 }
