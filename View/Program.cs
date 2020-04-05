@@ -16,41 +16,13 @@ namespace View
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
 
-
-            //Random rand = new Random(); // we need a random variable to select names randomly
-
-            //RandomName nameGen = new RandomName(rand); // create a new instance of the RandomName class
-
-            //string[] email = { "gmail.com", "hotmail.com", "yahoo.com", "student.inholland.nl", "hotmale.com" };
-
-            //List<string> names = nameGen.RandomNames(100, 0);
-            //    for (int i = 0; i < 100; i++)
-            //    {
-
-            //        User user = new User()
-            //        {
-            //            name = names[i],
-            //            email = names[i].Replace(" ", "") + "@" + email[rand.Next(0, 4)],
-            //            password = names[i].Replace(" ", "") + rand.Next(1000, 99999).ToString(),
-            //            userId = (i + 1).ToString(),
-            //            phoneNumber = rand.Next(100000000, 999999999).ToString(),
-            //        };
-
-            //        user.insertIntoCollection();
-            //    }
+           User.GenerateRandom(1);
 
             //Application.Run(new Login());
-            //var deleteFilter = Builders<BsonDocument>.Filter.Eq("IncidentID", "101");
-            //Model.Model.deleteDocument("Incidents", deleteFilter);
-
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            User u = new User();
-            Application.Run(new Dashboard(u));
-            
-          
         }
     }
 }

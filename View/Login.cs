@@ -48,7 +48,7 @@ namespace View
                 {
                     if(u.name == inputUsername)
                     {
-                        if(u.password == inputPassword)
+                        if(Auth.checkPassword(u.password, inputPassword))
                         {
                             Dashboard dashboard = new Dashboard(u);
                             this.Close();
