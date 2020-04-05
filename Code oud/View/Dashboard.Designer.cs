@@ -72,6 +72,7 @@
             this.createIncident_lbl = new System.Windows.Forms.Label();
             this.NoDesk_lbl = new System.Windows.Forms.Label();
             this.licensed_lbl = new System.Windows.Forms.Label();
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.dataGridView_incidentManagement = new System.Windows.Forms.DataGridView();
             this.filterByEmail_Lbl = new System.Windows.Forms.Label();
             this.filterByEmailTextBox = new System.Windows.Forms.TextBox();
@@ -93,6 +94,13 @@
             this.addIncidentBtn = new System.Windows.Forms.Button();
             this.cancelIncidentCreateBtn = new System.Windows.Forms.Button();
             this.IMError_lbl = new System.Windows.Forms.Label();
+=======
+            this.circularProgressBar_Prior = new CircularProgressBar.CircularProgressBar();
+            this.label_Prior = new System.Windows.Forms.Label();
+            this.button_LowPrior = new System.Windows.Forms.Button();
+            this.button_MedPrior = new System.Windows.Forms.Button();
+            this.button_HighPrior = new System.Windows.Forms.Button();
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             this.userManagement_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).BeginInit();
             this.createUser_panel.SuspendLayout();
@@ -107,7 +115,7 @@
             this.label_dashboard.AutoSize = true;
             this.label_dashboard.Location = new System.Drawing.Point(13, 13);
             this.label_dashboard.Name = "label_dashboard";
-            this.label_dashboard.Size = new System.Drawing.Size(59, 13);
+            this.label_dashboard.Size = new System.Drawing.Size(68, 15);
             this.label_dashboard.TabIndex = 0;
             this.label_dashboard.Text = "Dashboard";
             // 
@@ -121,7 +129,7 @@
             this.progress_unresolved.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.progress_unresolved.InnerMargin = 2;
             this.progress_unresolved.InnerWidth = -1;
-            this.progress_unresolved.Location = new System.Drawing.Point(85, 108);
+            this.progress_unresolved.Location = new System.Drawing.Point(23, 108);
             this.progress_unresolved.MarqueeAnimationSpeed = 2000;
             this.progress_unresolved.Name = "progress_unresolved";
             this.progress_unresolved.OuterColor = System.Drawing.Color.Gray;
@@ -130,7 +138,7 @@
             this.progress_unresolved.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.progress_unresolved.ProgressWidth = 25;
             this.progress_unresolved.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.progress_unresolved.Size = new System.Drawing.Size(255, 255);
+            this.progress_unresolved.Size = new System.Drawing.Size(201, 199);
             this.progress_unresolved.StartAngle = 270;
             this.progress_unresolved.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progress_unresolved.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -152,7 +160,7 @@
             this.progress_deadline.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.progress_deadline.InnerMargin = 2;
             this.progress_deadline.InnerWidth = -1;
-            this.progress_deadline.Location = new System.Drawing.Point(445, 108);
+            this.progress_deadline.Location = new System.Drawing.Point(271, 95);
             this.progress_deadline.MarqueeAnimationSpeed = 2000;
             this.progress_deadline.Name = "progress_deadline";
             this.progress_deadline.OuterColor = System.Drawing.Color.Gray;
@@ -161,7 +169,7 @@
             this.progress_deadline.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.progress_deadline.ProgressWidth = 25;
             this.progress_deadline.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.progress_deadline.Size = new System.Drawing.Size(255, 255);
+            this.progress_deadline.Size = new System.Drawing.Size(211, 212);
             this.progress_deadline.StartAngle = 270;
             this.progress_deadline.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progress_deadline.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -189,18 +197,18 @@
             // label_unresolved
             // 
             this.label_unresolved.AutoSize = true;
-            this.label_unresolved.Location = new System.Drawing.Point(159, 77);
+            this.label_unresolved.Location = new System.Drawing.Point(69, 77);
             this.label_unresolved.Name = "label_unresolved";
-            this.label_unresolved.Size = new System.Drawing.Size(107, 13);
+            this.label_unresolved.Size = new System.Drawing.Size(121, 15);
             this.label_unresolved.TabIndex = 24;
             this.label_unresolved.Text = "Unresolved Incidents";
             // 
             // label_deadline
             // 
             this.label_deadline.AutoSize = true;
-            this.label_deadline.Location = new System.Drawing.Point(500, 77);
+            this.label_deadline.Location = new System.Drawing.Point(294, 77);
             this.label_deadline.Name = "label_deadline";
-            this.label_deadline.Size = new System.Drawing.Size(146, 13);
+            this.label_deadline.Size = new System.Drawing.Size(168, 15);
             this.label_deadline.TabIndex = 25;
             this.label_deadline.Text = "Open incidents past Deadline";
             // 
@@ -211,7 +219,7 @@
             this.userManagement_panel.Controls.Add(this.userFilter_lbl);
             this.userManagement_panel.Controls.Add(this.dataGridView_userManagement);
             this.userManagement_panel.Controls.Add(this.userManagement_lbl);
-            this.userManagement_panel.Location = new System.Drawing.Point(2, 105);
+            this.userManagement_panel.Location = new System.Drawing.Point(3, 102);
             this.userManagement_panel.Name = "userManagement_panel";
             this.userManagement_panel.Size = new System.Drawing.Size(800, 452);
             this.userManagement_panel.TabIndex = 26;
@@ -234,7 +242,11 @@
             this.userFilter_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userFilter_txt.Location = new System.Drawing.Point(134, 63);
             this.userFilter_txt.Name = "userFilter_txt";
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.userFilter_txt.Size = new System.Drawing.Size(348, 22);
+=======
+            this.userFilter_txt.Size = new System.Drawing.Size(348, 24);
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             this.userFilter_txt.TabIndex = 3;
             this.userFilter_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userFilter_txt_KeyPress);
             // 
@@ -244,7 +256,11 @@
             this.userFilter_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userFilter_lbl.Location = new System.Drawing.Point(34, 66);
             this.userFilter_lbl.Name = "userFilter_lbl";
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.userFilter_lbl.Size = new System.Drawing.Size(94, 16);
+=======
+            this.userFilter_lbl.Size = new System.Drawing.Size(102, 18);
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             this.userFilter_lbl.TabIndex = 2;
             this.userFilter_lbl.Text = "Filter by email:";
             // 
@@ -285,7 +301,11 @@
             this.userManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userManagement_lbl.Location = new System.Drawing.Point(29, 25);
             this.userManagement_lbl.Name = "userManagement_lbl";
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.userManagement_lbl.Size = new System.Drawing.Size(203, 25);
+=======
+            this.userManagement_lbl.Size = new System.Drawing.Size(225, 29);
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             this.userManagement_lbl.TabIndex = 0;
             this.userManagement_lbl.Text = "User Management";
             // 
@@ -309,12 +329,13 @@
             this.createUser_panel.Controls.Add(this.lastName_lbl);
             this.createUser_panel.Controls.Add(this.firstName_lbl);
             this.createUser_panel.Controls.Add(this.addUser_lbl);
-            this.createUser_panel.Location = new System.Drawing.Point(2, 105);
+            this.createUser_panel.Location = new System.Drawing.Point(0, 102);
             this.createUser_panel.Name = "createUser_panel";
             this.createUser_panel.Size = new System.Drawing.Size(800, 449);
             this.createUser_panel.TabIndex = 27;
             // 
             // UMError_lbl
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             // 
             this.UMError_lbl.AutoSize = true;
             this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,6 +343,15 @@
             this.UMError_lbl.Location = new System.Drawing.Point(247, 25);
             this.UMError_lbl.Name = "UMError_lbl";
             this.UMError_lbl.Size = new System.Drawing.Size(0, 24);
+            this.UMError_lbl.TabIndex = 18;
+=======
+            // 
+            this.UMError_lbl.AutoSize = true;
+            this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UMError_lbl.ForeColor = System.Drawing.Color.Red;
+            this.UMError_lbl.Location = new System.Drawing.Point(247, 25);
+            this.UMError_lbl.Name = "UMError_lbl";
+            this.UMError_lbl.Size = new System.Drawing.Size(0, 25);
             this.UMError_lbl.TabIndex = 18;
             // 
             // createUserConfirm_btn
@@ -351,6 +381,227 @@
             this.createUserCancel_btn.Click += new System.EventHandler(this.createUserCancel_btn_Click);
             // 
             // checkBox_sendPW
+            // 
+            this.checkBox_sendPW.AutoSize = true;
+            this.checkBox_sendPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_sendPW.Location = new System.Drawing.Point(222, 292);
+            this.checkBox_sendPW.Name = "checkBox_sendPW";
+            this.checkBox_sendPW.Size = new System.Drawing.Size(329, 22);
+            this.checkBox_sendPW.TabIndex = 14;
+            this.checkBox_sendPW.Text = "yes, a password e-mail will be sent to the user";
+            this.checkBox_sendPW.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_location
+            // 
+            this.comboBox_location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_location.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_location.FormattingEnabled = true;
+            this.comboBox_location.Items.AddRange(new object[] {
+            "Haarlem",
+            "Amsterdam",
+            "Knuppeldam",
+            "Headquarters (HQ)"});
+            this.comboBox_location.Location = new System.Drawing.Point(222, 253);
+            this.comboBox_location.Name = "comboBox_location";
+            this.comboBox_location.Size = new System.Drawing.Size(297, 25);
+            this.comboBox_location.TabIndex = 13;
+            // 
+            // comboBox_userType
+            // 
+            this.comboBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_userType.FormattingEnabled = true;
+            this.comboBox_userType.Items.AddRange(new object[] {
+            "Employee",
+            "Service desk employee"});
+            this.comboBox_userType.Location = new System.Drawing.Point(222, 143);
+            this.comboBox_userType.Name = "comboBox_userType";
+            this.comboBox_userType.Size = new System.Drawing.Size(297, 25);
+            this.comboBox_userType.TabIndex = 12;
+            this.comboBox_userType.SelectedIndexChanged += new System.EventHandler(this.comboBox_userType_SelectedIndexChanged);
+            // 
+            // phoneNumber_txt
+            // 
+            this.phoneNumber_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumber_txt.Location = new System.Drawing.Point(222, 214);
+            this.phoneNumber_txt.Name = "phoneNumber_txt";
+            this.phoneNumber_txt.Size = new System.Drawing.Size(297, 24);
+            this.phoneNumber_txt.TabIndex = 11;
+            // 
+            // email_txt
+            // 
+            this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.Location = new System.Drawing.Point(222, 180);
+            this.email_txt.Name = "email_txt";
+            this.email_txt.Size = new System.Drawing.Size(297, 24);
+            this.email_txt.TabIndex = 10;
+            // 
+            // lastName_txt
+            // 
+            this.lastName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName_txt.Location = new System.Drawing.Point(222, 108);
+            this.lastName_txt.Name = "lastName_txt";
+            this.lastName_txt.Size = new System.Drawing.Size(297, 24);
+            this.lastName_txt.TabIndex = 9;
+            // 
+            // firstName_txt
+            // 
+            this.firstName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName_txt.Location = new System.Drawing.Point(222, 68);
+            this.firstName_txt.Name = "firstName_txt";
+            this.firstName_txt.Size = new System.Drawing.Size(297, 24);
+            this.firstName_txt.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(36, 293);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 18);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Send password?";
+            // 
+            // location_lbl
+            // 
+            this.location_lbl.AutoSize = true;
+            this.location_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.location_lbl.Location = new System.Drawing.Point(36, 256);
+            this.location_lbl.Name = "location_lbl";
+            this.location_lbl.Size = new System.Drawing.Size(114, 18);
+            this.location_lbl.TabIndex = 6;
+            this.location_lbl.Text = "Location/branch";
+            // 
+            // phoneNumber_lbl
+            // 
+            this.phoneNumber_lbl.AutoSize = true;
+            this.phoneNumber_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumber_lbl.Location = new System.Drawing.Point(34, 217);
+            this.phoneNumber_lbl.Name = "phoneNumber_lbl";
+            this.phoneNumber_lbl.Size = new System.Drawing.Size(109, 18);
+            this.phoneNumber_lbl.TabIndex = 5;
+            this.phoneNumber_lbl.Text = "Phone number:";
+            // 
+            // email_lbl
+            // 
+            this.email_lbl.AutoSize = true;
+            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_lbl.Location = new System.Drawing.Point(36, 183);
+            this.email_lbl.Name = "email_lbl";
+            this.email_lbl.Size = new System.Drawing.Size(111, 18);
+            this.email_lbl.TabIndex = 4;
+            this.email_lbl.Text = "E-mail address:";
+            // 
+            // userType_lbl
+            // 
+            this.userType_lbl.AutoSize = true;
+            this.userType_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userType_lbl.Location = new System.Drawing.Point(34, 146);
+            this.userType_lbl.Name = "userType_lbl";
+            this.userType_lbl.Size = new System.Drawing.Size(90, 18);
+            this.userType_lbl.TabIndex = 3;
+            this.userType_lbl.Text = "Type of user";
+            // 
+            // lastName_lbl
+            // 
+            this.lastName_lbl.AutoSize = true;
+            this.lastName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName_lbl.Location = new System.Drawing.Point(34, 111);
+            this.lastName_lbl.Name = "lastName_lbl";
+            this.lastName_lbl.Size = new System.Drawing.Size(81, 18);
+            this.lastName_lbl.TabIndex = 2;
+            this.lastName_lbl.Text = "Last name:";
+            // 
+            // firstName_lbl
+            // 
+            this.firstName_lbl.AutoSize = true;
+            this.firstName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName_lbl.Location = new System.Drawing.Point(34, 71);
+            this.firstName_lbl.Name = "firstName_lbl";
+            this.firstName_lbl.Size = new System.Drawing.Size(82, 18);
+            this.firstName_lbl.TabIndex = 1;
+            this.firstName_lbl.Text = "First name:";
+            // 
+            // addUser_lbl
+            // 
+            this.addUser_lbl.AutoSize = true;
+            this.addUser_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addUser_lbl.Location = new System.Drawing.Point(29, 25);
+            this.addUser_lbl.Name = "addUser_lbl";
+            this.addUser_lbl.Size = new System.Drawing.Size(213, 29);
+            this.addUser_lbl.TabIndex = 0;
+            this.addUser_lbl.Text = "Create New User";
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+            // 
+            // createUserConfirm_btn
+            // 
+            this.createUserConfirm_btn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.createUserConfirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createUserConfirm_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.createUserConfirm_btn.Location = new System.Drawing.Point(390, 342);
+            this.createUserConfirm_btn.Name = "createUserConfirm_btn";
+            this.createUserConfirm_btn.Size = new System.Drawing.Size(107, 55);
+            this.createUserConfirm_btn.TabIndex = 16;
+            this.createUserConfirm_btn.Text = "ADD USER";
+            this.createUserConfirm_btn.UseVisualStyleBackColor = false;
+            this.createUserConfirm_btn.Click += new System.EventHandler(this.createUserConfirm_btn_Click);
+            // 
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+            // createUserCancel_btn
+            // 
+            this.createUserCancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createUserCancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createUserCancel_btn.Location = new System.Drawing.Point(251, 342);
+            this.createUserCancel_btn.Name = "createUserCancel_btn";
+            this.createUserCancel_btn.Size = new System.Drawing.Size(108, 55);
+            this.createUserCancel_btn.TabIndex = 15;
+            this.createUserCancel_btn.Text = "CANCEL";
+            this.createUserCancel_btn.UseVisualStyleBackColor = true;
+            this.createUserCancel_btn.Click += new System.EventHandler(this.createUserCancel_btn_Click);
+            // 
+            // checkBox_sendPW
+=======
+            // incidentManagement_lbl
+            // 
+            this.incidentManagement_lbl.AutoSize = true;
+            this.incidentManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incidentManagement_lbl.Location = new System.Drawing.Point(32, 25);
+            this.incidentManagement_lbl.Name = "incidentManagement_lbl";
+            this.incidentManagement_lbl.Size = new System.Drawing.Size(214, 29);
+            this.incidentManagement_lbl.TabIndex = 0;
+            this.incidentManagement_lbl.Text = "Overview Tickets";
+            this.incidentManagement_lbl.Click += new System.EventHandler(this.incidentManagement_lbl_Click);
+            // 
+            // dashboard_panel
+            // 
+            this.dashboard_panel.Controls.Add(this.button_HighPrior);
+            this.dashboard_panel.Controls.Add(this.button_MedPrior);
+            this.dashboard_panel.Controls.Add(this.button_LowPrior);
+            this.dashboard_panel.Controls.Add(this.label_Prior);
+            this.dashboard_panel.Controls.Add(this.circularProgressBar_Prior);
+            this.dashboard_panel.Controls.Add(this.label1);
+            this.dashboard_panel.Controls.Add(this.label_deadline);
+            this.dashboard_panel.Controls.Add(this.label_unresolved);
+            this.dashboard_panel.Controls.Add(this.progress_deadline);
+            this.dashboard_panel.Controls.Add(this.progress_unresolved);
+            this.dashboard_panel.Location = new System.Drawing.Point(0, 104);
+            this.dashboard_panel.Name = "dashboard_panel";
+            this.dashboard_panel.Size = new System.Drawing.Size(799, 450);
+            this.dashboard_panel.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(33, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 29);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Current incidents";
+            // 
+            // menuDashboard_btn
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             // 
             this.checkBox_sendPW.AutoSize = true;
             this.checkBox_sendPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -400,6 +651,7 @@
             // 
             // email_txt
             // 
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_txt.Location = new System.Drawing.Point(222, 180);
             this.email_txt.Name = "email_txt";
@@ -617,11 +869,27 @@
             // 
             // NoDesk_lbl
             // 
+=======
+            this.createIncident_lbl.AutoSize = true;
+            this.createIncident_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createIncident_lbl.Location = new System.Drawing.Point(29, 25);
+            this.createIncident_lbl.Name = "createIncident_lbl";
+            this.createIncident_lbl.Size = new System.Drawing.Size(250, 29);
+            this.createIncident_lbl.TabIndex = 0;
+            this.createIncident_lbl.Text = "Create New Incident";
+            // 
+            // NoDesk_lbl
+            // 
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             this.NoDesk_lbl.AutoSize = true;
             this.NoDesk_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoDesk_lbl.Location = new System.Drawing.Point(704, 42);
             this.NoDesk_lbl.Name = "NoDesk_lbl";
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.NoDesk_lbl.Size = new System.Drawing.Size(94, 25);
+=======
+            this.NoDesk_lbl.Size = new System.Drawing.Size(106, 29);
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             this.NoDesk_lbl.TabIndex = 31;
             this.NoDesk_lbl.Text = "NoDesk";
             // 
@@ -630,6 +898,7 @@
             this.licensed_lbl.AutoSize = true;
             this.licensed_lbl.Location = new System.Drawing.Point(641, 67);
             this.licensed_lbl.Name = "licensed_lbl";
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.licensed_lbl.Size = new System.Drawing.Size(157, 13);
             this.licensed_lbl.TabIndex = 32;
             this.licensed_lbl.Text = "Licensed to: The Garden Group";
@@ -856,6 +1125,84 @@
             this.IMError_lbl.Size = new System.Drawing.Size(45, 16);
             this.IMError_lbl.TabIndex = 19;
             this.IMError_lbl.Text = "label2";
+=======
+            this.licensed_lbl.Size = new System.Drawing.Size(178, 15);
+            this.licensed_lbl.TabIndex = 32;
+            this.licensed_lbl.Text = "Licensed to: The Garden Group";
+            // 
+            // circularProgressBar_Prior
+            // 
+            this.circularProgressBar_Prior.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar_Prior.AnimationSpeed = 500;
+            this.circularProgressBar_Prior.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar_Prior.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.circularProgressBar_Prior.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar_Prior.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.circularProgressBar_Prior.InnerMargin = 2;
+            this.circularProgressBar_Prior.InnerWidth = -1;
+            this.circularProgressBar_Prior.Location = new System.Drawing.Point(515, 95);
+            this.circularProgressBar_Prior.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar_Prior.Name = "circularProgressBar_Prior";
+            this.circularProgressBar_Prior.OuterColor = System.Drawing.Color.Gray;
+            this.circularProgressBar_Prior.OuterMargin = -25;
+            this.circularProgressBar_Prior.OuterWidth = 26;
+            this.circularProgressBar_Prior.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.circularProgressBar_Prior.ProgressWidth = 25;
+            this.circularProgressBar_Prior.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.circularProgressBar_Prior.Size = new System.Drawing.Size(211, 212);
+            this.circularProgressBar_Prior.StartAngle = 270;
+            this.circularProgressBar_Prior.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar_Prior.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar_Prior.SubscriptText = ".23";
+            this.circularProgressBar_Prior.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar_Prior.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.circularProgressBar_Prior.SuperscriptText = "°C";
+            this.circularProgressBar_Prior.TabIndex = 27;
+            this.circularProgressBar_Prior.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar_Prior.Value = 68;
+            // 
+            // label_Prior
+            // 
+            this.label_Prior.AutoSize = true;
+            this.label_Prior.Location = new System.Drawing.Point(570, 77);
+            this.label_Prior.Name = "label_Prior";
+            this.label_Prior.Size = new System.Drawing.Size(96, 15);
+            this.label_Prior.TabIndex = 28;
+            this.label_Prior.Text = "Priority Incidents\r\n";
+            // 
+            // button_LowPrior
+            // 
+            this.button_LowPrior.BackColor = System.Drawing.Color.Yellow;
+            this.button_LowPrior.Location = new System.Drawing.Point(544, 326);
+            this.button_LowPrior.Name = "button_LowPrior";
+            this.button_LowPrior.Size = new System.Drawing.Size(40, 23);
+            this.button_LowPrior.TabIndex = 29;
+            this.button_LowPrior.Text = "Low";
+            this.button_LowPrior.UseVisualStyleBackColor = false;
+            this.button_LowPrior.Click += new System.EventHandler(this.button_LowPrior_Click);
+            // 
+            // button_MedPrior
+            // 
+            this.button_MedPrior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button_MedPrior.Location = new System.Drawing.Point(605, 326);
+            this.button_MedPrior.Name = "button_MedPrior";
+            this.button_MedPrior.Size = new System.Drawing.Size(40, 23);
+            this.button_MedPrior.TabIndex = 30;
+            this.button_MedPrior.Text = "Med";
+            this.button_MedPrior.UseVisualStyleBackColor = false;
+            this.button_MedPrior.Click += new System.EventHandler(this.button_MedPrior_Click);
+            // 
+            // button_HighPrior
+            // 
+            this.button_HighPrior.BackColor = System.Drawing.Color.Red;
+            this.button_HighPrior.Location = new System.Drawing.Point(663, 326);
+            this.button_HighPrior.Name = "button_HighPrior";
+            this.button_HighPrior.Size = new System.Drawing.Size(44, 23);
+            this.button_HighPrior.TabIndex = 31;
+            this.button_HighPrior.Text = "High";
+            this.button_HighPrior.UseVisualStyleBackColor = false;
+            this.button_HighPrior.Click += new System.EventHandler(this.button_HighPrior_Click);
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             // 
             // Dashboard
             // 
@@ -863,17 +1210,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 559);
             this.Controls.Add(this.menuIncidentManagement_btn);
+            this.Controls.Add(this.dashboard_panel);
             this.Controls.Add(this.menuUserManagement_btn);
             this.Controls.Add(this.menuDashboard_btn);
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.label_dashboard);
             this.Controls.Add(this.licensed_lbl);
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.Controls.Add(this.NoDesk_lbl);
             this.Controls.Add(this.createIncident_panel);
+=======
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             this.Controls.Add(this.createUser_panel);
-            this.Controls.Add(this.userManagement_panel);
-            this.Controls.Add(this.dashboard_panel);
+            this.Controls.Add(this.NoDesk_lbl);
             this.Controls.Add(this.incidentManagement_panel);
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+=======
+            this.Controls.Add(this.userManagement_panel);
+            this.Controls.Add(this.createIncident_panel);
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -939,6 +1294,7 @@
         private System.Windows.Forms.ComboBox comboBox_location;
         private System.Windows.Forms.Label UMError_lbl;
         private System.Windows.Forms.Label label1;
+<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
         private System.Windows.Forms.Button addNewIncidentBtn;
         private System.Windows.Forms.TextBox filterByEmailTextBox;
         private System.Windows.Forms.Label filterByEmail_Lbl;
@@ -960,5 +1316,12 @@
         private System.Windows.Forms.Button addIncidentBtn;
         private System.Windows.Forms.Button cancelIncidentCreateBtn;
         private System.Windows.Forms.Label IMError_lbl;
+=======
+        private System.Windows.Forms.Button button_HighPrior;
+        private System.Windows.Forms.Button button_MedPrior;
+        private System.Windows.Forms.Button button_LowPrior;
+        private System.Windows.Forms.Label label_Prior;
+        private CircularProgressBar.CircularProgressBar circularProgressBar_Prior;
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
     }
 }

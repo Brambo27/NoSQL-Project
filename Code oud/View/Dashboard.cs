@@ -39,6 +39,23 @@ namespace View
             //Daadwerkelijke waarden missen nog
             progress_deadline.Value = 2;
             progress_unresolved.Value = 5;
+            List<Incident>incidents = Incident.getAll();
+            int incidentsPastDeadline = 0;
+            int incidentsUnresolved = 0;
+            foreach(Incident i in incidents)
+            {
+                if(i.deadline > DateTime.Now)
+                {
+                    incidentsPastDeadline++;
+                }
+                //Unresolved aantal mist nog
+            }
+            progress_deadline.Text = incidents.Count.ToString();
+            progress_deadline.Maximum = incidents.Count;
+            progress_unresolved.Maximum = incidents.Count;
+
+            progress_deadline.Value = incidentsPastDeadline;
+            progress_unresolved.Value = incidentsUnresolved;
 
         }
 
@@ -269,6 +286,7 @@ namespace View
 
         }
 
+<<<<<<< HEAD:Code oud/View/Dashboard.cs
         private void addNewIncidentBtn_Click(object sender, EventArgs e)
         {
             showPanel("createIncident");
@@ -333,6 +351,39 @@ namespace View
             {
                 showPanel("createIncident");
             }
+=======
+        private void button_LowPrior_Click(object sender, EventArgs e)
+        {
+            label_Prior.Text = "Low priority Incidents";
+            circularProgressBar_Prior.Value = amountPriorityIncidents("Low");
+        }
+
+        private void button_MedPrior_Click(object sender, EventArgs e)
+        {
+            label_Prior.Text = "Medium priority Incidents";
+            circularProgressBar_Prior.Value = amountPriorityIncidents("Medium");
+        }
+
+        private void button_HighPrior_Click(object sender, EventArgs e)
+        {
+            label_Prior.Text = "High priority Incidents";
+            circularProgressBar_Prior.Value = amountPriorityIncidents("High");
+        }
+
+        
+        private int amountPriorityIncidents(string priorityStatus)
+        {
+            int amount = 0;
+            List<Incident>incidents = Incident.getAll();
+            foreach(Incident i in incidents)
+            {
+                if(Enum.TryParse(priorityStatus, out i.priority))
+                {
+                    amount++;
+                }
+            }
+            return amount;
+>>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.cs
         }
     }
 }
