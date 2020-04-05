@@ -42,8 +42,8 @@ namespace View
             //    }
 
             //Application.Run(new Login());
-            //var deleteFilter = Builders<BsonDocument>.Filter.Eq("IncidentID", "1");
-            //Model.Model.deleteDocument("Users", deleteFilter);
+            //var deleteFilter = Builders<BsonDocument>.Filter.Eq("IncidentID", "101");
+            //Model.Model.deleteDocument("Incidents", deleteFilter);
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);

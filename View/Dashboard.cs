@@ -507,6 +507,9 @@ namespace View
                         break;
                     }
                 }
+                var deleteFilter2 = Builders<BsonDocument>.Filter.Eq("userId", userid);
+                Model.Model.deleteDocument("Users", deleteFilter2);
+                showPanel("userManagement");
             }
         }
 
