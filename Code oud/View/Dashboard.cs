@@ -20,7 +20,8 @@ namespace View
         public Dashboard()
         {
             InitializeComponent();
-            
+            //var deleteFilter = Builders<BsonDocument>.Filter.Eq("IncidentID", "1");
+            //Model.Model.deleteDocument("Incidents", deleteFilter);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -47,12 +48,14 @@ namespace View
         }
 
         DataTable dt = new DataTable();
+        DataTable dt2 = new DataTable();
         private void showPanel(string panelName)
         {
             dashboard_panel.Hide();
             incidentManagement_panel.Hide();
             createUser_panel.Hide();
             userManagement_panel.Hide();
+            createIncident_panel.Hide();
 
             switch (panelName)
             {
@@ -61,15 +64,20 @@ namespace View
                     dashboard_panel.Show();
                     break;
                 case "incidentManagement":
-                    dt = getTable();
-                    dataGridView_userManagement.DataSource = dt;
+                    dt2 = getTableIncidents();
+                    dataGridView_incidentManagement.DataSource = dt2;
                     incidentManagement_panel.Show();
                     break;
                 case "userManagement":
+                    dt = getTable();
+                    dataGridView_userManagement.DataSource = dt;
                     userManagement_panel.Show();
                     break;
                 case "createUser":
                     createUser_panel.Show();
+                    break;
+                case "createIncident":
+                    createIncident_panel.Show();
                     break;
             }
         }
@@ -87,6 +95,25 @@ namespace View
         private void menuUsersManagement_btn_Click(object sender, EventArgs e)
         {
             showPanel("userManagement");
+        }
+
+        static DataTable getTableIncidents()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Subject", typeof(string));
+            table.Columns.Add("User", typeof(string));
+            table.Columns.Add("Date", typeof(string));
+            table.Columns.Add("Status", typeof(string));
+
+            List<Incident> incidents = Model.Model.getAll<Incident>("Incidents");
+
+            foreach (Incident i in incidents)
+            {
+                table.Rows.Add(i.Id, i.subject, i.reportedBy, i.createdAt, i.deadline);
+            }
+
+            return table;
         }
 
         static DataTable getTable()
@@ -218,9 +245,94 @@ namespace View
             Model.Model.insertIntoCollection("Users", user1);
         }
 
+        private void addIncident(List<string> data)
+        {
+            List<Incident> incidents = Model.Model.getAll<Incident>("Incidents");
+            int incidentID = incidents.Count + 1;
+            var incident1 = new BsonDocument
+            {
+                {"createdAt", data[0] },
+                {"Subject", data[1] },
+                {"Type", data[2] },
+                {"ReportedBy", data[3] },
+                {"Priority", data[4] },
+                {"Deadline", data[5] },
+                {"Description", data[6] },
+                {"IncidentID", incidentID.ToString() },
+            };
+
+            Model.Model.insertIntoCollection("Incidents", incident1);
+        }
+
         private void incidentManagement_lbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addNewIncidentBtn_Click(object sender, EventArgs e)
+        {
+            showPanel("createIncident");
+        }
+
+        private void cancelIncidentCreateBtn_Click(object sender, EventArgs e)
+        {
+            createIncident_panel.Hide();
+            incidentManagement_panel.Show();
+        }
+
+        private void addIncidentBtn_Click(object sender, EventArgs e)
+        {
+            List<string> incident = new List<string>();
+            IMError_lbl.Text = "";
+
+            // error checks
+            if (selectDataComboBox.Text == "")
+            {
+                IMError_lbl.Text = "Please select a date.";
+            }
+            else if (incidentSubjectTextBox.Text == "")
+            {
+                IMError_lbl.Text = "Please enter an incident subject.";
+            }
+            else if (selectTypeComboBox.Text == "")
+            {
+                IMError_lbl.Text = "Please select a type.";
+            }
+            else if (reportedByComboBox.Text == "")
+            {
+                IMError_lbl.Text = "Please select a user.";
+            }
+            else if (priorityComboBox.Text == "")
+            {
+                IMError_lbl.Text = "Please select a priority level.";
+            }
+            else if (followUpComboBox.Text == "")
+            {
+                IMError_lbl.Text = "Please select a deadline.";
+            }
+            else if (descriptionTextBox.Text == "")
+            {
+                IMError_lbl.Text = "Please enter a description.";
+            }
+
+            if (IMError_lbl.Text == "")
+            {
+                incident.Add(selectDataComboBox.Text);
+                incident.Add(incidentSubjectTextBox.Text);
+                incident.Add(selectTypeComboBox.Text);
+                incident.Add(reportedByComboBox.Text);
+                incident.Add(priorityComboBox.Text);
+                incident.Add(followUpComboBox.Text);
+                incident.Add(descriptionTextBox.Text);
+
+                addIncident(incident);
+                dt2 = getTableIncidents();
+                showPanel("incidentManagement");
+            }
+            else
+            {
+                showPanel("createIncident");
+            }
         }
     }
 }
