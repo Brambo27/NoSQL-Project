@@ -96,6 +96,7 @@ namespace Model
             return getCollection(CollectionName).Find(filter).FirstOrDefault();
         }
 
+        
         public T SelectWhere<T>(FilterDefinition<BsonDocument> filter)
         {
             T item = default(T);
@@ -106,9 +107,9 @@ namespace Model
             catch (ArgumentNullException e)
             {
                 if (e.InnerException is ArgumentNullException)
-                    Console.WriteLine("Null");
+                    Console.WriteLine(e.Message);
                 else
-                    Console.WriteLine("Exception");
+                    Console.WriteLine(e.Message);
             }
             return item;
         }

@@ -25,6 +25,13 @@ namespace Model
             Assistance_Request
         }
 
+        public enum IncidentStatus
+        {
+            Resolved,
+            Unresolved
+        }
+
+
         public override string primaryKey => null;
 
         public override string CollectionName => "Incidents";
@@ -37,7 +44,7 @@ namespace Model
             Incident incident = GetByObjectId<Incident>(id);
         }
 
-        public Incident(DateTime createdAt, string subject, IncidentType type, User reportedBy, IncidentPriority priority, DateTime deadline, string description)
+        public Incident(DateTime createdAt, string subject, IncidentType type, User reportedBy, IncidentPriority priority, DateTime deadline, string description,IncidentStatus status)
         {
             this.createdAt = createdAt;
             this.subject = subject;
@@ -56,6 +63,7 @@ namespace Model
         public DateTime deadline;
         public string description;
         private ObjectId id;
+        public IncidentStatus status;
 
         public static List<Incident> getAll()
         {

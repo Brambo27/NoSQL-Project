@@ -41,11 +41,11 @@
             this.button_close = new System.Windows.Forms.Button();
             this.label_register = new System.Windows.Forms.LinkLabel();
             this.panel_forgot = new System.Windows.Forms.Panel();
+            this.button_hide = new System.Windows.Forms.Button();
             this.button_RequestPass = new System.Windows.Forms.Button();
             this.textBox_ForgotEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label_ForgotHeader = new System.Windows.Forms.Label();
-            this.button_hide = new System.Windows.Forms.Button();
             this.panel_forgot.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,10 +65,11 @@
             // 
             this.label_Warning.AutoSize = true;
             this.label_Warning.ForeColor = System.Drawing.Color.Red;
-            this.label_Warning.Location = new System.Drawing.Point(388, 358);
+            this.label_Warning.Location = new System.Drawing.Point(295, 374);
             this.label_Warning.Name = "label_Warning";
-            this.label_Warning.Size = new System.Drawing.Size(0, 15);
+            this.label_Warning.Size = new System.Drawing.Size(211, 15);
             this.label_Warning.TabIndex = 20;
+            this.label_Warning.Text = "                                                                    \r\n";
             this.label_Warning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Warning.UseWaitCursor = true;
             // 
@@ -188,11 +189,22 @@
             this.panel_forgot.Controls.Add(this.textBox_ForgotEmail);
             this.panel_forgot.Controls.Add(this.label2);
             this.panel_forgot.Controls.Add(this.label_ForgotHeader);
-            this.panel_forgot.Location = new System.Drawing.Point(176, 92);
+            this.panel_forgot.Location = new System.Drawing.Point(175, 95);
             this.panel_forgot.Name = "panel_forgot";
             this.panel_forgot.Size = new System.Drawing.Size(428, 263);
             this.panel_forgot.TabIndex = 23;
             this.panel_forgot.Visible = false;
+            // 
+            // button_hide
+            // 
+            this.button_hide.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_hide.Location = new System.Drawing.Point(90, 145);
+            this.button_hide.Name = "button_hide";
+            this.button_hide.Size = new System.Drawing.Size(31, 25);
+            this.button_hide.TabIndex = 9;
+            this.button_hide.Text = "<";
+            this.button_hide.UseVisualStyleBackColor = false;
+            this.button_hide.Click += new System.EventHandler(this.button_hide_Click);
             // 
             // button_RequestPass
             // 
@@ -231,17 +243,6 @@
             this.label_ForgotHeader.Size = new System.Drawing.Size(174, 25);
             this.label_ForgotHeader.TabIndex = 5;
             this.label_ForgotHeader.Text = "Forgot Password";
-            // 
-            // button_hide
-            // 
-            this.button_hide.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_hide.Location = new System.Drawing.Point(90, 145);
-            this.button_hide.Name = "button_hide";
-            this.button_hide.Size = new System.Drawing.Size(31, 25);
-            this.button_hide.TabIndex = 9;
-            this.button_hide.Text = "<";
-            this.button_hide.UseVisualStyleBackColor = false;
-            this.button_hide.Click += new System.EventHandler(this.button_hide_Click);
             // 
             // Login
             // 

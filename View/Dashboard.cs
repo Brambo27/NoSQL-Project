@@ -17,9 +17,11 @@ namespace View
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        User currentUser;
+        public Dashboard(User currentUser)
         {
             InitializeComponent();
+            this.currentUser = currentUser;
             //var deleteFilter = Builders<BsonDocument>.Filter.Eq("IncidentID", "1");
             //Model.Model.deleteDocument("Incidents", deleteFilter);
         }
@@ -34,27 +36,7 @@ namespace View
             this.Close();
         }
 
-        private void progressValues()
-        {
-            List<Incident>incidents = Incident.getAll();
-            int incidentsPastDeadline = 0;
-            int incidentsUnresolved = 0;
-            foreach(Incident i in incidents)
-            {
-                if(i.deadline > DateTime.Now)
-                {
-                    incidentsPastDeadline++;
-                }
-                //Unresolved aantal mist nog
-            }
-            progress_deadline.Text = incidents.Count.ToString();
-            progress_deadline.Maximum = incidents.Count;
-            progress_unresolved.Maximum = incidents.Count;
-
-            progress_deadline.Value = incidentsPastDeadline;
-            progress_unresolved.Value = incidentsUnresolved;
-
-        }
+       
 
         private void progress_deadline_Click(object sender, EventArgs e)
         {
@@ -352,35 +334,64 @@ namespace View
 
         private void button_LowPrior_Click(object sender, EventArgs e)
         {
-            label_Prior.Text = "Low priority Incidents";
-            circularProgressBar_Prior.Value = amountPriorityIncidents("Low");
+            PriorityHandler("Low");
         }
 
         private void button_MedPrior_Click(object sender, EventArgs e)
         {
-            label_Prior.Text = "Medium priority Incidents";
-            circularProgressBar_Prior.Value = amountPriorityIncidents("Medium");
+            PriorityHandler("Medium");
         }
 
         private void button_HighPrior_Click(object sender, EventArgs e)
         {
-            label_Prior.Text = "High priority Incidents";
-            circularProgressBar_Prior.Value = amountPriorityIncidents("High");
+            PriorityHandler("High");
         }
 
-        
-        private int amountPriorityIncidents(string priorityStatus)
+        List<Incident> incidents = Incident.getAll();
+
+        private void PriorityHandler(string priority)
         {
             int amount = 0;
-            List<Incident>incidents = Incident.getAll();
-            foreach(Incident i in incidents)
+            
+            label_Prior.Text = priority+" priority Incidents";
+            foreach (Incident i in incidents)
             {
-                if(Enum.TryParse(priorityStatus, out i.priority))
+                if (i.priority == (Incident.IncidentPriority)Enum.Parse(typeof(Incident.IncidentPriority), priority))
                 {
                     amount++;
                 }
             }
-            return amount;
+            progress_priority.Value = amount;
+            progress_priority.Text = amount.ToString()+"/"+incidents.Count;
+        }
+
+        private void progressValues()
+        {
+            List<Incident> incidents = Incident.getAll();
+            int incidentsPastDeadline = 0;
+            int incidentsUnresolved = 0;
+            foreach (Incident i in incidents)
+            {
+                if (i.deadline > DateTime.Now)
+                {
+                    incidentsPastDeadline++;
+                }
+                if(i.status == (Incident.IncidentStatus)Enum.Parse(typeof(Incident.IncidentStatus), "Unresolved"))
+                {
+                    incidentsUnresolved++;
+                }
+            }
+            progress_deadline.Maximum = incidents.Count;
+            progress_unresolved.Maximum = incidents.Count;
+            progress_priority.Maximum = incidents.Count;
+
+            progress_deadline.Text = incidentsPastDeadline + "/" + incidents.Count;
+            progress_unresolved.Text = incidentsUnresolved + "/" + incidents.Count;
+
+
+
+            progress_deadline.Value = incidentsPastDeadline;
+            progress_unresolved.Value = incidentsUnresolved;
 
         }
     }

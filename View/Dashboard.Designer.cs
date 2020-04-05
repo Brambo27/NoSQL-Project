@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_dashboard = new System.Windows.Forms.Label();
             this.progress_unresolved = new CircularProgressBar.CircularProgressBar();
             this.progress_deadline = new CircularProgressBar.CircularProgressBar();
@@ -62,51 +62,49 @@
             this.firstName_lbl = new System.Windows.Forms.Label();
             this.addUser_lbl = new System.Windows.Forms.Label();
             this.incidentManagement_panel = new System.Windows.Forms.Panel();
+            this.addNewIncidentBtn = new System.Windows.Forms.Button();
+            this.filterByEmailTextBox = new System.Windows.Forms.TextBox();
+            this.filterByEmail_Lbl = new System.Windows.Forms.Label();
+            this.dataGridView_incidentManagement = new System.Windows.Forms.DataGridView();
             this.incidentManagement_lbl = new System.Windows.Forms.Label();
             this.dashboard_panel = new System.Windows.Forms.Panel();
+            this.button_HighPrior = new System.Windows.Forms.Button();
+            this.button_MedPrior = new System.Windows.Forms.Button();
+            this.button_LowPrior = new System.Windows.Forms.Button();
+            this.label_Prior = new System.Windows.Forms.Label();
+            this.progress_priority = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.menuDashboard_btn = new System.Windows.Forms.Button();
             this.menuUserManagement_btn = new System.Windows.Forms.Button();
             this.menuIncidentManagement_btn = new System.Windows.Forms.Button();
             this.createIncident_panel = new System.Windows.Forms.Panel();
+            this.IMError_lbl = new System.Windows.Forms.Label();
+            this.addIncidentBtn = new System.Windows.Forms.Button();
+            this.cancelIncidentCreateBtn = new System.Windows.Forms.Button();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.incidentSubjectTextBox = new System.Windows.Forms.TextBox();
+            this.followUpComboBox = new System.Windows.Forms.ComboBox();
+            this.priorityComboBox = new System.Windows.Forms.ComboBox();
+            this.reportedByComboBox = new System.Windows.Forms.ComboBox();
+            this.selectTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.selectDataComboBox = new System.Windows.Forms.ComboBox();
+            this.description_Lbl = new System.Windows.Forms.Label();
+            this.deadlineFollowup_Lbl = new System.Windows.Forms.Label();
+            this.priority_Lbl = new System.Windows.Forms.Label();
+            this.reportedBy_Lbl = new System.Windows.Forms.Label();
+            this.typeOfIncident_Lbl = new System.Windows.Forms.Label();
+            this.subject_Lbl = new System.Windows.Forms.Label();
+            this.reported_Lbl = new System.Windows.Forms.Label();
             this.createIncident_lbl = new System.Windows.Forms.Label();
             this.NoDesk_lbl = new System.Windows.Forms.Label();
             this.licensed_lbl = new System.Windows.Forms.Label();
-            this.dataGridView_incidentManagement = new System.Windows.Forms.DataGridView();
-            this.filterByEmail_Lbl = new System.Windows.Forms.Label();
-            this.filterByEmailTextBox = new System.Windows.Forms.TextBox();
-            this.addNewIncidentBtn = new System.Windows.Forms.Button();
-            this.reported_Lbl = new System.Windows.Forms.Label();
-            this.subject_Lbl = new System.Windows.Forms.Label();
-            this.typeOfIncident_Lbl = new System.Windows.Forms.Label();
-            this.reportedBy_Lbl = new System.Windows.Forms.Label();
-            this.priority_Lbl = new System.Windows.Forms.Label();
-            this.deadlineFollowup_Lbl = new System.Windows.Forms.Label();
-            this.description_Lbl = new System.Windows.Forms.Label();
-            this.selectDataComboBox = new System.Windows.Forms.ComboBox();
-            this.selectTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.reportedByComboBox = new System.Windows.Forms.ComboBox();
-            this.priorityComboBox = new System.Windows.Forms.ComboBox();
-            this.followUpComboBox = new System.Windows.Forms.ComboBox();
-            this.incidentSubjectTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.addIncidentBtn = new System.Windows.Forms.Button();
-            this.cancelIncidentCreateBtn = new System.Windows.Forms.Button();
-            this.IMError_lbl = new System.Windows.Forms.Label();
-
-            this.circularProgressBar_Prior = new CircularProgressBar.CircularProgressBar();
-            this.label_Prior = new System.Windows.Forms.Label();
-            this.button_LowPrior = new System.Windows.Forms.Button();
-            this.button_MedPrior = new System.Windows.Forms.Button();
-            this.button_HighPrior = new System.Windows.Forms.Button();
-
             this.userManagement_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).BeginInit();
             this.createUser_panel.SuspendLayout();
             this.incidentManagement_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_incidentManagement)).BeginInit();
             this.dashboard_panel.SuspendLayout();
             this.createIncident_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_incidentManagement)).BeginInit();
             this.SuspendLayout();
             // 
             // label_dashboard
@@ -123,7 +121,7 @@
             this.progress_unresolved.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
             this.progress_unresolved.AnimationSpeed = 500;
             this.progress_unresolved.BackColor = System.Drawing.Color.Transparent;
-            this.progress_unresolved.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.progress_unresolved.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.progress_unresolved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.progress_unresolved.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.progress_unresolved.InnerMargin = 2;
@@ -141,10 +139,10 @@
             this.progress_unresolved.StartAngle = 270;
             this.progress_unresolved.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progress_unresolved.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.progress_unresolved.SubscriptText = ".23";
+            this.progress_unresolved.SubscriptText = "";
             this.progress_unresolved.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progress_unresolved.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.progress_unresolved.SuperscriptText = "°C";
+            this.progress_unresolved.SuperscriptText = "";
             this.progress_unresolved.TabIndex = 1;
             this.progress_unresolved.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.progress_unresolved.Value = 68;
@@ -154,7 +152,7 @@
             this.progress_deadline.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
             this.progress_deadline.AnimationSpeed = 500;
             this.progress_deadline.BackColor = System.Drawing.Color.Transparent;
-            this.progress_deadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.progress_deadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.progress_deadline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.progress_deadline.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.progress_deadline.InnerMargin = 2;
@@ -172,10 +170,10 @@
             this.progress_deadline.StartAngle = 270;
             this.progress_deadline.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progress_deadline.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.progress_deadline.SubscriptText = ".23";
+            this.progress_deadline.SubscriptText = "";
             this.progress_deadline.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progress_deadline.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.progress_deadline.SuperscriptText = "°C";
+            this.progress_deadline.SuperscriptText = "";
             this.progress_deadline.TabIndex = 2;
             this.progress_deadline.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.progress_deadline.Value = 68;
@@ -241,11 +239,7 @@
             this.userFilter_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userFilter_txt.Location = new System.Drawing.Point(134, 63);
             this.userFilter_txt.Name = "userFilter_txt";
-
-            this.userFilter_txt.Size = new System.Drawing.Size(348, 22);
-
             this.userFilter_txt.Size = new System.Drawing.Size(348, 24);
-
             this.userFilter_txt.TabIndex = 3;
             this.userFilter_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userFilter_txt_KeyPress);
             // 
@@ -255,11 +249,7 @@
             this.userFilter_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userFilter_lbl.Location = new System.Drawing.Point(34, 66);
             this.userFilter_lbl.Name = "userFilter_lbl";
-
-            this.userFilter_lbl.Size = new System.Drawing.Size(94, 16);
-
             this.userFilter_lbl.Size = new System.Drawing.Size(102, 18);
-
             this.userFilter_lbl.TabIndex = 2;
             this.userFilter_lbl.Text = "Filter by email:";
             // 
@@ -271,23 +261,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_userManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_userManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_userManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_userManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_userManagement.Location = new System.Drawing.Point(34, 111);
             this.dataGridView_userManagement.Name = "dataGridView_userManagement";
             this.dataGridView_userManagement.ReadOnly = true;
@@ -300,11 +290,7 @@
             this.userManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userManagement_lbl.Location = new System.Drawing.Point(29, 25);
             this.userManagement_lbl.Name = "userManagement_lbl";
-
-            this.userManagement_lbl.Size = new System.Drawing.Size(203, 25);
-
             this.userManagement_lbl.Size = new System.Drawing.Size(225, 29);
-
             this.userManagement_lbl.TabIndex = 0;
             this.userManagement_lbl.Text = "User Management";
             // 
@@ -334,16 +320,6 @@
             this.createUser_panel.TabIndex = 27;
             // 
             // UMError_lbl
-
-            // 
-            this.UMError_lbl.AutoSize = true;
-            this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UMError_lbl.ForeColor = System.Drawing.Color.Red;
-            this.UMError_lbl.Location = new System.Drawing.Point(247, 25);
-            this.UMError_lbl.Name = "UMError_lbl";
-            this.UMError_lbl.Size = new System.Drawing.Size(0, 24);
-            this.UMError_lbl.TabIndex = 18;
-
             // 
             this.UMError_lbl.AutoSize = true;
             this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -399,6 +375,10 @@
             "Haarlem",
             "Amsterdam",
             "Knuppeldam",
+            "Headquarters (HQ)",
+            "Haarlem",
+            "Amsterdam",
+            "Knuppeldam",
             "Headquarters (HQ)"});
             this.comboBox_location.Location = new System.Drawing.Point(222, 253);
             this.comboBox_location.Name = "comboBox_location";
@@ -411,6 +391,8 @@
             this.comboBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_userType.FormattingEnabled = true;
             this.comboBox_userType.Items.AddRange(new object[] {
+            "Employee",
+            "Service desk employee",
             "Employee",
             "Service desk employee"});
             this.comboBox_userType.Location = new System.Drawing.Point(222, 143);
@@ -530,37 +512,58 @@
             this.addUser_lbl.Size = new System.Drawing.Size(213, 29);
             this.addUser_lbl.TabIndex = 0;
             this.addUser_lbl.Text = "Create New User";
-
             // 
-            // createUserConfirm_btn
+            // incidentManagement_panel
             // 
-            this.createUserConfirm_btn.BackColor = System.Drawing.SystemColors.Highlight;
-            this.createUserConfirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createUserConfirm_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.createUserConfirm_btn.Location = new System.Drawing.Point(390, 342);
-            this.createUserConfirm_btn.Name = "createUserConfirm_btn";
-            this.createUserConfirm_btn.Size = new System.Drawing.Size(107, 55);
-            this.createUserConfirm_btn.TabIndex = 16;
-            this.createUserConfirm_btn.Text = "ADD USER";
-            this.createUserConfirm_btn.UseVisualStyleBackColor = false;
-            this.createUserConfirm_btn.Click += new System.EventHandler(this.createUserConfirm_btn_Click);
+            this.incidentManagement_panel.Controls.Add(this.addNewIncidentBtn);
+            this.incidentManagement_panel.Controls.Add(this.filterByEmailTextBox);
+            this.incidentManagement_panel.Controls.Add(this.filterByEmail_Lbl);
+            this.incidentManagement_panel.Controls.Add(this.dataGridView_incidentManagement);
+            this.incidentManagement_panel.Controls.Add(this.incidentManagement_lbl);
+            this.incidentManagement_panel.Location = new System.Drawing.Point(2, 105);
+            this.incidentManagement_panel.Name = "incidentManagement_panel";
+            this.incidentManagement_panel.Size = new System.Drawing.Size(800, 452);
+            this.incidentManagement_panel.TabIndex = 1;
             // 
-
-            // createUserCancel_btn
+            // addNewIncidentBtn
             // 
-            this.createUserCancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createUserCancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createUserCancel_btn.Location = new System.Drawing.Point(251, 342);
-            this.createUserCancel_btn.Name = "createUserCancel_btn";
-            this.createUserCancel_btn.Size = new System.Drawing.Size(108, 55);
-            this.createUserCancel_btn.TabIndex = 15;
-            this.createUserCancel_btn.Text = "CANCEL";
-            this.createUserCancel_btn.UseVisualStyleBackColor = true;
-            this.createUserCancel_btn.Click += new System.EventHandler(this.createUserCancel_btn_Click);
+            this.addNewIncidentBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.addNewIncidentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNewIncidentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewIncidentBtn.Location = new System.Drawing.Point(611, 54);
+            this.addNewIncidentBtn.Name = "addNewIncidentBtn";
+            this.addNewIncidentBtn.Size = new System.Drawing.Size(154, 43);
+            this.addNewIncidentBtn.TabIndex = 5;
+            this.addNewIncidentBtn.Text = "+ ADD NEW INCIDENT";
+            this.addNewIncidentBtn.UseVisualStyleBackColor = false;
+            this.addNewIncidentBtn.Click += new System.EventHandler(this.addNewIncidentBtn_Click);
             // 
-            // checkBox_sendPW
-
+            // filterByEmailTextBox
+            // 
+            this.filterByEmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.filterByEmailTextBox.Location = new System.Drawing.Point(134, 70);
+            this.filterByEmailTextBox.Name = "filterByEmailTextBox";
+            this.filterByEmailTextBox.Size = new System.Drawing.Size(241, 24);
+            this.filterByEmailTextBox.TabIndex = 3;
+            // 
+            // filterByEmail_Lbl
+            // 
+            this.filterByEmail_Lbl.AutoSize = true;
+            this.filterByEmail_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.filterByEmail_Lbl.Location = new System.Drawing.Point(39, 73);
+            this.filterByEmail_Lbl.Name = "filterByEmail_Lbl";
+            this.filterByEmail_Lbl.Size = new System.Drawing.Size(102, 18);
+            this.filterByEmail_Lbl.TabIndex = 2;
+            this.filterByEmail_Lbl.Text = "Filter by email:";
+            // 
+            // dataGridView_incidentManagement
+            // 
+            this.dataGridView_incidentManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_incidentManagement.Location = new System.Drawing.Point(34, 111);
+            this.dataGridView_incidentManagement.Name = "dataGridView_incidentManagement";
+            this.dataGridView_incidentManagement.Size = new System.Drawing.Size(731, 314);
+            this.dataGridView_incidentManagement.TabIndex = 1;
+            // 
             // incidentManagement_lbl
             // 
             this.incidentManagement_lbl.AutoSize = true;
@@ -578,206 +581,7 @@
             this.dashboard_panel.Controls.Add(this.button_MedPrior);
             this.dashboard_panel.Controls.Add(this.button_LowPrior);
             this.dashboard_panel.Controls.Add(this.label_Prior);
-            this.dashboard_panel.Controls.Add(this.circularProgressBar_Prior);
-            this.dashboard_panel.Controls.Add(this.label1);
-            this.dashboard_panel.Controls.Add(this.label_deadline);
-            this.dashboard_panel.Controls.Add(this.label_unresolved);
-            this.dashboard_panel.Controls.Add(this.progress_deadline);
-            this.dashboard_panel.Controls.Add(this.progress_unresolved);
-            this.dashboard_panel.Location = new System.Drawing.Point(0, 104);
-            this.dashboard_panel.Name = "dashboard_panel";
-            this.dashboard_panel.Size = new System.Drawing.Size(799, 450);
-            this.dashboard_panel.TabIndex = 27;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 29);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Current incidents";
-            // 
-            // menuDashboard_btn
-
-            // 
-            this.checkBox_sendPW.AutoSize = true;
-            this.checkBox_sendPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_sendPW.Location = new System.Drawing.Point(222, 292);
-            this.checkBox_sendPW.Name = "checkBox_sendPW";
-            this.checkBox_sendPW.Size = new System.Drawing.Size(297, 20);
-            this.checkBox_sendPW.TabIndex = 14;
-            this.checkBox_sendPW.Text = "yes, a password e-mail will be sent to the user";
-            this.checkBox_sendPW.UseVisualStyleBackColor = true;
-            // 
-            // comboBox_location
-            // 
-            this.comboBox_location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_location.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_location.FormattingEnabled = true;
-            this.comboBox_location.Items.AddRange(new object[] {
-            "Haarlem",
-            "Amsterdam",
-            "Knuppeldam",
-            "Headquarters (HQ)"});
-            this.comboBox_location.Location = new System.Drawing.Point(222, 253);
-            this.comboBox_location.Name = "comboBox_location";
-            this.comboBox_location.Size = new System.Drawing.Size(297, 24);
-            this.comboBox_location.TabIndex = 13;
-            // 
-            // comboBox_userType
-            // 
-            this.comboBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_userType.FormattingEnabled = true;
-            this.comboBox_userType.Items.AddRange(new object[] {
-            "Employee",
-            "Service desk employee"});
-            this.comboBox_userType.Location = new System.Drawing.Point(222, 143);
-            this.comboBox_userType.Name = "comboBox_userType";
-            this.comboBox_userType.Size = new System.Drawing.Size(297, 24);
-            this.comboBox_userType.TabIndex = 12;
-            this.comboBox_userType.SelectedIndexChanged += new System.EventHandler(this.comboBox_userType_SelectedIndexChanged);
-            // 
-            // phoneNumber_txt
-            // 
-            this.phoneNumber_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumber_txt.Location = new System.Drawing.Point(222, 214);
-            this.phoneNumber_txt.Name = "phoneNumber_txt";
-            this.phoneNumber_txt.Size = new System.Drawing.Size(297, 22);
-            this.phoneNumber_txt.TabIndex = 11;
-            // 
-            // email_txt
-            // 
-
-            this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email_txt.Location = new System.Drawing.Point(222, 180);
-            this.email_txt.Name = "email_txt";
-            this.email_txt.Size = new System.Drawing.Size(297, 22);
-            this.email_txt.TabIndex = 10;
-            // 
-            // lastName_txt
-            // 
-            this.lastName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastName_txt.Location = new System.Drawing.Point(222, 108);
-            this.lastName_txt.Name = "lastName_txt";
-            this.lastName_txt.Size = new System.Drawing.Size(297, 22);
-            this.lastName_txt.TabIndex = 9;
-            // 
-            // firstName_txt
-            // 
-            this.firstName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstName_txt.Location = new System.Drawing.Point(222, 68);
-            this.firstName_txt.Name = "firstName_txt";
-            this.firstName_txt.Size = new System.Drawing.Size(297, 22);
-            this.firstName_txt.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(36, 293);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 16);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Send password?";
-            // 
-            // location_lbl
-            // 
-            this.location_lbl.AutoSize = true;
-            this.location_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.location_lbl.Location = new System.Drawing.Point(36, 256);
-            this.location_lbl.Name = "location_lbl";
-            this.location_lbl.Size = new System.Drawing.Size(104, 16);
-            this.location_lbl.TabIndex = 6;
-            this.location_lbl.Text = "Location/branch";
-            // 
-            // phoneNumber_lbl
-            // 
-            this.phoneNumber_lbl.AutoSize = true;
-            this.phoneNumber_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumber_lbl.Location = new System.Drawing.Point(34, 217);
-            this.phoneNumber_lbl.Name = "phoneNumber_lbl";
-            this.phoneNumber_lbl.Size = new System.Drawing.Size(98, 16);
-            this.phoneNumber_lbl.TabIndex = 5;
-            this.phoneNumber_lbl.Text = "Phone number:";
-            // 
-            // email_lbl
-            // 
-            this.email_lbl.AutoSize = true;
-            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email_lbl.Location = new System.Drawing.Point(36, 183);
-            this.email_lbl.Name = "email_lbl";
-            this.email_lbl.Size = new System.Drawing.Size(102, 16);
-            this.email_lbl.TabIndex = 4;
-            this.email_lbl.Text = "E-mail address:";
-            // 
-            // userType_lbl
-            // 
-            this.userType_lbl.AutoSize = true;
-            this.userType_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userType_lbl.Location = new System.Drawing.Point(34, 146);
-            this.userType_lbl.Name = "userType_lbl";
-            this.userType_lbl.Size = new System.Drawing.Size(83, 16);
-            this.userType_lbl.TabIndex = 3;
-            this.userType_lbl.Text = "Type of user";
-            // 
-            // lastName_lbl
-            // 
-            this.lastName_lbl.AutoSize = true;
-            this.lastName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastName_lbl.Location = new System.Drawing.Point(34, 111);
-            this.lastName_lbl.Name = "lastName_lbl";
-            this.lastName_lbl.Size = new System.Drawing.Size(73, 16);
-            this.lastName_lbl.TabIndex = 2;
-            this.lastName_lbl.Text = "Last name:";
-            // 
-            // firstName_lbl
-            // 
-            this.firstName_lbl.AutoSize = true;
-            this.firstName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstName_lbl.Location = new System.Drawing.Point(34, 71);
-            this.firstName_lbl.Name = "firstName_lbl";
-            this.firstName_lbl.Size = new System.Drawing.Size(73, 16);
-            this.firstName_lbl.TabIndex = 1;
-            this.firstName_lbl.Text = "First name:";
-            // 
-            // addUser_lbl
-            // 
-            this.addUser_lbl.AutoSize = true;
-            this.addUser_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addUser_lbl.Location = new System.Drawing.Point(29, 25);
-            this.addUser_lbl.Name = "addUser_lbl";
-            this.addUser_lbl.Size = new System.Drawing.Size(190, 25);
-            this.addUser_lbl.TabIndex = 0;
-            this.addUser_lbl.Text = "Create New User";
-            // 
-            // incidentManagement_panel
-            // 
-            this.incidentManagement_panel.Controls.Add(this.addNewIncidentBtn);
-            this.incidentManagement_panel.Controls.Add(this.filterByEmailTextBox);
-            this.incidentManagement_panel.Controls.Add(this.filterByEmail_Lbl);
-            this.incidentManagement_panel.Controls.Add(this.dataGridView_incidentManagement);
-            this.incidentManagement_panel.Controls.Add(this.incidentManagement_lbl);
-            this.incidentManagement_panel.Location = new System.Drawing.Point(2, 105);
-            this.incidentManagement_panel.Name = "incidentManagement_panel";
-            this.incidentManagement_panel.Size = new System.Drawing.Size(800, 452);
-            this.incidentManagement_panel.TabIndex = 1;
-            // 
-            // incidentManagement_lbl
-            // 
-            this.incidentManagement_lbl.AutoSize = true;
-            this.incidentManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incidentManagement_lbl.Location = new System.Drawing.Point(32, 25);
-            this.incidentManagement_lbl.Name = "incidentManagement_lbl";
-            this.incidentManagement_lbl.Size = new System.Drawing.Size(192, 25);
-            this.incidentManagement_lbl.TabIndex = 0;
-            this.incidentManagement_lbl.Text = "Overview Tickets";
-            this.incidentManagement_lbl.Click += new System.EventHandler(this.incidentManagement_lbl_Click);
-            // 
-            // dashboard_panel
-            // 
+            this.dashboard_panel.Controls.Add(this.progress_priority);
             this.dashboard_panel.Controls.Add(this.label1);
             this.dashboard_panel.Controls.Add(this.label_deadline);
             this.dashboard_panel.Controls.Add(this.label_unresolved);
@@ -788,13 +592,86 @@
             this.dashboard_panel.Size = new System.Drawing.Size(799, 450);
             this.dashboard_panel.TabIndex = 27;
             // 
+            // button_HighPrior
+            // 
+            this.button_HighPrior.BackColor = System.Drawing.Color.Red;
+            this.button_HighPrior.Location = new System.Drawing.Point(663, 326);
+            this.button_HighPrior.Name = "button_HighPrior";
+            this.button_HighPrior.Size = new System.Drawing.Size(44, 23);
+            this.button_HighPrior.TabIndex = 31;
+            this.button_HighPrior.Text = "High";
+            this.button_HighPrior.UseVisualStyleBackColor = false;
+            this.button_HighPrior.Click += new System.EventHandler(this.button_HighPrior_Click);
+            // 
+            // button_MedPrior
+            // 
+            this.button_MedPrior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button_MedPrior.Location = new System.Drawing.Point(605, 326);
+            this.button_MedPrior.Name = "button_MedPrior";
+            this.button_MedPrior.Size = new System.Drawing.Size(40, 23);
+            this.button_MedPrior.TabIndex = 30;
+            this.button_MedPrior.Text = "Med";
+            this.button_MedPrior.UseVisualStyleBackColor = false;
+            this.button_MedPrior.Click += new System.EventHandler(this.button_MedPrior_Click);
+            // 
+            // button_LowPrior
+            // 
+            this.button_LowPrior.BackColor = System.Drawing.Color.Yellow;
+            this.button_LowPrior.Location = new System.Drawing.Point(544, 326);
+            this.button_LowPrior.Name = "button_LowPrior";
+            this.button_LowPrior.Size = new System.Drawing.Size(40, 23);
+            this.button_LowPrior.TabIndex = 29;
+            this.button_LowPrior.Text = "Low";
+            this.button_LowPrior.UseVisualStyleBackColor = false;
+            this.button_LowPrior.Click += new System.EventHandler(this.button_LowPrior_Click);
+            // 
+            // label_Prior
+            // 
+            this.label_Prior.AutoSize = true;
+            this.label_Prior.Location = new System.Drawing.Point(570, 77);
+            this.label_Prior.Name = "label_Prior";
+            this.label_Prior.Size = new System.Drawing.Size(96, 15);
+            this.label_Prior.TabIndex = 28;
+            this.label_Prior.Text = "Priority Incidents\r\n";
+            // 
+            // progress_priority
+            // 
+            this.progress_priority.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.progress_priority.AnimationSpeed = 500;
+            this.progress_priority.BackColor = System.Drawing.Color.Transparent;
+            this.progress_priority.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_priority.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.progress_priority.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.progress_priority.InnerMargin = 2;
+            this.progress_priority.InnerWidth = -1;
+            this.progress_priority.Location = new System.Drawing.Point(515, 95);
+            this.progress_priority.MarqueeAnimationSpeed = 2000;
+            this.progress_priority.Name = "progress_priority";
+            this.progress_priority.OuterColor = System.Drawing.Color.Gray;
+            this.progress_priority.OuterMargin = -25;
+            this.progress_priority.OuterWidth = 26;
+            this.progress_priority.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.progress_priority.ProgressWidth = 25;
+            this.progress_priority.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.progress_priority.Size = new System.Drawing.Size(211, 212);
+            this.progress_priority.StartAngle = 270;
+            this.progress_priority.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progress_priority.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.progress_priority.SubscriptText = "";
+            this.progress_priority.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progress_priority.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.progress_priority.SuperscriptText = "";
+            this.progress_priority.TabIndex = 27;
+            this.progress_priority.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.progress_priority.Value = 68;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(33, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 25);
+            this.label1.Size = new System.Drawing.Size(211, 29);
             this.label1.TabIndex = 26;
             this.label1.Text = "Current incidents";
             // 
@@ -856,237 +733,16 @@
             this.createIncident_panel.Size = new System.Drawing.Size(800, 452);
             this.createIncident_panel.TabIndex = 1;
             // 
-            // createIncident_lbl
+            // IMError_lbl
             // 
-            this.createIncident_lbl.AutoSize = true;
-            this.createIncident_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createIncident_lbl.Location = new System.Drawing.Point(29, 25);
-            this.createIncident_lbl.Name = "createIncident_lbl";
-            this.createIncident_lbl.Size = new System.Drawing.Size(224, 25);
-            this.createIncident_lbl.TabIndex = 0;
-            this.createIncident_lbl.Text = "Create New Incident";
-            // 
-            // NoDesk_lbl
-            // 
-
-            this.createIncident_lbl.AutoSize = true;
-            this.createIncident_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createIncident_lbl.Location = new System.Drawing.Point(29, 25);
-            this.createIncident_lbl.Name = "createIncident_lbl";
-            this.createIncident_lbl.Size = new System.Drawing.Size(250, 29);
-            this.createIncident_lbl.TabIndex = 0;
-            this.createIncident_lbl.Text = "Create New Incident";
-            // 
-            // NoDesk_lbl
-            // 
-
-            this.NoDesk_lbl.AutoSize = true;
-            this.NoDesk_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoDesk_lbl.Location = new System.Drawing.Point(704, 42);
-            this.NoDesk_lbl.Name = "NoDesk_lbl";
-
-            this.NoDesk_lbl.Size = new System.Drawing.Size(94, 25);
-
-            this.NoDesk_lbl.Size = new System.Drawing.Size(106, 29);
-
-            this.NoDesk_lbl.TabIndex = 31;
-            this.NoDesk_lbl.Text = "NoDesk";
-            // 
-            // licensed_lbl
-            // 
-            this.licensed_lbl.AutoSize = true;
-            this.licensed_lbl.Location = new System.Drawing.Point(641, 67);
-            this.licensed_lbl.Name = "licensed_lbl";
-
-            this.licensed_lbl.Size = new System.Drawing.Size(157, 13);
-            this.licensed_lbl.TabIndex = 32;
-            this.licensed_lbl.Text = "Licensed to: The Garden Group";
-            // 
-            // dataGridView_incidentManagement
-            // 
-            this.dataGridView_incidentManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_incidentManagement.Location = new System.Drawing.Point(34, 111);
-            this.dataGridView_incidentManagement.Name = "dataGridView_incidentManagement";
-            this.dataGridView_incidentManagement.Size = new System.Drawing.Size(731, 314);
-            this.dataGridView_incidentManagement.TabIndex = 1;
-            // 
-            // filterByEmail_Lbl
-            // 
-            this.filterByEmail_Lbl.AutoSize = true;
-            this.filterByEmail_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.filterByEmail_Lbl.Location = new System.Drawing.Point(39, 73);
-            this.filterByEmail_Lbl.Name = "filterByEmail_Lbl";
-            this.filterByEmail_Lbl.Size = new System.Drawing.Size(94, 16);
-            this.filterByEmail_Lbl.TabIndex = 2;
-            this.filterByEmail_Lbl.Text = "Filter by email:";
-            // 
-            // filterByEmailTextBox
-            // 
-            this.filterByEmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.filterByEmailTextBox.Location = new System.Drawing.Point(134, 70);
-            this.filterByEmailTextBox.Name = "filterByEmailTextBox";
-            this.filterByEmailTextBox.Size = new System.Drawing.Size(241, 22);
-            this.filterByEmailTextBox.TabIndex = 3;
-            // 
-            // addNewIncidentBtn
-            // 
-            this.addNewIncidentBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.addNewIncidentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNewIncidentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewIncidentBtn.Location = new System.Drawing.Point(611, 54);
-            this.addNewIncidentBtn.Name = "addNewIncidentBtn";
-            this.addNewIncidentBtn.Size = new System.Drawing.Size(154, 43);
-            this.addNewIncidentBtn.TabIndex = 5;
-            this.addNewIncidentBtn.Text = "+ ADD NEW INCIDENT";
-            this.addNewIncidentBtn.UseVisualStyleBackColor = false;
-            this.addNewIncidentBtn.Click += new System.EventHandler(this.addNewIncidentBtn_Click);
-            // 
-            // reported_Lbl
-            // 
-            this.reported_Lbl.AutoSize = true;
-            this.reported_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.reported_Lbl.Location = new System.Drawing.Point(31, 69);
-            this.reported_Lbl.Name = "reported_Lbl";
-            this.reported_Lbl.Size = new System.Drawing.Size(123, 16);
-            this.reported_Lbl.TabIndex = 1;
-            this.reported_Lbl.Text = "Date/time reported:";
-            // 
-            // subject_Lbl
-            // 
-            this.subject_Lbl.AutoSize = true;
-            this.subject_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.subject_Lbl.Location = new System.Drawing.Point(31, 96);
-            this.subject_Lbl.Name = "subject_Lbl";
-            this.subject_Lbl.Size = new System.Drawing.Size(119, 16);
-            this.subject_Lbl.TabIndex = 2;
-            this.subject_Lbl.Text = "Subject of incident:";
-            // 
-            // typeOfIncident_Lbl
-            // 
-            this.typeOfIncident_Lbl.AutoSize = true;
-            this.typeOfIncident_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.typeOfIncident_Lbl.Location = new System.Drawing.Point(31, 125);
-            this.typeOfIncident_Lbl.Name = "typeOfIncident_Lbl";
-            this.typeOfIncident_Lbl.Size = new System.Drawing.Size(106, 16);
-            this.typeOfIncident_Lbl.TabIndex = 3;
-            this.typeOfIncident_Lbl.Text = "Type of incident:";
-            // 
-            // reportedBy_Lbl
-            // 
-            this.reportedBy_Lbl.AutoSize = true;
-            this.reportedBy_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.reportedBy_Lbl.Location = new System.Drawing.Point(31, 152);
-            this.reportedBy_Lbl.Name = "reportedBy_Lbl";
-            this.reportedBy_Lbl.Size = new System.Drawing.Size(115, 16);
-            this.reportedBy_Lbl.TabIndex = 4;
-            this.reportedBy_Lbl.Text = "Reported by user:";
-            // 
-            // priority_Lbl
-            // 
-            this.priority_Lbl.AutoSize = true;
-            this.priority_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.priority_Lbl.Location = new System.Drawing.Point(31, 181);
-            this.priority_Lbl.Name = "priority_Lbl";
-            this.priority_Lbl.Size = new System.Drawing.Size(52, 16);
-            this.priority_Lbl.TabIndex = 5;
-            this.priority_Lbl.Text = "Priority:";
-            // 
-            // deadlineFollowup_Lbl
-            // 
-            this.deadlineFollowup_Lbl.AutoSize = true;
-            this.deadlineFollowup_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.deadlineFollowup_Lbl.Location = new System.Drawing.Point(31, 213);
-            this.deadlineFollowup_Lbl.Name = "deadlineFollowup_Lbl";
-            this.deadlineFollowup_Lbl.Size = new System.Drawing.Size(122, 16);
-            this.deadlineFollowup_Lbl.TabIndex = 6;
-            this.deadlineFollowup_Lbl.Text = "Deadline/follow up:";
-            // 
-            // description_Lbl
-            // 
-            this.description_Lbl.AutoSize = true;
-            this.description_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.description_Lbl.Location = new System.Drawing.Point(31, 243);
-            this.description_Lbl.Name = "description_Lbl";
-            this.description_Lbl.Size = new System.Drawing.Size(79, 16);
-            this.description_Lbl.TabIndex = 7;
-            this.description_Lbl.Text = "Description:";
-            // 
-            // selectDataComboBox
-            // 
-            this.selectDataComboBox.FormattingEnabled = true;
-            this.selectDataComboBox.Items.AddRange(new object[] {
-            "random",
-            "random2"});
-            this.selectDataComboBox.Location = new System.Drawing.Point(185, 68);
-            this.selectDataComboBox.Name = "selectDataComboBox";
-            this.selectDataComboBox.Size = new System.Drawing.Size(246, 21);
-            this.selectDataComboBox.TabIndex = 9;
-            // 
-            // selectTypeComboBox
-            // 
-            this.selectTypeComboBox.FormattingEnabled = true;
-            this.selectTypeComboBox.Items.AddRange(new object[] {
-            "Select type",
-            "Hardware",
-            "Service"});
-            this.selectTypeComboBox.Location = new System.Drawing.Point(185, 124);
-            this.selectTypeComboBox.Name = "selectTypeComboBox";
-            this.selectTypeComboBox.Size = new System.Drawing.Size(246, 21);
-            this.selectTypeComboBox.TabIndex = 10;
-            // 
-            // reportedByComboBox
-            // 
-            this.reportedByComboBox.FormattingEnabled = true;
-            this.reportedByComboBox.Items.AddRange(new object[] {
-            "Hank",
-            "Pete",
-            "Claus",
-            "Xynaria",
-            "Thijs"});
-            this.reportedByComboBox.Location = new System.Drawing.Point(185, 151);
-            this.reportedByComboBox.Name = "reportedByComboBox";
-            this.reportedByComboBox.Size = new System.Drawing.Size(246, 21);
-            this.reportedByComboBox.TabIndex = 11;
-            // 
-            // priorityComboBox
-            // 
-            this.priorityComboBox.FormattingEnabled = true;
-            this.priorityComboBox.Items.AddRange(new object[] {
-            "Low",
-            "Normal",
-            "High"});
-            this.priorityComboBox.Location = new System.Drawing.Point(185, 180);
-            this.priorityComboBox.Name = "priorityComboBox";
-            this.priorityComboBox.Size = new System.Drawing.Size(246, 21);
-            this.priorityComboBox.TabIndex = 12;
-            // 
-            // followUpComboBox
-            // 
-            this.followUpComboBox.FormattingEnabled = true;
-            this.followUpComboBox.Items.AddRange(new object[] {
-            "7 days",
-            "14 days",
-            "28 days",
-            "6 months"});
-            this.followUpComboBox.Location = new System.Drawing.Point(185, 212);
-            this.followUpComboBox.Name = "followUpComboBox";
-            this.followUpComboBox.Size = new System.Drawing.Size(246, 21);
-            this.followUpComboBox.TabIndex = 13;
-            // 
-            // incidentSubjectTextBox
-            // 
-            this.incidentSubjectTextBox.Location = new System.Drawing.Point(185, 95);
-            this.incidentSubjectTextBox.Name = "incidentSubjectTextBox";
-            this.incidentSubjectTextBox.Size = new System.Drawing.Size(246, 20);
-            this.incidentSubjectTextBox.TabIndex = 14;
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(185, 243);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(246, 132);
-            this.descriptionTextBox.TabIndex = 15;
+            this.IMError_lbl.AutoSize = true;
+            this.IMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.IMError_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.IMError_lbl.Location = new System.Drawing.Point(287, 35);
+            this.IMError_lbl.Name = "IMError_lbl";
+            this.IMError_lbl.Size = new System.Drawing.Size(46, 18);
+            this.IMError_lbl.TabIndex = 19;
+            this.IMError_lbl.Text = "label2";
             // 
             // addIncidentBtn
             // 
@@ -1114,94 +770,181 @@
             this.cancelIncidentCreateBtn.UseVisualStyleBackColor = true;
             this.cancelIncidentCreateBtn.Click += new System.EventHandler(this.cancelIncidentCreateBtn_Click);
             // 
-            // IMError_lbl
+            // descriptionTextBox
             // 
-            this.IMError_lbl.AutoSize = true;
-            this.IMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.IMError_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.IMError_lbl.Location = new System.Drawing.Point(287, 35);
-            this.IMError_lbl.Name = "IMError_lbl";
-            this.IMError_lbl.Size = new System.Drawing.Size(45, 16);
-            this.IMError_lbl.TabIndex = 19;
-            this.IMError_lbl.Text = "label2";
-
+            this.descriptionTextBox.Location = new System.Drawing.Point(185, 243);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(246, 132);
+            this.descriptionTextBox.TabIndex = 15;
+            // 
+            // incidentSubjectTextBox
+            // 
+            this.incidentSubjectTextBox.Location = new System.Drawing.Point(185, 95);
+            this.incidentSubjectTextBox.Name = "incidentSubjectTextBox";
+            this.incidentSubjectTextBox.Size = new System.Drawing.Size(246, 20);
+            this.incidentSubjectTextBox.TabIndex = 14;
+            // 
+            // followUpComboBox
+            // 
+            this.followUpComboBox.FormattingEnabled = true;
+            this.followUpComboBox.Items.AddRange(new object[] {
+            "7 days",
+            "14 days",
+            "28 days",
+            "6 months"});
+            this.followUpComboBox.Location = new System.Drawing.Point(185, 212);
+            this.followUpComboBox.Name = "followUpComboBox";
+            this.followUpComboBox.Size = new System.Drawing.Size(246, 21);
+            this.followUpComboBox.TabIndex = 13;
+            // 
+            // priorityComboBox
+            // 
+            this.priorityComboBox.FormattingEnabled = true;
+            this.priorityComboBox.Items.AddRange(new object[] {
+            "Low",
+            "Normal",
+            "High"});
+            this.priorityComboBox.Location = new System.Drawing.Point(185, 180);
+            this.priorityComboBox.Name = "priorityComboBox";
+            this.priorityComboBox.Size = new System.Drawing.Size(246, 21);
+            this.priorityComboBox.TabIndex = 12;
+            // 
+            // reportedByComboBox
+            // 
+            this.reportedByComboBox.FormattingEnabled = true;
+            this.reportedByComboBox.Items.AddRange(new object[] {
+            "Hank",
+            "Pete",
+            "Claus",
+            "Xynaria",
+            "Thijs"});
+            this.reportedByComboBox.Location = new System.Drawing.Point(185, 151);
+            this.reportedByComboBox.Name = "reportedByComboBox";
+            this.reportedByComboBox.Size = new System.Drawing.Size(246, 21);
+            this.reportedByComboBox.TabIndex = 11;
+            // 
+            // selectTypeComboBox
+            // 
+            this.selectTypeComboBox.FormattingEnabled = true;
+            this.selectTypeComboBox.Items.AddRange(new object[] {
+            "Select type",
+            "Hardware",
+            "Service"});
+            this.selectTypeComboBox.Location = new System.Drawing.Point(185, 124);
+            this.selectTypeComboBox.Name = "selectTypeComboBox";
+            this.selectTypeComboBox.Size = new System.Drawing.Size(246, 21);
+            this.selectTypeComboBox.TabIndex = 10;
+            // 
+            // selectDataComboBox
+            // 
+            this.selectDataComboBox.FormattingEnabled = true;
+            this.selectDataComboBox.Items.AddRange(new object[] {
+            "random",
+            "random2"});
+            this.selectDataComboBox.Location = new System.Drawing.Point(185, 68);
+            this.selectDataComboBox.Name = "selectDataComboBox";
+            this.selectDataComboBox.Size = new System.Drawing.Size(246, 21);
+            this.selectDataComboBox.TabIndex = 9;
+            // 
+            // description_Lbl
+            // 
+            this.description_Lbl.AutoSize = true;
+            this.description_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.description_Lbl.Location = new System.Drawing.Point(31, 243);
+            this.description_Lbl.Name = "description_Lbl";
+            this.description_Lbl.Size = new System.Drawing.Size(87, 18);
+            this.description_Lbl.TabIndex = 7;
+            this.description_Lbl.Text = "Description:";
+            // 
+            // deadlineFollowup_Lbl
+            // 
+            this.deadlineFollowup_Lbl.AutoSize = true;
+            this.deadlineFollowup_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.deadlineFollowup_Lbl.Location = new System.Drawing.Point(31, 213);
+            this.deadlineFollowup_Lbl.Name = "deadlineFollowup_Lbl";
+            this.deadlineFollowup_Lbl.Size = new System.Drawing.Size(132, 18);
+            this.deadlineFollowup_Lbl.TabIndex = 6;
+            this.deadlineFollowup_Lbl.Text = "Deadline/follow up:";
+            // 
+            // priority_Lbl
+            // 
+            this.priority_Lbl.AutoSize = true;
+            this.priority_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.priority_Lbl.Location = new System.Drawing.Point(31, 181);
+            this.priority_Lbl.Name = "priority_Lbl";
+            this.priority_Lbl.Size = new System.Drawing.Size(58, 18);
+            this.priority_Lbl.TabIndex = 5;
+            this.priority_Lbl.Text = "Priority:";
+            // 
+            // reportedBy_Lbl
+            // 
+            this.reportedBy_Lbl.AutoSize = true;
+            this.reportedBy_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.reportedBy_Lbl.Location = new System.Drawing.Point(31, 152);
+            this.reportedBy_Lbl.Name = "reportedBy_Lbl";
+            this.reportedBy_Lbl.Size = new System.Drawing.Size(125, 18);
+            this.reportedBy_Lbl.TabIndex = 4;
+            this.reportedBy_Lbl.Text = "Reported by user:";
+            // 
+            // typeOfIncident_Lbl
+            // 
+            this.typeOfIncident_Lbl.AutoSize = true;
+            this.typeOfIncident_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.typeOfIncident_Lbl.Location = new System.Drawing.Point(31, 125);
+            this.typeOfIncident_Lbl.Name = "typeOfIncident_Lbl";
+            this.typeOfIncident_Lbl.Size = new System.Drawing.Size(115, 18);
+            this.typeOfIncident_Lbl.TabIndex = 3;
+            this.typeOfIncident_Lbl.Text = "Type of incident:";
+            // 
+            // subject_Lbl
+            // 
+            this.subject_Lbl.AutoSize = true;
+            this.subject_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.subject_Lbl.Location = new System.Drawing.Point(31, 96);
+            this.subject_Lbl.Name = "subject_Lbl";
+            this.subject_Lbl.Size = new System.Drawing.Size(132, 18);
+            this.subject_Lbl.TabIndex = 2;
+            this.subject_Lbl.Text = "Subject of incident:";
+            // 
+            // reported_Lbl
+            // 
+            this.reported_Lbl.AutoSize = true;
+            this.reported_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.reported_Lbl.Location = new System.Drawing.Point(31, 69);
+            this.reported_Lbl.Name = "reported_Lbl";
+            this.reported_Lbl.Size = new System.Drawing.Size(134, 18);
+            this.reported_Lbl.TabIndex = 1;
+            this.reported_Lbl.Text = "Date/time reported:";
+            // 
+            // createIncident_lbl
+            // 
+            this.createIncident_lbl.AutoSize = true;
+            this.createIncident_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createIncident_lbl.Location = new System.Drawing.Point(29, 25);
+            this.createIncident_lbl.Name = "createIncident_lbl";
+            this.createIncident_lbl.Size = new System.Drawing.Size(250, 29);
+            this.createIncident_lbl.TabIndex = 0;
+            this.createIncident_lbl.Text = "Create New Incident";
+            // 
+            // NoDesk_lbl
+            // 
+            this.NoDesk_lbl.AutoSize = true;
+            this.NoDesk_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoDesk_lbl.Location = new System.Drawing.Point(704, 42);
+            this.NoDesk_lbl.Name = "NoDesk_lbl";
+            this.NoDesk_lbl.Size = new System.Drawing.Size(106, 29);
+            this.NoDesk_lbl.TabIndex = 31;
+            this.NoDesk_lbl.Text = "NoDesk";
+            // 
+            // licensed_lbl
+            // 
+            this.licensed_lbl.AutoSize = true;
+            this.licensed_lbl.Location = new System.Drawing.Point(641, 67);
+            this.licensed_lbl.Name = "licensed_lbl";
             this.licensed_lbl.Size = new System.Drawing.Size(178, 15);
             this.licensed_lbl.TabIndex = 32;
             this.licensed_lbl.Text = "Licensed to: The Garden Group";
-            // 
-            // circularProgressBar_Prior
-            // 
-            this.circularProgressBar_Prior.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar_Prior.AnimationSpeed = 500;
-            this.circularProgressBar_Prior.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar_Prior.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar_Prior.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar_Prior.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar_Prior.InnerMargin = 2;
-            this.circularProgressBar_Prior.InnerWidth = -1;
-            this.circularProgressBar_Prior.Location = new System.Drawing.Point(515, 95);
-            this.circularProgressBar_Prior.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar_Prior.Name = "circularProgressBar_Prior";
-            this.circularProgressBar_Prior.OuterColor = System.Drawing.Color.Gray;
-            this.circularProgressBar_Prior.OuterMargin = -25;
-            this.circularProgressBar_Prior.OuterWidth = 26;
-            this.circularProgressBar_Prior.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.circularProgressBar_Prior.ProgressWidth = 25;
-            this.circularProgressBar_Prior.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar_Prior.Size = new System.Drawing.Size(211, 212);
-            this.circularProgressBar_Prior.StartAngle = 270;
-            this.circularProgressBar_Prior.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar_Prior.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar_Prior.SubscriptText = ".23";
-            this.circularProgressBar_Prior.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar_Prior.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar_Prior.SuperscriptText = "°C";
-            this.circularProgressBar_Prior.TabIndex = 27;
-            this.circularProgressBar_Prior.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.circularProgressBar_Prior.Value = 68;
-            // 
-            // label_Prior
-            // 
-            this.label_Prior.AutoSize = true;
-            this.label_Prior.Location = new System.Drawing.Point(570, 77);
-            this.label_Prior.Name = "label_Prior";
-            this.label_Prior.Size = new System.Drawing.Size(96, 15);
-            this.label_Prior.TabIndex = 28;
-            this.label_Prior.Text = "Priority Incidents\r\n";
-            // 
-            // button_LowPrior
-            // 
-            this.button_LowPrior.BackColor = System.Drawing.Color.Yellow;
-            this.button_LowPrior.Location = new System.Drawing.Point(544, 326);
-            this.button_LowPrior.Name = "button_LowPrior";
-            this.button_LowPrior.Size = new System.Drawing.Size(40, 23);
-            this.button_LowPrior.TabIndex = 29;
-            this.button_LowPrior.Text = "Low";
-            this.button_LowPrior.UseVisualStyleBackColor = false;
-            this.button_LowPrior.Click += new System.EventHandler(this.button_LowPrior_Click);
-            // 
-            // button_MedPrior
-            // 
-            this.button_MedPrior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button_MedPrior.Location = new System.Drawing.Point(605, 326);
-            this.button_MedPrior.Name = "button_MedPrior";
-            this.button_MedPrior.Size = new System.Drawing.Size(40, 23);
-            this.button_MedPrior.TabIndex = 30;
-            this.button_MedPrior.Text = "Med";
-            this.button_MedPrior.UseVisualStyleBackColor = false;
-            this.button_MedPrior.Click += new System.EventHandler(this.button_MedPrior_Click);
-            // 
-            // button_HighPrior
-            // 
-            this.button_HighPrior.BackColor = System.Drawing.Color.Red;
-            this.button_HighPrior.Location = new System.Drawing.Point(663, 326);
-            this.button_HighPrior.Name = "button_HighPrior";
-            this.button_HighPrior.Size = new System.Drawing.Size(44, 23);
-            this.button_HighPrior.TabIndex = 31;
-            this.button_HighPrior.Text = "High";
-            this.button_HighPrior.UseVisualStyleBackColor = false;
-            this.button_HighPrior.Click += new System.EventHandler(this.button_HighPrior_Click);
-
             // 
             // Dashboard
             // 
@@ -1215,17 +958,11 @@
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.label_dashboard);
             this.Controls.Add(this.licensed_lbl);
-
-            this.Controls.Add(this.NoDesk_lbl);
-            this.Controls.Add(this.createIncident_panel);
-
             this.Controls.Add(this.createUser_panel);
             this.Controls.Add(this.NoDesk_lbl);
             this.Controls.Add(this.incidentManagement_panel);
-
             this.Controls.Add(this.userManagement_panel);
             this.Controls.Add(this.createIncident_panel);
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -1237,11 +974,11 @@
             this.createUser_panel.PerformLayout();
             this.incidentManagement_panel.ResumeLayout(false);
             this.incidentManagement_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_incidentManagement)).EndInit();
             this.dashboard_panel.ResumeLayout(false);
             this.dashboard_panel.PerformLayout();
             this.createIncident_panel.ResumeLayout(false);
             this.createIncident_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_incidentManagement)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1318,7 +1055,7 @@
         private System.Windows.Forms.Button button_MedPrior;
         private System.Windows.Forms.Button button_LowPrior;
         private System.Windows.Forms.Label label_Prior;
-        private CircularProgressBar.CircularProgressBar circularProgressBar_Prior;
+        private CircularProgressBar.CircularProgressBar progress_priority;
 
     }
 }

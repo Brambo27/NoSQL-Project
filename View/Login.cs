@@ -17,6 +17,7 @@ namespace View
 {
     public partial class Login : Form
     {
+        List<User> users;
         //Initializing and setting user data in app settings if remember me was checked on previous login
         public Login()
         {
@@ -26,6 +27,8 @@ namespace View
                 textBox_Username.Text = Properties.Settings.Default.Username;
                 textBox_Password.Text = Properties.Settings.Default.Password;
             }
+            textBox_Password.PasswordChar = '*';
+            users = Model.Model.getAll<User>("Users");
         }
 
         //Handling user input and checking for valid fields in database for confirmation
@@ -37,24 +40,33 @@ namespace View
 
             if (inputUsername == "" || inputPassword == "")
             {
-                warning = "Empty Fields";
+                warning = "Empty Fields.";
             }
             else
             {
-                FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("Name", inputUsername);
-                User user = new User().SelectWhere<User>(filter);
-                if(user == null)
+                foreach (User u in users)
                 {
-                    warning = "User not found.";
-                    textBox_Username.Text = "";
-                }
-                else
-                {
-                    if(user.password == inputPassword)
-                        warning = "Success.";
+                    if(u.name == inputUsername)
+                    {
+                        if(u.password == inputPassword)
+                        {
+                            Dashboard dashboard = new Dashboard(u);
+                            this.Close();
+                            dashboard.Show();
+                            break;
+                        }
+                        else
+                        {
+                            warning = "Password incorrect.";
+                            break;
+                        }
+                    }
                     else
-                        warning = "Password incorrect.";
-                }
+                    {
+                        warning = "User not found.";
+                        textBox_Username.Text = "";
+                    }   
+                }           
 
                 if (checkBox_Remember.Checked)
                 {
@@ -69,6 +81,7 @@ namespace View
                     Properties.Settings.Default.Save();
                 }
             }
+
             textBox_Password.Text = "";
             label_Warning.Text = warning;
         }
@@ -77,19 +90,20 @@ namespace View
         private void button_RequestPass_Click(object sender, EventArgs e)
         {
             string requestEmail = textBox_ForgotEmail.Text;
-            FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("Email", requestEmail);
-            User user = new User().SelectWhere<User>(filter);
-            if (user == null)
+            foreach(User u in users)
             {
-                label_Warning.Text = "Email not found, please try again.";
-            }
-            else
-            {
-                panel_forgot.Hide();
-                string newPass = CreatePassword(10);
-                label_Warning.Text = "We've send you an email with an updated password.";
-                Model.Email.emailPassword(user.email, user.name, newPass);
-                panel_forgot.Hide();
+                if(u.email == requestEmail)
+                {
+                    panel_forgot.Hide();
+                    string newPass = CreatePassword(10);
+                    label_Warning.Text = "We've send you an email with an updated password.";
+                    Model.Email.emailPassword(u.email, u.name, newPass);
+                    panel_forgot.Hide();
+                }
+                else
+                {
+                    label_Warning.Text = "Email not found, please try again.";
+                }
             }
         }
 
