@@ -22,8 +22,6 @@ namespace View
         {
             InitializeComponent();
             this.currentUser = currentUser;
-            //var deleteFilter = Builders<BsonDocument>.Filter.Eq("IncidentID", "1");
-            //Model.Model.deleteDocument("Incidents", deleteFilter);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -96,10 +94,10 @@ namespace View
         static DataTable getTableIncidents()
         {
             DataTable table = new DataTable();
-            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("ID", typeof(string));
             table.Columns.Add("Subject", typeof(string));
             table.Columns.Add("User", typeof(string));
-            table.Columns.Add("Date", typeof(string));
+            table.Columns.Add("Date", typeof(DateTime));
             table.Columns.Add("Status", typeof(string));
 
             List<Incident> incidents = Model.Model.getAll<Incident>("Incidents");
@@ -244,17 +242,23 @@ namespace View
         private void addIncident(List<string> data)
         {
             List<Incident> incidents = Model.Model.getAll<Incident>("Incidents");
-            int incidentID = incidents.Count + 1;
-            var incident1 = new BsonDocument
+            Incident incident1 = new Incident
             {
-                {"createdAt", data[0] },
-                {"Subject", data[1] },
-                {"Type", data[2] },
-                {"ReportedBy", data[3] },
-                {"Priority", data[4] },
-                {"Deadline", data[5] },
-                {"Description", data[6] },
-                {"IncidentID", incidentID.ToString() },
+                createdAt = dateReportedDateTimePicker.Value,
+                subject = data[1],
+                type = data[2],
+                reportedBy = data[3],
+
+
+
+
+                //{"createdAt", data[0] },
+                //{"subject", data[1] },
+                //{"type", data[2] },
+                //{"reportedBy", data[3] },
+                //{"priority", data[4] },
+                //{"deadline", data[5] },
+                //{"description", data[6] },
             };
 
             Model.Model.insertIntoCollection("Incidents", incident1);
@@ -283,7 +287,7 @@ namespace View
             IMError_lbl.Text = "";
 
             // error checks
-            if (selectDataComboBox.Text == "")
+            if (dateReportedDateTimePicker.Text == "")
             {
                 IMError_lbl.Text = "Please select a date.";
             }
@@ -314,7 +318,7 @@ namespace View
 
             if (IMError_lbl.Text == "")
             {
-                incident.Add(selectDataComboBox.Text);
+                incident.Add(dateReportedDateTimePicker.Text);
                 incident.Add(incidentSubjectTextBox.Text);
                 incident.Add(selectTypeComboBox.Text);
                 incident.Add(reportedByComboBox.Text);

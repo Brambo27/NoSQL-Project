@@ -16,7 +16,8 @@ namespace View
         [STAThread]
         static void Main()
         {
-
+            var deleteFilter = Builders<BsonDocument>.Filter.Eq("description", "test");
+            Model.Model.deleteDocument("Incidents", deleteFilter);
 
 
             //Random rand = new Random(); // we need a random variable to select names randomly
