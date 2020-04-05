@@ -22,6 +22,16 @@ namespace View
         {
             InitializeComponent();
             this.currentUser = currentUser;
+<<<<<<< HEAD
+=======
+
+            if (currentUser.userType == User.UserType.Admin)
+            {
+                openBackupToolBtn.Show();
+            }
+            //var deleteFilter = Builders<BsonDocument>.Filter.Eq("IncidentID", "1");
+            //Model.Model.deleteDocument("Incidents", deleteFilter);
+>>>>>>> cfb73121685a9d086d4194b145939bec38c27115
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -599,6 +609,11 @@ namespace View
 
             update = Builders<BsonDocument>.Update.Set("reportedBy", user.name);
             var incident = new BsonDocument { { "reportedBy", data[0] + " " + data[1] } };      
+        }
+
+        private void openBackupToolBtn_Click(object sender, EventArgs e)
+        {
+            Application.Run(new AdminPanel());
         }
     }
 }
