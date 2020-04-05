@@ -37,6 +37,9 @@
             this.label_unresolved = new System.Windows.Forms.Label();
             this.label_deadline = new System.Windows.Forms.Label();
             this.userManagement_panel = new System.Windows.Forms.Panel();
+            this.editUser_btn = new System.Windows.Forms.Button();
+            this.deleteUser_btn = new System.Windows.Forms.Button();
+            this.viewUser_btn = new System.Windows.Forms.Button();
             this.addUser_btn = new System.Windows.Forms.Button();
             this.userFilter_txt = new System.Windows.Forms.TextBox();
             this.userFilter_lbl = new System.Windows.Forms.Label();
@@ -53,7 +56,7 @@
             this.email_txt = new System.Windows.Forms.TextBox();
             this.lastName_txt = new System.Windows.Forms.TextBox();
             this.firstName_txt = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.sendPW_lbl = new System.Windows.Forms.Label();
             this.location_lbl = new System.Windows.Forms.Label();
             this.phoneNumber_lbl = new System.Windows.Forms.Label();
             this.email_lbl = new System.Windows.Forms.Label();
@@ -72,6 +75,7 @@
             this.label_Prior = new System.Windows.Forms.Label();
             this.progress_priority = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.dashboardCurrentIncidents_lbl = new System.Windows.Forms.Label();
             this.menuDashboard_btn = new System.Windows.Forms.Button();
             this.menuUserManagement_btn = new System.Windows.Forms.Button();
             this.menuIncidentManagement_btn = new System.Windows.Forms.Button();
@@ -95,9 +99,14 @@
             this.createIncident_lbl = new System.Windows.Forms.Label();
             this.NoDesk_lbl = new System.Windows.Forms.Label();
             this.licensed_lbl = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.dateReportedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.filterByEmail_Lbl = new System.Windows.Forms.Label();
             this.filterByEmailTextBox = new System.Windows.Forms.TextBox();
+=======
+            this.editUserConfirm_btn = new System.Windows.Forms.Button();
+            this.userId_txt = new System.Windows.Forms.TextBox();
+>>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
             this.userManagement_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).BeginInit();
             this.createUser_panel.SuspendLayout();
@@ -211,6 +220,9 @@
             // 
             // userManagement_panel
             // 
+            this.userManagement_panel.Controls.Add(this.editUser_btn);
+            this.userManagement_panel.Controls.Add(this.deleteUser_btn);
+            this.userManagement_panel.Controls.Add(this.viewUser_btn);
             this.userManagement_panel.Controls.Add(this.addUser_btn);
             this.userManagement_panel.Controls.Add(this.userFilter_txt);
             this.userManagement_panel.Controls.Add(this.userFilter_lbl);
@@ -220,6 +232,43 @@
             this.userManagement_panel.Name = "userManagement_panel";
             this.userManagement_panel.Size = new System.Drawing.Size(800, 452);
             this.userManagement_panel.TabIndex = 26;
+            // 
+            // editUser_btn
+            // 
+            this.editUser_btn.BackColor = System.Drawing.Color.Khaki;
+            this.editUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editUser_btn.Location = new System.Drawing.Point(180, 401);
+            this.editUser_btn.Name = "editUser_btn";
+            this.editUser_btn.Size = new System.Drawing.Size(108, 30);
+            this.editUser_btn.TabIndex = 7;
+            this.editUser_btn.Text = "Edit User";
+            this.editUser_btn.UseVisualStyleBackColor = false;
+            this.editUser_btn.Click += new System.EventHandler(this.editUser_btn_Click);
+            // 
+            // deleteUser_btn
+            // 
+            this.deleteUser_btn.BackColor = System.Drawing.Color.Red;
+            this.deleteUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteUser_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.deleteUser_btn.Location = new System.Drawing.Point(314, 401);
+            this.deleteUser_btn.Name = "deleteUser_btn";
+            this.deleteUser_btn.Size = new System.Drawing.Size(108, 30);
+            this.deleteUser_btn.TabIndex = 6;
+            this.deleteUser_btn.Text = "Delete User";
+            this.deleteUser_btn.UseVisualStyleBackColor = false;
+            this.deleteUser_btn.Click += new System.EventHandler(this.deleteUser_btn_Click);
+            // 
+            // viewUser_btn
+            // 
+            this.viewUser_btn.BackColor = System.Drawing.Color.SkyBlue;
+            this.viewUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewUser_btn.Location = new System.Drawing.Point(37, 401);
+            this.viewUser_btn.Name = "viewUser_btn";
+            this.viewUser_btn.Size = new System.Drawing.Size(108, 30);
+            this.viewUser_btn.TabIndex = 5;
+            this.viewUser_btn.Text = "View User";
+            this.viewUser_btn.UseVisualStyleBackColor = false;
+            this.viewUser_btn.Click += new System.EventHandler(this.viewUser_btn_Click);
             // 
             // addUser_btn
             // 
@@ -279,9 +328,11 @@
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView_userManagement.Location = new System.Drawing.Point(34, 111);
+            this.dataGridView_userManagement.MultiSelect = false;
             this.dataGridView_userManagement.Name = "dataGridView_userManagement";
             this.dataGridView_userManagement.ReadOnly = true;
-            this.dataGridView_userManagement.Size = new System.Drawing.Size(720, 331);
+            this.dataGridView_userManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_userManagement.Size = new System.Drawing.Size(720, 284);
             this.dataGridView_userManagement.TabIndex = 1;
             // 
             // userManagement_lbl
@@ -296,6 +347,8 @@
             // 
             // createUser_panel
             // 
+            this.createUser_panel.Controls.Add(this.userId_txt);
+            this.createUser_panel.Controls.Add(this.editUserConfirm_btn);
             this.createUser_panel.Controls.Add(this.UMError_lbl);
             this.createUser_panel.Controls.Add(this.createUserConfirm_btn);
             this.createUser_panel.Controls.Add(this.createUserCancel_btn);
@@ -306,7 +359,7 @@
             this.createUser_panel.Controls.Add(this.email_txt);
             this.createUser_panel.Controls.Add(this.lastName_txt);
             this.createUser_panel.Controls.Add(this.firstName_txt);
-            this.createUser_panel.Controls.Add(this.label7);
+            this.createUser_panel.Controls.Add(this.sendPW_lbl);
             this.createUser_panel.Controls.Add(this.location_lbl);
             this.createUser_panel.Controls.Add(this.phoneNumber_lbl);
             this.createUser_panel.Controls.Add(this.email_lbl);
@@ -314,7 +367,7 @@
             this.createUser_panel.Controls.Add(this.lastName_lbl);
             this.createUser_panel.Controls.Add(this.firstName_lbl);
             this.createUser_panel.Controls.Add(this.addUser_lbl);
-            this.createUser_panel.Location = new System.Drawing.Point(0, 102);
+            this.createUser_panel.Location = new System.Drawing.Point(2, 103);
             this.createUser_panel.Name = "createUser_panel";
             this.createUser_panel.Size = new System.Drawing.Size(800, 449);
             this.createUser_panel.TabIndex = 27;
@@ -375,10 +428,6 @@
             "Haarlem",
             "Amsterdam",
             "Knuppeldam",
-            "Headquarters (HQ)",
-            "Haarlem",
-            "Amsterdam",
-            "Knuppeldam",
             "Headquarters (HQ)"});
             this.comboBox_location.Location = new System.Drawing.Point(222, 253);
             this.comboBox_location.Name = "comboBox_location";
@@ -392,9 +441,7 @@
             this.comboBox_userType.FormattingEnabled = true;
             this.comboBox_userType.Items.AddRange(new object[] {
             "Employee",
-            "Service desk employee",
-            "Employee",
-            "Service desk employee"});
+            "Admin"});
             this.comboBox_userType.Location = new System.Drawing.Point(222, 143);
             this.comboBox_userType.Name = "comboBox_userType";
             this.comboBox_userType.Size = new System.Drawing.Size(297, 24);
@@ -433,8 +480,9 @@
             this.firstName_txt.Size = new System.Drawing.Size(297, 22);
             this.firstName_txt.TabIndex = 8;
             // 
-            // label7
+            // sendPW_lbl
             // 
+<<<<<<< HEAD
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(36, 293);
@@ -442,6 +490,15 @@
             this.label7.Size = new System.Drawing.Size(109, 16);
             this.label7.TabIndex = 7;
             this.label7.Text = "Send password?";
+=======
+            this.sendPW_lbl.AutoSize = true;
+            this.sendPW_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendPW_lbl.Location = new System.Drawing.Point(36, 293);
+            this.sendPW_lbl.Name = "sendPW_lbl";
+            this.sendPW_lbl.Size = new System.Drawing.Size(109, 16);
+            this.sendPW_lbl.TabIndex = 7;
+            this.sendPW_lbl.Text = "Send password?";
+>>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
             // 
             // location_lbl
             // 
@@ -520,7 +577,7 @@
             this.incidentManagement_panel.Controls.Add(this.filterByEmail_Lbl);
             this.incidentManagement_panel.Controls.Add(this.dataGridView_incidentManagement);
             this.incidentManagement_panel.Controls.Add(this.incidentManagement_lbl);
-            this.incidentManagement_panel.Location = new System.Drawing.Point(2, 105);
+            this.incidentManagement_panel.Location = new System.Drawing.Point(-1, 103);
             this.incidentManagement_panel.Name = "incidentManagement_panel";
             this.incidentManagement_panel.Size = new System.Drawing.Size(800, 452);
             this.incidentManagement_panel.TabIndex = 1;
@@ -565,6 +622,7 @@
             this.dashboard_panel.Controls.Add(this.label_Prior);
             this.dashboard_panel.Controls.Add(this.progress_priority);
             this.dashboard_panel.Controls.Add(this.label1);
+            this.dashboard_panel.Controls.Add(this.dashboardCurrentIncidents_lbl);
             this.dashboard_panel.Controls.Add(this.label_deadline);
             this.dashboard_panel.Controls.Add(this.label_unresolved);
             this.dashboard_panel.Controls.Add(this.progress_deadline);
@@ -657,6 +715,16 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Current incidents";
             // 
+            // dashboardCurrentIncidents_lbl
+            // 
+            this.dashboardCurrentIncidents_lbl.AutoSize = true;
+            this.dashboardCurrentIncidents_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardCurrentIncidents_lbl.Location = new System.Drawing.Point(33, 24);
+            this.dashboardCurrentIncidents_lbl.Name = "dashboardCurrentIncidents_lbl";
+            this.dashboardCurrentIncidents_lbl.Size = new System.Drawing.Size(192, 25);
+            this.dashboardCurrentIncidents_lbl.TabIndex = 26;
+            this.dashboardCurrentIncidents_lbl.Text = "Current incidents";
+            // 
             // menuDashboard_btn
             // 
             this.menuDashboard_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -710,10 +778,20 @@
             this.createIncident_panel.Controls.Add(this.subject_Lbl);
             this.createIncident_panel.Controls.Add(this.reported_Lbl);
             this.createIncident_panel.Controls.Add(this.createIncident_lbl);
-            this.createIncident_panel.Location = new System.Drawing.Point(2, 105);
+            this.createIncident_panel.Location = new System.Drawing.Point(3, 103);
             this.createIncident_panel.Name = "createIncident_panel";
             this.createIncident_panel.Size = new System.Drawing.Size(800, 452);
             this.createIncident_panel.TabIndex = 1;
+            // 
+            // createIncident_lbl
+            // 
+            this.createIncident_lbl.AutoSize = true;
+            this.createIncident_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createIncident_lbl.Location = new System.Drawing.Point(29, 25);
+            this.createIncident_lbl.Name = "createIncident_lbl";
+            this.createIncident_lbl.Size = new System.Drawing.Size(224, 25);
+            this.createIncident_lbl.TabIndex = 0;
+            this.createIncident_lbl.Text = "Create New Incident";
             // 
             // IMError_lbl
             // 
@@ -828,6 +906,21 @@
             this.description_Lbl.TabIndex = 7;
             this.description_Lbl.Text = "Description:";
             // 
+            // editUserConfirm_btn
+            // 
+            this.editUserConfirm_btn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.editUserConfirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editUserConfirm_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.editUserConfirm_btn.Location = new System.Drawing.Point(390, 342);
+            this.editUserConfirm_btn.Name = "editUserConfirm_btn";
+            this.editUserConfirm_btn.Size = new System.Drawing.Size(107, 55);
+            this.editUserConfirm_btn.TabIndex = 19;
+            this.editUserConfirm_btn.Text = "EDIT USER";
+            this.editUserConfirm_btn.UseVisualStyleBackColor = false;
+            this.editUserConfirm_btn.Visible = false;
+            this.editUserConfirm_btn.Click += new System.EventHandler(this.editUserConfirm_btn_Click);
+            // 
             // deadlineFollowup_Lbl
             // 
             this.deadlineFollowup_Lbl.AutoSize = true;
@@ -917,6 +1010,7 @@
             this.licensed_lbl.TabIndex = 32;
             this.licensed_lbl.Text = "Licensed to: The Garden Group";
             // 
+<<<<<<< HEAD
             // dateReportedDateTimePicker
             // 
             this.dateReportedDateTimePicker.CustomFormat = "dd/MM/yyyy hh:mm:ss";
@@ -944,6 +1038,18 @@
             this.filterByEmailTextBox.Name = "filterByEmailTextBox";
             this.filterByEmailTextBox.Size = new System.Drawing.Size(241, 22);
             this.filterByEmailTextBox.TabIndex = 3;
+=======
+            // userId_txt
+            // 
+            this.userId_txt.Enabled = false;
+            this.userId_txt.Location = new System.Drawing.Point(34, 344);
+            this.userId_txt.Name = "userId_txt";
+            this.userId_txt.ReadOnly = true;
+            this.userId_txt.Size = new System.Drawing.Size(100, 20);
+            this.userId_txt.TabIndex = 20;
+            this.userId_txt.Text = "[hidden textbox]";
+            this.userId_txt.Visible = false;
+>>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
             // 
             // Dashboard
             // 
@@ -962,6 +1068,12 @@
             this.Controls.Add(this.createUser_panel);
             this.Controls.Add(this.incidentManagement_panel);
             this.Controls.Add(this.userManagement_panel);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.dashboard_panel);
+            this.Controls.Add(this.incidentManagement_panel);
+            this.Controls.Add(this.createIncident_panel);
+>>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -1014,7 +1126,7 @@
         private System.Windows.Forms.TextBox email_txt;
         private System.Windows.Forms.TextBox lastName_txt;
         private System.Windows.Forms.TextBox firstName_txt;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label sendPW_lbl;
         private System.Windows.Forms.Label location_lbl;
         private System.Windows.Forms.Label phoneNumber_lbl;
         private System.Windows.Forms.Label email_lbl;
@@ -1052,8 +1164,18 @@
         private System.Windows.Forms.Button button_LowPrior;
         private System.Windows.Forms.Label label_Prior;
         private CircularProgressBar.CircularProgressBar progress_priority;
+<<<<<<< HEAD
         private System.Windows.Forms.DateTimePicker dateReportedDateTimePicker;
         private System.Windows.Forms.TextBox filterByEmailTextBox;
         private System.Windows.Forms.Label filterByEmail_Lbl;
+=======
+
+        private System.Windows.Forms.Label dashboardCurrentIncidents_lbl;
+        private System.Windows.Forms.Button editUser_btn;
+        private System.Windows.Forms.Button deleteUser_btn;
+        private System.Windows.Forms.Button viewUser_btn;
+        private System.Windows.Forms.Button editUserConfirm_btn;
+        private System.Windows.Forms.TextBox userId_txt;
+>>>>>>> be8754ff2d5bac6a386de3e1f225283038c61d69
     }
 }
