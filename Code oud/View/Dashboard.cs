@@ -36,9 +36,6 @@ namespace View
 
         private void progressValues()
         {
-            //Daadwerkelijke waarden missen nog
-            progress_deadline.Value = 2;
-            progress_unresolved.Value = 5;
             List<Incident>incidents = Incident.getAll();
             int incidentsPastDeadline = 0;
             int incidentsUnresolved = 0;
@@ -286,7 +283,7 @@ namespace View
 
         }
 
-<<<<<<< HEAD:Code oud/View/Dashboard.cs
+
         private void addNewIncidentBtn_Click(object sender, EventArgs e)
         {
             showPanel("createIncident");
@@ -351,7 +348,8 @@ namespace View
             {
                 showPanel("createIncident");
             }
-=======
+        }
+
         private void button_LowPrior_Click(object sender, EventArgs e)
         {
             label_Prior.Text = "Low priority Incidents";
@@ -383,7 +381,7 @@ namespace View
                 }
             }
             return amount;
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.cs
+
         }
     }
 }

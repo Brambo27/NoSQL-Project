@@ -72,7 +72,6 @@
             this.createIncident_lbl = new System.Windows.Forms.Label();
             this.NoDesk_lbl = new System.Windows.Forms.Label();
             this.licensed_lbl = new System.Windows.Forms.Label();
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
             this.dataGridView_incidentManagement = new System.Windows.Forms.DataGridView();
             this.filterByEmail_Lbl = new System.Windows.Forms.Label();
             this.filterByEmailTextBox = new System.Windows.Forms.TextBox();
@@ -94,13 +93,13 @@
             this.addIncidentBtn = new System.Windows.Forms.Button();
             this.cancelIncidentCreateBtn = new System.Windows.Forms.Button();
             this.IMError_lbl = new System.Windows.Forms.Label();
-=======
+
             this.circularProgressBar_Prior = new CircularProgressBar.CircularProgressBar();
             this.label_Prior = new System.Windows.Forms.Label();
             this.button_LowPrior = new System.Windows.Forms.Button();
             this.button_MedPrior = new System.Windows.Forms.Button();
             this.button_HighPrior = new System.Windows.Forms.Button();
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             this.userManagement_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).BeginInit();
             this.createUser_panel.SuspendLayout();
@@ -242,11 +241,11 @@
             this.userFilter_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userFilter_txt.Location = new System.Drawing.Point(134, 63);
             this.userFilter_txt.Name = "userFilter_txt";
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             this.userFilter_txt.Size = new System.Drawing.Size(348, 22);
-=======
+
             this.userFilter_txt.Size = new System.Drawing.Size(348, 24);
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             this.userFilter_txt.TabIndex = 3;
             this.userFilter_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userFilter_txt_KeyPress);
             // 
@@ -256,11 +255,11 @@
             this.userFilter_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userFilter_lbl.Location = new System.Drawing.Point(34, 66);
             this.userFilter_lbl.Name = "userFilter_lbl";
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             this.userFilter_lbl.Size = new System.Drawing.Size(94, 16);
-=======
+
             this.userFilter_lbl.Size = new System.Drawing.Size(102, 18);
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             this.userFilter_lbl.TabIndex = 2;
             this.userFilter_lbl.Text = "Filter by email:";
             // 
@@ -301,11 +300,11 @@
             this.userManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userManagement_lbl.Location = new System.Drawing.Point(29, 25);
             this.userManagement_lbl.Name = "userManagement_lbl";
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             this.userManagement_lbl.Size = new System.Drawing.Size(203, 25);
-=======
+
             this.userManagement_lbl.Size = new System.Drawing.Size(225, 29);
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             this.userManagement_lbl.TabIndex = 0;
             this.userManagement_lbl.Text = "User Management";
             // 
@@ -335,7 +334,7 @@
             this.createUser_panel.TabIndex = 27;
             // 
             // UMError_lbl
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             // 
             this.UMError_lbl.AutoSize = true;
             this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,7 +343,7 @@
             this.UMError_lbl.Name = "UMError_lbl";
             this.UMError_lbl.Size = new System.Drawing.Size(0, 24);
             this.UMError_lbl.TabIndex = 18;
-=======
+
             // 
             this.UMError_lbl.AutoSize = true;
             this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -531,7 +530,7 @@
             this.addUser_lbl.Size = new System.Drawing.Size(213, 29);
             this.addUser_lbl.TabIndex = 0;
             this.addUser_lbl.Text = "Create New User";
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             // 
             // createUserConfirm_btn
             // 
@@ -547,7 +546,7 @@
             this.createUserConfirm_btn.UseVisualStyleBackColor = false;
             this.createUserConfirm_btn.Click += new System.EventHandler(this.createUserConfirm_btn_Click);
             // 
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             // createUserCancel_btn
             // 
             this.createUserCancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -561,7 +560,7 @@
             this.createUserCancel_btn.Click += new System.EventHandler(this.createUserCancel_btn_Click);
             // 
             // checkBox_sendPW
-=======
+
             // incidentManagement_lbl
             // 
             this.incidentManagement_lbl.AutoSize = true;
@@ -601,7 +600,7 @@
             this.label1.Text = "Current incidents";
             // 
             // menuDashboard_btn
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             // 
             this.checkBox_sendPW.AutoSize = true;
             this.checkBox_sendPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -651,7 +650,7 @@
             // 
             // email_txt
             // 
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_txt.Location = new System.Drawing.Point(222, 180);
             this.email_txt.Name = "email_txt";
@@ -869,7 +868,7 @@
             // 
             // NoDesk_lbl
             // 
-=======
+
             this.createIncident_lbl.AutoSize = true;
             this.createIncident_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createIncident_lbl.Location = new System.Drawing.Point(29, 25);
@@ -880,16 +879,16 @@
             // 
             // NoDesk_lbl
             // 
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             this.NoDesk_lbl.AutoSize = true;
             this.NoDesk_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoDesk_lbl.Location = new System.Drawing.Point(704, 42);
             this.NoDesk_lbl.Name = "NoDesk_lbl";
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             this.NoDesk_lbl.Size = new System.Drawing.Size(94, 25);
-=======
+
             this.NoDesk_lbl.Size = new System.Drawing.Size(106, 29);
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             this.NoDesk_lbl.TabIndex = 31;
             this.NoDesk_lbl.Text = "NoDesk";
             // 
@@ -898,7 +897,7 @@
             this.licensed_lbl.AutoSize = true;
             this.licensed_lbl.Location = new System.Drawing.Point(641, 67);
             this.licensed_lbl.Name = "licensed_lbl";
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             this.licensed_lbl.Size = new System.Drawing.Size(157, 13);
             this.licensed_lbl.TabIndex = 32;
             this.licensed_lbl.Text = "Licensed to: The Garden Group";
@@ -1125,7 +1124,7 @@
             this.IMError_lbl.Size = new System.Drawing.Size(45, 16);
             this.IMError_lbl.TabIndex = 19;
             this.IMError_lbl.Text = "label2";
-=======
+
             this.licensed_lbl.Size = new System.Drawing.Size(178, 15);
             this.licensed_lbl.TabIndex = 32;
             this.licensed_lbl.Text = "Licensed to: The Garden Group";
@@ -1202,7 +1201,7 @@
             this.button_HighPrior.Text = "High";
             this.button_HighPrior.UseVisualStyleBackColor = false;
             this.button_HighPrior.Click += new System.EventHandler(this.button_HighPrior_Click);
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             // 
             // Dashboard
             // 
@@ -1216,19 +1215,17 @@
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.label_dashboard);
             this.Controls.Add(this.licensed_lbl);
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
             this.Controls.Add(this.NoDesk_lbl);
             this.Controls.Add(this.createIncident_panel);
-=======
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             this.Controls.Add(this.createUser_panel);
             this.Controls.Add(this.NoDesk_lbl);
             this.Controls.Add(this.incidentManagement_panel);
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
-=======
+
             this.Controls.Add(this.userManagement_panel);
             this.Controls.Add(this.createIncident_panel);
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -1294,7 +1291,7 @@
         private System.Windows.Forms.ComboBox comboBox_location;
         private System.Windows.Forms.Label UMError_lbl;
         private System.Windows.Forms.Label label1;
-<<<<<<< HEAD:Code oud/View/Dashboard.Designer.cs
+
         private System.Windows.Forms.Button addNewIncidentBtn;
         private System.Windows.Forms.TextBox filterByEmailTextBox;
         private System.Windows.Forms.Label filterByEmail_Lbl;
@@ -1316,12 +1313,12 @@
         private System.Windows.Forms.Button addIncidentBtn;
         private System.Windows.Forms.Button cancelIncidentCreateBtn;
         private System.Windows.Forms.Label IMError_lbl;
-=======
+
         private System.Windows.Forms.Button button_HighPrior;
         private System.Windows.Forms.Button button_MedPrior;
         private System.Windows.Forms.Button button_LowPrior;
         private System.Windows.Forms.Label label_Prior;
         private CircularProgressBar.CircularProgressBar circularProgressBar_Prior;
->>>>>>> 9da909cd9598c663557bea98c6ff1dab9d44a5a1:View/Dashboard.Designer.cs
+
     }
 }
