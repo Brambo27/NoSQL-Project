@@ -95,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Incident.cs" />
     <Compile Include="Model.cs" />
