@@ -42,7 +42,7 @@
             this.StartBackup.Name = "StartBackup";
             this.StartBackup.Size = new System.Drawing.Size(276, 58);
             this.StartBackup.TabIndex = 0;
-            this.StartBackup.Text = "Make Backup";
+            this.StartBackup.Text = "Make local Backup";
             this.StartBackup.UseVisualStyleBackColor = true;
             this.StartBackup.Click += new System.EventHandler(this.StartBackup_Click);
             // 
@@ -108,16 +108,15 @@
             this.Text = "AdminPanel";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Button StartBackup;
         private System.Windows.Forms.Button backupLocationButton;
         private System.Windows.Forms.Label CheckBoxLbl;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button SelectBackupFileBtn;
         private System.Windows.Forms.Button ReturnBackupBtn;
+        private System.Windows.Forms.Button SelectBackupFileBtn;
+        private System.Windows.Forms.Button StartBackup;
+
+        #endregion
     }
 }

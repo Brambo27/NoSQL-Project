@@ -12,22 +12,23 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Newtonsoft.Json.Bson;
 
 namespace Model
 {
     public abstract class Model
     {
-        public abstract string primaryKey { get; }
-        public abstract string CollectionName { get; }
+        protected abstract string PrimaryKey { get; }
+        protected abstract string CollectionName { get; }
         public abstract ObjectId Id { get; set; }
 
-        public static IMongoDatabase GetDatabase()
+        private static IMongoDatabase GetDatabase()
         {
             MongoClient client = new MongoClient("mongodb+srv://dbUser:Pret9999@cluster0-iiugx.azure.mongodb.net/test?retryWrites=true&w=majority");
             return client.GetDatabase("NOSQL");
         }
 
-        public static IMongoCollection<BsonDocument> getCollection(string collectionName)
+        private static IMongoCollection<BsonDocument> getCollection(string collectionName)
         {
             return GetDatabase().GetCollection<BsonDocument>(collectionName);
         }
@@ -181,7 +182,7 @@ namespace Model
             return objects;
         }
 
-        public static List<BsonDocument> getAllDocuments(string collectionName)
+        private static List<BsonDocument> GetAllDocuments(string collectionName)
         {
             return getCollection(collectionName).Find(new BsonDocument()).ToList();
         }
@@ -190,13 +191,13 @@ namespace Model
         {
             FilterDefinition<BsonDocument> filter;
 
-            if (primaryKey == null)
+            if (PrimaryKey == null)
             {
                 filter = Builders<BsonDocument>.Filter.Eq("_id", Id);
             }
             else
             {
-                filter = Builders<BsonDocument>.Filter.Eq(primaryKey, Id);
+                filter = Builders<BsonDocument>.Filter.Eq(PrimaryKey, Id);
             }
 
 
@@ -215,9 +216,9 @@ namespace Model
         {
             List<BsonDocument> documents = new List<BsonDocument>();
 
-            foreach (dynamic ding in dynamics)
+            foreach (dynamic thing in dynamics)
             {
-                documents.Add(ding.toBsonDocument());
+                documents.Add(thing.toBsonDocument());
             }
 
             return documents.ToArray();
@@ -225,7 +226,7 @@ namespace Model
 
         public static void BackupDocuments(string backupLocation, string collection)
         {
-            List<BsonDocument> items = getAllDocuments(collection);
+            List<BsonDocument> documents = GetAllDocuments(collection) ?? throw new ArgumentNullException("No documents found.");
 
             //open file stream
             using (StreamWriter file = File.CreateText(backupLocation + "/" + collection + "_backup.txt"))
@@ -233,7 +234,7 @@ namespace Model
                 file.WriteLine("{\"collectionName\": \"" + collection + "\"}");
                 JsonSerializer serializer = new JsonSerializer();
                 //serialize object directly into file stream
-                serializer.Serialize(file, items.ConvertAll(BsonTypeMapper.MapToDotNetValue));
+                serializer.Serialize(file, documents.ConvertAll(BsonTypeMapper.MapToDotNetValue));
             }
         }
 
@@ -241,23 +242,43 @@ namespace Model
         {
             using (StreamReader r = new StreamReader(backupLocation))
             {
-                //Type type = Type.GetType("Model." + collection.Remove(collection.Length - 1));
-                string collectionJson = r.ReadLine();
-                string json = r.ReadToEnd();
-                //List<dynamic> items = JsonConvert.DeserializeObject<List<dynamic>>(json);
-                List<BsonDocument> items = BsonSerializer.Deserialize<List<BsonDocument>>(json);
+                // Type type = Type.GetType("Model." + collection.Remove(collection.Length - 1));
+                 // JArray json = JArray.Parse(r.ReadToEnd());
+                 //List<dynamic> items = JsonConvert.DeserializeObject<List<dynamic>>(json);
 
-                dynamic collectionNameJson = JObject.Parse(collectionJson);
-                string collectionName = collectionNameJson.collectionName;
+                 //The first line of the backup file has info about the collection we're supposed to restore.
+                 string collectionJson = r.ReadLine();
+                 string json = r.ReadToEnd();
 
-                if (getCollection(collectionName).Find<BsonDocument>("{}").CountDocuments() == 0)
-                {
-                    insertIntoCollection(getCollection(collectionName), items.ToArray());
-                }
-                else
-                {
-                    throw new Exception("Database is not empty. Database needs to be empty to insert from backup");
-                }
+                 dynamic collectionNameJson = JObject.Parse(collectionJson);
+                 string collectionName = collectionNameJson.collectionName;
+                 
+                 if (getCollection(collectionName).Find<BsonDocument>("{}").CountDocuments() == 0)
+                 {
+                     //Dit was erg mooi geweest maar helaas. Het mocht niet zo zijn.
+                     //BsonSerializer.Deserialize<List<User>>(json).ForEach(dynamic => insertIntoCollection(collectionName, dynamic.ToBsonDocument()));
+                      
+                     try
+                     {
+                         String typeString = JArray.Parse(json).First()["_t"].ToString();
+                         Type type = Type.GetType("System.Collections.Generic.List`1[Model."+ typeString +"]");
+                         IList deserializedJsonList =  (IList) BsonSerializer.Deserialize(json, type);
+                     
+                         foreach (Model item in deserializedJsonList)
+                         {
+                             item.insertIntoCollection(collectionName);
+                         }
+                     }
+                     catch (Exception e)
+                     {
+                         //Er kan een hoop fout gaan in deze functie dus als er iets fout gaat geef ik gewoon de gebruiker de schuld.
+                         throw new Exception("Backup file has possibly been corrupted. Please don't try again.");
+                     }
+                 }
+                 else
+                 {
+                     throw new Exception("Database is not empty. Database needs to be empty to insert from backup");
+                 }
             }
         }
 
