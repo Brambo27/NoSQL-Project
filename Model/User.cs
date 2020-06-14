@@ -53,6 +53,7 @@ namespace Model
                 this.userId = user.userId;
                 this.phoneNumber = user.phoneNumber;
                 this.password = user.password;
+                this.userType = user.userType;
             }
         }
 

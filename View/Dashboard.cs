@@ -27,6 +27,12 @@ namespace View
             {
                 openBackupToolBtn.Show();
             }
+            else if (currentUser.userType == User.UserType.User)
+            {
+                menuDashboard_btn.Hide();
+                menuIncidentManagement_btn.Hide();
+                menuUserManagement_btn.Hide();
+            }
             //var deleteFilter = Builders<BsonDocument>.Filter.Eq("IncidentID", "1");
             //Model.Model.deleteDocument("Incidents", deleteFilter);
         }
@@ -101,7 +107,6 @@ namespace View
         static DataTable getTableIncidents()
         {
             DataTable table = new DataTable();
-            table.Columns.Add("ID", typeof(int));
             table.Columns.Add("Subject", typeof(string));
             table.Columns.Add("User", typeof(string));
             table.Columns.Add("Date", typeof(string));
@@ -111,7 +116,7 @@ namespace View
 
             foreach (Incident i in incidents)
             {
-                table.Rows.Add(i.Id, i.subject, i.reportedBy, i.createdAt, i.deadline);
+                table.Rows.Add(i.subject, i.reportedBy.name, i.createdAt, i.deadline);
             }
 
             return table;
@@ -143,10 +148,10 @@ namespace View
                     first = nameArray[0];
                     last = nameArray[1];
                 }
-                var selectFilter = Builders<BsonDocument>.Filter.Eq("reportedBy", first + " " + last);
+                var selectFilter = Builders<BsonDocument>.Filter.Eq("reportedBy", u);
                 List<Incident> tickets = Model.Model.selectAllWhere<Incident>("Incidents", selectFilter);
                 aantalTicket = tickets.Count;
-                table.Rows.Add(u.userId, u.email, first, last, aantalTicket);
+                table.Rows.Add(u.userId, u.email, first, last, tickets.Count);
             }
 
             return table;
@@ -380,10 +385,19 @@ namespace View
             PriorityHandler("High");
         }
 
-        List<Incident> incidents = Incident.getAll();
-
         private void PriorityHandler(string priority)
         {
+            List<Incident> incidents;
+            if (currentUser.userType == User.UserType.User)
+            {
+                var selectFilter = Builders<BsonDocument>.Filter.Eq("reportedBy", currentUser);
+                incidents = Incident.selectAllWhere<Incident>("Incidents", selectFilter);
+            }
+            else
+            {
+                incidents = Incident.getAll();
+            }
+
             int amount = 0;
             
             label_Prior.Text = priority+" priority Incidents";
@@ -400,7 +414,16 @@ namespace View
 
         private void progressValues()
         {
-            List<Incident> incidents = Incident.getAll();
+            List<Incident> incidents;
+            if (currentUser.userType == User.UserType.User)
+            {
+                var selectFilter = Builders<BsonDocument>.Filter.Eq("reportedBy", currentUser);
+                incidents = Incident.selectAllWhere<Incident>("Incidents", selectFilter);
+            }
+            else
+            {
+                incidents = Incident.getAll();
+            }
             int incidentsPastDeadline = 0;
             int incidentsUnresolved = 0;
             foreach (Incident i in incidents)
