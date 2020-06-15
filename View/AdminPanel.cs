@@ -64,10 +64,9 @@ namespace View
 
         private void ReturnBackupBtn_Click(object sender, EventArgs e)
         {
-            Model.Model.InsertFromBackup(_selectedBackupFile);
             try
             {
-                
+                Model.Model.InsertFromBackup(_selectedBackupFile);
             }
             catch (Exception ex)
             {
