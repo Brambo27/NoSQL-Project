@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_dashboard = new System.Windows.Forms.Label();
             this.progress_unresolved = new CircularProgressBar.CircularProgressBar();
             this.progress_deadline = new CircularProgressBar.CircularProgressBar();
@@ -106,10 +106,10 @@
             this.licensed_lbl = new System.Windows.Forms.Label();
             this.openBackupToolBtn = new System.Windows.Forms.Button();
             this.userManagement_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView_userManagement)).BeginInit();
             this.createUser_panel.SuspendLayout();
             this.incidentManagement_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_incidentManagement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView_incidentManagement)).BeginInit();
             this.dashboard_panel.SuspendLayout();
             this.createIncident_panel.SuspendLayout();
             this.SuspendLayout();
@@ -128,9 +128,9 @@
             this.progress_unresolved.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
             this.progress_unresolved.AnimationSpeed = 500;
             this.progress_unresolved.BackColor = System.Drawing.Color.Transparent;
-            this.progress_unresolved.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progress_unresolved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.progress_unresolved.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.progress_unresolved.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.progress_unresolved.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.progress_unresolved.InnerColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))), ((int) (((byte) (224)))));
             this.progress_unresolved.InnerMargin = 2;
             this.progress_unresolved.InnerWidth = -1;
             this.progress_unresolved.Location = new System.Drawing.Point(23, 108);
@@ -139,15 +139,15 @@
             this.progress_unresolved.OuterColor = System.Drawing.Color.Gray;
             this.progress_unresolved.OuterMargin = -25;
             this.progress_unresolved.OuterWidth = 26;
-            this.progress_unresolved.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.progress_unresolved.ProgressColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
             this.progress_unresolved.ProgressWidth = 25;
             this.progress_unresolved.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.progress_unresolved.Size = new System.Drawing.Size(201, 199);
             this.progress_unresolved.StartAngle = 270;
-            this.progress_unresolved.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progress_unresolved.SubscriptColor = System.Drawing.Color.FromArgb(((int) (((byte) (166)))), ((int) (((byte) (166)))), ((int) (((byte) (166)))));
             this.progress_unresolved.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.progress_unresolved.SubscriptText = "";
-            this.progress_unresolved.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progress_unresolved.SuperscriptColor = System.Drawing.Color.FromArgb(((int) (((byte) (166)))), ((int) (((byte) (166)))), ((int) (((byte) (166)))));
             this.progress_unresolved.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.progress_unresolved.SuperscriptText = "";
             this.progress_unresolved.TabIndex = 1;
@@ -159,9 +159,9 @@
             this.progress_deadline.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
             this.progress_deadline.AnimationSpeed = 500;
             this.progress_deadline.BackColor = System.Drawing.Color.Transparent;
-            this.progress_deadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progress_deadline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.progress_deadline.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.progress_deadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.progress_deadline.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.progress_deadline.InnerColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))), ((int) (((byte) (224)))));
             this.progress_deadline.InnerMargin = 2;
             this.progress_deadline.InnerWidth = -1;
             this.progress_deadline.Location = new System.Drawing.Point(271, 95);
@@ -170,15 +170,15 @@
             this.progress_deadline.OuterColor = System.Drawing.Color.Gray;
             this.progress_deadline.OuterMargin = -25;
             this.progress_deadline.OuterWidth = 26;
-            this.progress_deadline.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.progress_deadline.ProgressColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
             this.progress_deadline.ProgressWidth = 25;
             this.progress_deadline.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.progress_deadline.Size = new System.Drawing.Size(211, 212);
             this.progress_deadline.StartAngle = 270;
-            this.progress_deadline.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progress_deadline.SubscriptColor = System.Drawing.Color.FromArgb(((int) (((byte) (166)))), ((int) (((byte) (166)))), ((int) (((byte) (166)))));
             this.progress_deadline.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.progress_deadline.SubscriptText = "";
-            this.progress_deadline.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progress_deadline.SuperscriptColor = System.Drawing.Color.FromArgb(((int) (((byte) (166)))), ((int) (((byte) (166)))), ((int) (((byte) (166)))));
             this.progress_deadline.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.progress_deadline.SuperscriptText = "";
             this.progress_deadline.TabIndex = 2;
@@ -272,7 +272,7 @@
             // 
             this.addUser_btn.BackColor = System.Drawing.Color.Chartreuse;
             this.addUser_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addUser_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addUser_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.addUser_btn.Location = new System.Drawing.Point(611, 54);
             this.addUser_btn.Name = "addUser_btn";
             this.addUser_btn.Size = new System.Drawing.Size(154, 43);
@@ -283,7 +283,7 @@
             // 
             // userFilter_txt
             // 
-            this.userFilter_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userFilter_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.userFilter_txt.Location = new System.Drawing.Point(134, 63);
             this.userFilter_txt.Name = "userFilter_txt";
             this.userFilter_txt.Size = new System.Drawing.Size(348, 22);
@@ -293,7 +293,7 @@
             // userFilter_lbl
             // 
             this.userFilter_lbl.AutoSize = true;
-            this.userFilter_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userFilter_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.userFilter_lbl.Location = new System.Drawing.Point(34, 66);
             this.userFilter_lbl.Name = "userFilter_lbl";
             this.userFilter_lbl.Size = new System.Drawing.Size(94, 16);
@@ -304,27 +304,25 @@
             // 
             this.dataGridView_userManagement.AllowUserToAddRows = false;
             this.dataGridView_userManagement.AllowUserToDeleteRows = false;
-            this.dataGridView_userManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_userManagement.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_userManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_userManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_userManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_userManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_userManagement.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_userManagement.Location = new System.Drawing.Point(34, 111);
             this.dataGridView_userManagement.MultiSelect = false;
             this.dataGridView_userManagement.Name = "dataGridView_userManagement";
@@ -336,7 +334,7 @@
             // userManagement_lbl
             // 
             this.userManagement_lbl.AutoSize = true;
-            this.userManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.userManagement_lbl.Location = new System.Drawing.Point(29, 25);
             this.userManagement_lbl.Name = "userManagement_lbl";
             this.userManagement_lbl.Size = new System.Drawing.Size(203, 25);
@@ -385,7 +383,7 @@
             // 
             this.editUserConfirm_btn.BackColor = System.Drawing.SystemColors.Highlight;
             this.editUserConfirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.editUserConfirm_btn.ForeColor = System.Drawing.SystemColors.Control;
             this.editUserConfirm_btn.Location = new System.Drawing.Point(390, 342);
             this.editUserConfirm_btn.Name = "editUserConfirm_btn";
@@ -399,7 +397,7 @@
             // UMError_lbl
             // 
             this.UMError_lbl.AutoSize = true;
-            this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle) ((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.UMError_lbl.ForeColor = System.Drawing.Color.Red;
             this.UMError_lbl.Location = new System.Drawing.Point(247, 25);
             this.UMError_lbl.Name = "UMError_lbl";
@@ -410,7 +408,7 @@
             // 
             this.createUserConfirm_btn.BackColor = System.Drawing.SystemColors.Highlight;
             this.createUserConfirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createUserConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.createUserConfirm_btn.ForeColor = System.Drawing.SystemColors.Control;
             this.createUserConfirm_btn.Location = new System.Drawing.Point(390, 342);
             this.createUserConfirm_btn.Name = "createUserConfirm_btn";
@@ -423,7 +421,7 @@
             // createUserCancel_btn
             // 
             this.createUserCancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createUserCancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createUserCancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.createUserCancel_btn.Location = new System.Drawing.Point(251, 342);
             this.createUserCancel_btn.Name = "createUserCancel_btn";
             this.createUserCancel_btn.Size = new System.Drawing.Size(108, 55);
@@ -435,7 +433,7 @@
             // checkBox_sendPW
             // 
             this.checkBox_sendPW.AutoSize = true;
-            this.checkBox_sendPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_sendPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.checkBox_sendPW.Location = new System.Drawing.Point(222, 292);
             this.checkBox_sendPW.Name = "checkBox_sendPW";
             this.checkBox_sendPW.Size = new System.Drawing.Size(297, 20);
@@ -446,13 +444,9 @@
             // comboBox_location
             // 
             this.comboBox_location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_location.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_location.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.comboBox_location.FormattingEnabled = true;
-            this.comboBox_location.Items.AddRange(new object[] {
-            "Haarlem",
-            "Amsterdam",
-            "Knuppeldam",
-            "Headquarters (HQ)"});
+            this.comboBox_location.Items.AddRange(new object[] {"Haarlem", "Amsterdam", "Knuppeldam", "Headquarters (HQ)"});
             this.comboBox_location.Location = new System.Drawing.Point(222, 253);
             this.comboBox_location.Name = "comboBox_location";
             this.comboBox_location.Size = new System.Drawing.Size(297, 24);
@@ -461,11 +455,9 @@
             // comboBox_userType
             // 
             this.comboBox_userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_userType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.comboBox_userType.FormattingEnabled = true;
-            this.comboBox_userType.Items.AddRange(new object[] {
-            "Employee",
-            "Admin"});
+            this.comboBox_userType.Items.AddRange(new object[] {"Employee", "Admin"});
             this.comboBox_userType.Location = new System.Drawing.Point(222, 143);
             this.comboBox_userType.Name = "comboBox_userType";
             this.comboBox_userType.Size = new System.Drawing.Size(297, 24);
@@ -474,7 +466,7 @@
             // 
             // phoneNumber_txt
             // 
-            this.phoneNumber_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumber_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.phoneNumber_txt.Location = new System.Drawing.Point(222, 214);
             this.phoneNumber_txt.Name = "phoneNumber_txt";
             this.phoneNumber_txt.Size = new System.Drawing.Size(297, 22);
@@ -482,7 +474,7 @@
             // 
             // email_txt
             // 
-            this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.email_txt.Location = new System.Drawing.Point(222, 180);
             this.email_txt.Name = "email_txt";
             this.email_txt.Size = new System.Drawing.Size(297, 22);
@@ -490,7 +482,7 @@
             // 
             // lastName_txt
             // 
-            this.lastName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lastName_txt.Location = new System.Drawing.Point(222, 108);
             this.lastName_txt.Name = "lastName_txt";
             this.lastName_txt.Size = new System.Drawing.Size(297, 22);
@@ -498,7 +490,7 @@
             // 
             // firstName_txt
             // 
-            this.firstName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.firstName_txt.Location = new System.Drawing.Point(222, 68);
             this.firstName_txt.Name = "firstName_txt";
             this.firstName_txt.Size = new System.Drawing.Size(297, 22);
@@ -507,7 +499,7 @@
             // sendPW_lbl
             // 
             this.sendPW_lbl.AutoSize = true;
-            this.sendPW_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendPW_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.sendPW_lbl.Location = new System.Drawing.Point(36, 293);
             this.sendPW_lbl.Name = "sendPW_lbl";
             this.sendPW_lbl.Size = new System.Drawing.Size(109, 16);
@@ -517,7 +509,7 @@
             // location_lbl
             // 
             this.location_lbl.AutoSize = true;
-            this.location_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.location_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.location_lbl.Location = new System.Drawing.Point(36, 256);
             this.location_lbl.Name = "location_lbl";
             this.location_lbl.Size = new System.Drawing.Size(104, 16);
@@ -527,7 +519,7 @@
             // phoneNumber_lbl
             // 
             this.phoneNumber_lbl.AutoSize = true;
-            this.phoneNumber_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumber_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.phoneNumber_lbl.Location = new System.Drawing.Point(34, 217);
             this.phoneNumber_lbl.Name = "phoneNumber_lbl";
             this.phoneNumber_lbl.Size = new System.Drawing.Size(98, 16);
@@ -537,7 +529,7 @@
             // email_lbl
             // 
             this.email_lbl.AutoSize = true;
-            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.email_lbl.Location = new System.Drawing.Point(36, 183);
             this.email_lbl.Name = "email_lbl";
             this.email_lbl.Size = new System.Drawing.Size(102, 16);
@@ -547,7 +539,7 @@
             // userType_lbl
             // 
             this.userType_lbl.AutoSize = true;
-            this.userType_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userType_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.userType_lbl.Location = new System.Drawing.Point(34, 146);
             this.userType_lbl.Name = "userType_lbl";
             this.userType_lbl.Size = new System.Drawing.Size(83, 16);
@@ -557,7 +549,7 @@
             // lastName_lbl
             // 
             this.lastName_lbl.AutoSize = true;
-            this.lastName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lastName_lbl.Location = new System.Drawing.Point(34, 111);
             this.lastName_lbl.Name = "lastName_lbl";
             this.lastName_lbl.Size = new System.Drawing.Size(73, 16);
@@ -567,7 +559,7 @@
             // firstName_lbl
             // 
             this.firstName_lbl.AutoSize = true;
-            this.firstName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.firstName_lbl.Location = new System.Drawing.Point(34, 71);
             this.firstName_lbl.Name = "firstName_lbl";
             this.firstName_lbl.Size = new System.Drawing.Size(73, 16);
@@ -577,7 +569,7 @@
             // addUser_lbl
             // 
             this.addUser_lbl.AutoSize = true;
-            this.addUser_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addUser_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.addUser_lbl.Location = new System.Drawing.Point(29, 25);
             this.addUser_lbl.Name = "addUser_lbl";
             this.addUser_lbl.Size = new System.Drawing.Size(190, 25);
@@ -600,7 +592,7 @@
             // 
             this.addNewIncidentBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.addNewIncidentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNewIncidentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewIncidentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.addNewIncidentBtn.Location = new System.Drawing.Point(611, 54);
             this.addNewIncidentBtn.Name = "addNewIncidentBtn";
             this.addNewIncidentBtn.Size = new System.Drawing.Size(154, 43);
@@ -638,7 +630,7 @@
             // incidentManagement_lbl
             // 
             this.incidentManagement_lbl.AutoSize = true;
-            this.incidentManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incidentManagement_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.incidentManagement_lbl.Location = new System.Drawing.Point(32, 25);
             this.incidentManagement_lbl.Name = "incidentManagement_lbl";
             this.incidentManagement_lbl.Size = new System.Drawing.Size(192, 25);
@@ -677,7 +669,7 @@
             // 
             // button_MedPrior
             // 
-            this.button_MedPrior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button_MedPrior.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
             this.button_MedPrior.Location = new System.Drawing.Point(605, 326);
             this.button_MedPrior.Name = "button_MedPrior";
             this.button_MedPrior.Size = new System.Drawing.Size(40, 23);
@@ -711,9 +703,9 @@
             this.progress_priority.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
             this.progress_priority.AnimationSpeed = 500;
             this.progress_priority.BackColor = System.Drawing.Color.Transparent;
-            this.progress_priority.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progress_priority.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.progress_priority.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.progress_priority.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.progress_priority.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.progress_priority.InnerColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))), ((int) (((byte) (224)))));
             this.progress_priority.InnerMargin = 2;
             this.progress_priority.InnerWidth = -1;
             this.progress_priority.Location = new System.Drawing.Point(515, 95);
@@ -722,15 +714,15 @@
             this.progress_priority.OuterColor = System.Drawing.Color.Gray;
             this.progress_priority.OuterMargin = -25;
             this.progress_priority.OuterWidth = 26;
-            this.progress_priority.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.progress_priority.ProgressColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
             this.progress_priority.ProgressWidth = 25;
             this.progress_priority.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.progress_priority.Size = new System.Drawing.Size(211, 212);
             this.progress_priority.StartAngle = 270;
-            this.progress_priority.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progress_priority.SubscriptColor = System.Drawing.Color.FromArgb(((int) (((byte) (166)))), ((int) (((byte) (166)))), ((int) (((byte) (166)))));
             this.progress_priority.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.progress_priority.SubscriptText = "";
-            this.progress_priority.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progress_priority.SuperscriptColor = System.Drawing.Color.FromArgb(((int) (((byte) (166)))), ((int) (((byte) (166)))), ((int) (((byte) (166)))));
             this.progress_priority.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.progress_priority.SuperscriptText = "";
             this.progress_priority.TabIndex = 27;
@@ -740,7 +732,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.Location = new System.Drawing.Point(33, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 25);
@@ -750,7 +742,7 @@
             // dashboardCurrentIncidents_lbl
             // 
             this.dashboardCurrentIncidents_lbl.AutoSize = true;
-            this.dashboardCurrentIncidents_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardCurrentIncidents_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.dashboardCurrentIncidents_lbl.Location = new System.Drawing.Point(33, 24);
             this.dashboardCurrentIncidents_lbl.Name = "dashboardCurrentIncidents_lbl";
             this.dashboardCurrentIncidents_lbl.Size = new System.Drawing.Size(192, 25);
@@ -819,7 +811,7 @@
             // 
             this.IMError_lbl.AutoSize = true;
             this.IMError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.IMError_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.IMError_lbl.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.IMError_lbl.Location = new System.Drawing.Point(287, 35);
             this.IMError_lbl.Name = "IMError_lbl";
             this.IMError_lbl.Size = new System.Drawing.Size(45, 16);
@@ -830,7 +822,7 @@
             // 
             this.addIncidentBtn.BackColor = System.Drawing.SystemColors.Highlight;
             this.addIncidentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addIncidentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addIncidentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.addIncidentBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.addIncidentBtn.Location = new System.Drawing.Point(324, 387);
             this.addIncidentBtn.Name = "addIncidentBtn";
@@ -843,7 +835,7 @@
             // cancelIncidentCreateBtn
             // 
             this.cancelIncidentCreateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelIncidentCreateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelIncidentCreateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.cancelIncidentCreateBtn.Location = new System.Drawing.Point(185, 387);
             this.cancelIncidentCreateBtn.Name = "cancelIncidentCreateBtn";
             this.cancelIncidentCreateBtn.Size = new System.Drawing.Size(108, 55);
@@ -870,11 +862,7 @@
             // followUpComboBox
             // 
             this.followUpComboBox.FormattingEnabled = true;
-            this.followUpComboBox.Items.AddRange(new object[] {
-            "7 days",
-            "14 days",
-            "28 days",
-            "6 months"});
+            this.followUpComboBox.Items.AddRange(new object[] {"7 days", "14 days", "28 days", "6 months"});
             this.followUpComboBox.Location = new System.Drawing.Point(185, 212);
             this.followUpComboBox.Name = "followUpComboBox";
             this.followUpComboBox.Size = new System.Drawing.Size(246, 21);
@@ -883,10 +871,7 @@
             // priorityComboBox
             // 
             this.priorityComboBox.FormattingEnabled = true;
-            this.priorityComboBox.Items.AddRange(new object[] {
-            "Low",
-            "Normal",
-            "High"});
+            this.priorityComboBox.Items.AddRange(new object[] {"Low", "Normal", "High"});
             this.priorityComboBox.Location = new System.Drawing.Point(185, 180);
             this.priorityComboBox.Name = "priorityComboBox";
             this.priorityComboBox.Size = new System.Drawing.Size(246, 21);
@@ -895,12 +880,7 @@
             // reportedByComboBox
             // 
             this.reportedByComboBox.FormattingEnabled = true;
-            this.reportedByComboBox.Items.AddRange(new object[] {
-            "Hank",
-            "Pete",
-            "Claus",
-            "Xynaria",
-            "Thijs"});
+            this.reportedByComboBox.Items.AddRange(new object[] {"Hank", "Pete", "Claus", "Xynaria", "Thijs"});
             this.reportedByComboBox.Location = new System.Drawing.Point(185, 151);
             this.reportedByComboBox.Name = "reportedByComboBox";
             this.reportedByComboBox.Size = new System.Drawing.Size(246, 21);
@@ -909,10 +889,7 @@
             // selectTypeComboBox
             // 
             this.selectTypeComboBox.FormattingEnabled = true;
-            this.selectTypeComboBox.Items.AddRange(new object[] {
-            "Select type",
-            "Hardware",
-            "Service"});
+            this.selectTypeComboBox.Items.AddRange(new object[] {"Select type", "Hardware", "Service"});
             this.selectTypeComboBox.Location = new System.Drawing.Point(185, 124);
             this.selectTypeComboBox.Name = "selectTypeComboBox";
             this.selectTypeComboBox.Size = new System.Drawing.Size(246, 21);
@@ -921,9 +898,7 @@
             // selectDataComboBox
             // 
             this.selectDataComboBox.FormattingEnabled = true;
-            this.selectDataComboBox.Items.AddRange(new object[] {
-            "random",
-            "random2"});
+            this.selectDataComboBox.Items.AddRange(new object[] {"random", "random2"});
             this.selectDataComboBox.Location = new System.Drawing.Point(185, 68);
             this.selectDataComboBox.Name = "selectDataComboBox";
             this.selectDataComboBox.Size = new System.Drawing.Size(246, 21);
@@ -1002,7 +977,7 @@
             // createIncident_lbl
             // 
             this.createIncident_lbl.AutoSize = true;
-            this.createIncident_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createIncident_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.createIncident_lbl.Location = new System.Drawing.Point(29, 25);
             this.createIncident_lbl.Name = "createIncident_lbl";
             this.createIncident_lbl.Size = new System.Drawing.Size(224, 25);
@@ -1012,7 +987,7 @@
             // NoDesk_lbl
             // 
             this.NoDesk_lbl.AutoSize = true;
-            this.NoDesk_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoDesk_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.NoDesk_lbl.Location = new System.Drawing.Point(704, 42);
             this.NoDesk_lbl.Name = "NoDesk_lbl";
             this.NoDesk_lbl.Size = new System.Drawing.Size(94, 25);
@@ -1063,100 +1038,96 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.userManagement_panel.ResumeLayout(false);
             this.userManagement_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManagement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView_userManagement)).EndInit();
             this.createUser_panel.ResumeLayout(false);
             this.createUser_panel.PerformLayout();
             this.incidentManagement_panel.ResumeLayout(false);
             this.incidentManagement_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_incidentManagement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView_incidentManagement)).EndInit();
             this.dashboard_panel.ResumeLayout(false);
             this.dashboard_panel.PerformLayout();
             this.createIncident_panel.ResumeLayout(false);
             this.createIncident_panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Label label_dashboard;
-        private CircularProgressBar.CircularProgressBar progress_unresolved;
-        private CircularProgressBar.CircularProgressBar progress_deadline;
-        private System.Windows.Forms.Button button_close;
-        private System.Windows.Forms.Label label_unresolved;
-        private System.Windows.Forms.Label label_deadline;
-        private System.Windows.Forms.Panel userManagement_panel;
-        private System.Windows.Forms.DataGridView dataGridView_userManagement;
-        private System.Windows.Forms.Label userManagement_lbl;
-        private System.Windows.Forms.Panel createUser_panel;
-        private System.Windows.Forms.Panel incidentManagement_panel;
-        private System.Windows.Forms.Label addUser_lbl;
-        private System.Windows.Forms.Panel dashboard_panel;
-        private System.Windows.Forms.Button menuDashboard_btn;
-        private System.Windows.Forms.Button menuUserManagement_btn;
-        private System.Windows.Forms.Button menuIncidentManagement_btn;
-        private System.Windows.Forms.Label incidentManagement_lbl;
-        private System.Windows.Forms.Panel createIncident_panel;
-        private System.Windows.Forms.Label createIncident_lbl;
-        private System.Windows.Forms.Label NoDesk_lbl;
-        private System.Windows.Forms.Label licensed_lbl;
+        private System.Windows.Forms.Button addIncidentBtn;
+        private System.Windows.Forms.Button addNewIncidentBtn;
         private System.Windows.Forms.Button addUser_btn;
-        private System.Windows.Forms.TextBox userFilter_txt;
-        private System.Windows.Forms.Label userFilter_lbl;
-        private System.Windows.Forms.ComboBox comboBox_userType;
-        private System.Windows.Forms.TextBox phoneNumber_txt;
-        private System.Windows.Forms.TextBox email_txt;
-        private System.Windows.Forms.TextBox lastName_txt;
-        private System.Windows.Forms.TextBox firstName_txt;
-        private System.Windows.Forms.Label sendPW_lbl;
-        private System.Windows.Forms.Label location_lbl;
-        private System.Windows.Forms.Label phoneNumber_lbl;
-        private System.Windows.Forms.Label email_lbl;
-        private System.Windows.Forms.Label userType_lbl;
-        private System.Windows.Forms.Label lastName_lbl;
-        private System.Windows.Forms.Label firstName_lbl;
-        private System.Windows.Forms.Button createUserConfirm_btn;
-        private System.Windows.Forms.Button createUserCancel_btn;
+        private System.Windows.Forms.Label addUser_lbl;
+        private System.Windows.Forms.Button button_close;
+        private System.Windows.Forms.Button button_HighPrior;
+        private System.Windows.Forms.Button button_LowPrior;
+        private System.Windows.Forms.Button button_MedPrior;
+        private System.Windows.Forms.Button cancelIncidentCreateBtn;
         private System.Windows.Forms.CheckBox checkBox_sendPW;
         private System.Windows.Forms.ComboBox comboBox_location;
-        private System.Windows.Forms.Label UMError_lbl;
-        private System.Windows.Forms.Label label1;
-
-        private System.Windows.Forms.Button addNewIncidentBtn;
-        private System.Windows.Forms.TextBox filterByEmailTextBox;
-        private System.Windows.Forms.Label filterByEmail_Lbl;
-        private System.Windows.Forms.DataGridView dataGridView_incidentManagement;
-        private System.Windows.Forms.Label description_Lbl;
-        private System.Windows.Forms.Label deadlineFollowup_Lbl;
-        private System.Windows.Forms.Label priority_Lbl;
-        private System.Windows.Forms.Label reportedBy_Lbl;
-        private System.Windows.Forms.Label typeOfIncident_Lbl;
-        private System.Windows.Forms.Label subject_Lbl;
-        private System.Windows.Forms.Label reported_Lbl;
-        private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.TextBox incidentSubjectTextBox;
-        private System.Windows.Forms.ComboBox followUpComboBox;
-        private System.Windows.Forms.ComboBox priorityComboBox;
-        private System.Windows.Forms.ComboBox reportedByComboBox;
-        private System.Windows.Forms.ComboBox selectTypeComboBox;
-        private System.Windows.Forms.ComboBox selectDataComboBox;
-        private System.Windows.Forms.Button addIncidentBtn;
-        private System.Windows.Forms.Button cancelIncidentCreateBtn;
-        private System.Windows.Forms.Label IMError_lbl;
-
-        private System.Windows.Forms.Button button_HighPrior;
-        private System.Windows.Forms.Button button_MedPrior;
-        private System.Windows.Forms.Button button_LowPrior;
-        private System.Windows.Forms.Label label_Prior;
-        private CircularProgressBar.CircularProgressBar progress_priority;
-
+        private System.Windows.Forms.ComboBox comboBox_userType;
+        private System.Windows.Forms.Label createIncident_lbl;
+        private System.Windows.Forms.Panel createIncident_panel;
+        private System.Windows.Forms.Panel createUser_panel;
+        private System.Windows.Forms.Button createUserCancel_btn;
+        private System.Windows.Forms.Button createUserConfirm_btn;
+        private System.Windows.Forms.Panel dashboard_panel;
         private System.Windows.Forms.Label dashboardCurrentIncidents_lbl;
-        private System.Windows.Forms.Button editUser_btn;
+        private System.Windows.Forms.DataGridView dataGridView_incidentManagement;
+        private System.Windows.Forms.DataGridView dataGridView_userManagement;
+        private System.Windows.Forms.Label deadlineFollowup_Lbl;
         private System.Windows.Forms.Button deleteUser_btn;
-        private System.Windows.Forms.Button viewUser_btn;
+        private System.Windows.Forms.Label description_Lbl;
+        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.Button editUser_btn;
         private System.Windows.Forms.Button editUserConfirm_btn;
-        private System.Windows.Forms.TextBox userId_txt;
+        private System.Windows.Forms.Label email_lbl;
+        private System.Windows.Forms.TextBox email_txt;
+        private System.Windows.Forms.Label filterByEmail_Lbl;
+        private System.Windows.Forms.TextBox filterByEmailTextBox;
+        private System.Windows.Forms.Label firstName_lbl;
+        private System.Windows.Forms.TextBox firstName_txt;
+        private System.Windows.Forms.ComboBox followUpComboBox;
+        private System.Windows.Forms.Label IMError_lbl;
+        private System.Windows.Forms.Label incidentManagement_lbl;
+        private System.Windows.Forms.Panel incidentManagement_panel;
+        private System.Windows.Forms.TextBox incidentSubjectTextBox;
+        private System.Windows.Forms.Label label_dashboard;
+        private System.Windows.Forms.Label label_deadline;
+        private System.Windows.Forms.Label label_Prior;
+        private System.Windows.Forms.Label label_unresolved;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lastName_lbl;
+        private System.Windows.Forms.TextBox lastName_txt;
+        private System.Windows.Forms.Label licensed_lbl;
+        private System.Windows.Forms.Label location_lbl;
+        private System.Windows.Forms.Button menuDashboard_btn;
+        private System.Windows.Forms.Button menuIncidentManagement_btn;
+        private System.Windows.Forms.Button menuUserManagement_btn;
+        private System.Windows.Forms.Label NoDesk_lbl;
         private System.Windows.Forms.Button openBackupToolBtn;
+        private System.Windows.Forms.Label phoneNumber_lbl;
+        private System.Windows.Forms.TextBox phoneNumber_txt;
+        private System.Windows.Forms.Label priority_Lbl;
+        private System.Windows.Forms.ComboBox priorityComboBox;
+        private CircularProgressBar.CircularProgressBar progress_deadline;
+        private CircularProgressBar.CircularProgressBar progress_priority;
+        private CircularProgressBar.CircularProgressBar progress_unresolved;
+        private System.Windows.Forms.Label reported_Lbl;
+        private System.Windows.Forms.Label reportedBy_Lbl;
+        private System.Windows.Forms.ComboBox reportedByComboBox;
+        private System.Windows.Forms.ComboBox selectDataComboBox;
+        private System.Windows.Forms.ComboBox selectTypeComboBox;
+        private System.Windows.Forms.Label sendPW_lbl;
+        private System.Windows.Forms.Label subject_Lbl;
+        private System.Windows.Forms.Label typeOfIncident_Lbl;
+        private System.Windows.Forms.Label UMError_lbl;
+        private System.Windows.Forms.Label userFilter_lbl;
+        private System.Windows.Forms.TextBox userFilter_txt;
+        private System.Windows.Forms.TextBox userId_txt;
+        private System.Windows.Forms.Label userManagement_lbl;
+        private System.Windows.Forms.Panel userManagement_panel;
+        private System.Windows.Forms.Label userType_lbl;
+        private System.Windows.Forms.Button viewUser_btn;
+
+        #endregion
     }
 }

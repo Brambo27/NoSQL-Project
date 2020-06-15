@@ -1,33 +1,31 @@
-﻿using MongoDB.Bson;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace Model
 {
     public abstract class Model
     {
-        public abstract string primaryKey { get; }
-        public abstract string CollectionName { get; }
+        protected abstract string PrimaryKey { get; }
+        protected abstract string CollectionName { get; }
         public abstract ObjectId Id { get; set; }
 
-        public static IMongoDatabase GetDatabase()
+        private static IMongoDatabase GetDatabase()
         {
-            MongoClient client = new MongoClient("mongodb+srv://dbUser:Pret9999@cluster0-iiugx.azure.mongodb.net/test?retryWrites=true&w=majority");
+            var client =
+                new MongoClient(
+                    "mongodb+srv://dbUser:Pret9999@cluster0-iiugx.azure.mongodb.net/test?retryWrites=true&w=majority");
             return client.GetDatabase("NOSQL");
         }
 
-        public static IMongoCollection<BsonDocument> getCollection(string collectionName)
+        private static IMongoCollection<BsonDocument> getCollection(string collectionName)
         {
             return GetDatabase().GetCollection<BsonDocument>(collectionName);
         }
@@ -39,18 +37,12 @@ namespace Model
 
         public static void insertIntoCollection(IMongoCollection<BsonDocument> collection, BsonDocument[] data)
         {
-            if(data != null)
-            {
-               collection.InsertMany(data);
-            }
+            if (data != null) collection.InsertMany(data);
         }
 
         public static void insertIntoCollection(IMongoCollection<BsonDocument> collection, BsonDocument data)
         {
-            if (data != null)
-            {
-                collection.InsertOne(data);
-            }
+            if (data != null) collection.InsertOne(data);
         }
 
         public static void insertIntoCollection(string collection, BsonDocument data)
@@ -78,15 +70,16 @@ namespace Model
             insertIntoCollection(getCollection(CollectionName), this.ToBsonDocument());
         }
 
-        public static void updateDocument(string collection, BsonDocument document, UpdateDefinition<BsonDocument> update)
+        public static void updateDocument(string collection, BsonDocument document,
+            UpdateDefinition<BsonDocument> update)
         {
             getCollection(collection).UpdateOne(document, update);
         }
 
         public void update()
         {
-            BsonDocument originalDocument = GetByObjectId(Id);
-            BsonDocument updateDocument = this.ToBsonDocument();
+            var originalDocument = GetByObjectId(Id);
+            var updateDocument = this.ToBsonDocument();
 
             getCollection(CollectionName).ReplaceOne(originalDocument, updateDocument);
         }
@@ -96,10 +89,10 @@ namespace Model
             return getCollection(CollectionName).Find(filter).FirstOrDefault();
         }
 
-        
+
         public T SelectWhere<T>(FilterDefinition<BsonDocument> filter)
         {
-            T item = default(T);
+            T item = default;
             try
             {
                 item = BsonSerializer.Deserialize<T>(getCollection(CollectionName).Find(filter).FirstOrDefault());
@@ -111,6 +104,7 @@ namespace Model
                 else
                     Console.WriteLine(e.Message);
             }
+
             return item;
         }
 
@@ -118,11 +112,8 @@ namespace Model
         {
             var documents = getCollection(collectionName).Find(filter).ToList();
 
-            List<T> objects = new List<T>();
-            foreach (BsonDocument document in documents)
-            {
-                objects.Add(BsonSerializer.Deserialize<T>(document));
-            }
+            var objects = new List<T>();
+            foreach (var document in documents) objects.Add(BsonSerializer.Deserialize<T>(document));
 
             return objects;
         }
@@ -134,25 +125,27 @@ namespace Model
 
         public BsonDocument GetByObjectId(ObjectId objectId)
         {
-            return getCollection(CollectionName).Find(new BsonDocument { { "_id", objectId } }).First();
+            return getCollection(CollectionName).Find(new BsonDocument {{"_id", objectId}}).First();
         }
 
         public T GetByObjectId<T>(ObjectId objectId)
         {
-            return BsonSerializer.Deserialize<T>(getCollection(CollectionName).Find(new BsonDocument { { "_id", objectId } }).First());
+            return BsonSerializer.Deserialize<T>(getCollection(CollectionName)
+                .Find(new BsonDocument {{"_id", objectId}}).First());
         }
 
         public dynamic getById(string field, string value, string collectionName)
         {
             var filter = Builders<BsonDocument>.Filter.Eq(field, value);
 
-            BsonDocument document = getCollection(collectionName).Find(filter).FirstOrDefault();
+            var document = getCollection(collectionName).Find(filter).FirstOrDefault();
             if (document != null)
             {
-                dynamic ding = deserialize(document);
+                var dynamic = deserialize(document);
 
-                return ding;
+                return dynamic;
             }
+
             return null;
         }
 
@@ -172,16 +165,13 @@ namespace Model
         {
             var documents = getCollection(collectionName).Find(new BsonDocument()).ToList();
 
-            List<T> objects = new List<T>();
-            foreach (BsonDocument document in documents)
-            {
-                objects.Add(BsonSerializer.Deserialize<T>(document));
-            }
+            var objects = new List<T>();
+            foreach (var document in documents) objects.Add(BsonSerializer.Deserialize<T>(document));
 
             return objects;
         }
 
-        public static List<BsonDocument> getAllDocuments(string collectionName)
+        private static List<BsonDocument> GetAllDocuments(string collectionName)
         {
             return getCollection(collectionName).Find(new BsonDocument()).ToList();
         }
@@ -190,90 +180,99 @@ namespace Model
         {
             FilterDefinition<BsonDocument> filter;
 
-            if (primaryKey == null)
-            {
+            if (PrimaryKey == null)
                 filter = Builders<BsonDocument>.Filter.Eq("_id", Id);
-            }
             else
-            {
-                filter = Builders<BsonDocument>.Filter.Eq(primaryKey, Id);
-            }
+                filter = Builders<BsonDocument>.Filter.Eq(PrimaryKey, Id);
 
 
-            BsonDocument document = getCollection("Users").Find(filter).FirstOrDefault();
+            var document = getCollection("Users").Find(filter).FirstOrDefault();
 
             if (document != null)
             {
-                dynamic ding = deserialize(document);
+                var ding = deserialize(document);
 
                 return ding;
             }
+
             return null;
         }
 
         public static BsonDocument[] toBsonDocumentArray(List<dynamic> dynamics)
         {
-            List<BsonDocument> documents = new List<BsonDocument>();
+            var documents = new List<BsonDocument>();
 
-            foreach (dynamic ding in dynamics)
-            {
-                documents.Add(ding.toBsonDocument());
-            }
+            foreach (var thing in dynamics) documents.Add(thing.toBsonDocument());
 
             return documents.ToArray();
         }
 
         public static void BackupDocuments(string backupLocation, string collection)
         {
-            List<BsonDocument> items = getAllDocuments(collection);
+            var documents = GetAllDocuments(collection) ?? throw new ArgumentNullException("No documents found.");
 
             //open file stream
-            using (StreamWriter file = File.CreateText(backupLocation + "/" + collection + "_backup.txt"))
+            using (var file = File.CreateText(backupLocation + "/" + collection + "_backup.txt"))
             {
                 file.WriteLine("{\"collectionName\": \"" + collection + "\"}");
-                JsonSerializer serializer = new JsonSerializer();
+                var serializer = new JsonSerializer();
                 //serialize object directly into file stream
-                serializer.Serialize(file, items.ConvertAll(BsonTypeMapper.MapToDotNetValue));
+                serializer.Serialize(file, documents.ConvertAll(BsonTypeMapper.MapToDotNetValue));
             }
         }
 
         public static void InsertFromBackup(string backupLocation)
         {
-            using (StreamReader r = new StreamReader(backupLocation))
+            using (var r = new StreamReader(backupLocation))
             {
-                //Type type = Type.GetType("Model." + collection.Remove(collection.Length - 1));
-                string collectionJson = r.ReadLine();
-                string json = r.ReadToEnd();
+                // Type type = Type.GetType("Model." + collection.Remove(collection.Length - 1));
+                // JArray json = JArray.Parse(r.ReadToEnd());
                 //List<dynamic> items = JsonConvert.DeserializeObject<List<dynamic>>(json);
-                List<BsonDocument> items = BsonSerializer.Deserialize<List<BsonDocument>>(json);
 
+                //The first line of the backup file has info about the collection we're supposed to restore.
+                var collectionJson = r.ReadLine();
                 dynamic collectionNameJson = JObject.Parse(collectionJson);
                 string collectionName = collectionNameJson.collectionName;
 
-                if (getCollection(collectionName).Find<BsonDocument>("{}").CountDocuments() == 0)
-                {
-                    insertIntoCollection(getCollection(collectionName), items.ToArray());
-                }
+                //Read the rest of the backup file.
+                var json = r.ReadToEnd();
+
+                //We kunnen alleen de backup terug zetten als de database leeg is in verband met duplicate keys,
+                //Dus check of de database leeg is.
+                if (getCollection(collectionName).Find("{}").CountDocuments() == 0)
+                    //Dit was erg mooi geweest maar helaas. Het mocht niet zo zijn.
+                    // BsonSerializer.Deserialize<List<User>>(json).ForEach(dynamic => dynamic.insertIntoCollection());
+
+                    try
+                    {
+                        //Get the first row so we can check what type the model should be.
+                        var typeString = JArray.Parse(json).First()["_t"].ToString();
+                        var type = Type.GetType("System.Collections.Generic.List`1[Model." + typeString + "]");
+                        var deserializedJsonList = (IList) BsonSerializer.Deserialize(json, type);
+
+                        foreach (Model item in deserializedJsonList) item.insertIntoCollection(collectionName);
+                    }
+                    catch (Exception e)
+                    {
+                        //Er kan een hoop fout gaan in deze functie dus als er iets fout gaat geef ik gewoon de gebruiker de schuld.
+                        throw new Exception("Backup file has possibly been corrupted. Please don't try again.");
+                    }
                 else
-                {
                     throw new Exception("Database is not empty. Database needs to be empty to insert from backup");
-                }
             }
         }
 
         public static List<string> getAllCollectionNames()
         {
-            List<string> collections = new List<string>();
+            var collections = new List<string>();
 
-            foreach (BsonDocument collection in GetDatabase().ListCollectionsAsync().Result.ToListAsync<BsonDocument>().Result)
+            foreach (var collection in GetDatabase().ListCollectionsAsync().Result.ToListAsync().Result)
             {
-                string name = collection["name"].AsString;
+                var name = collection["name"].AsString;
                 collections.Add(name);
             }
 
             return collections;
         }
-
-       
     }
 }

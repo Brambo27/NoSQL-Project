@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using MongoDB.Driver;
 using System;
 using System.Collections;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Model
 {
@@ -17,9 +18,9 @@ namespace Model
             Admin
         }
 
-        public override string primaryKey { get => "userId"; }
+        protected override string PrimaryKey { get => "userId"; }
         public override ObjectId Id { get => id; set => id = value; }
-        public override string CollectionName { get => "Users"; }
+        protected override string CollectionName { get => "Users"; }
 
         public string userId;
         public string name;
@@ -43,7 +44,7 @@ namespace Model
 
         public User(string user_Id)
         {
-            var user = getById(primaryKey, user_Id);
+            var user = getById(PrimaryKey, user_Id);
 
             if (user != null)
             {
@@ -85,7 +86,7 @@ namespace Model
             return BsonSerializer.Deserialize<User>(document);
         }
 
-       public static void GenerateRandom()
+        public static void GenerateRandom()
         {
             Random rand = new Random(); // we need a random variable to select names randomly
 

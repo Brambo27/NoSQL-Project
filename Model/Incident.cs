@@ -32,9 +32,9 @@ namespace Model
         }
 
 
-        public override string primaryKey => null;
+        protected override string PrimaryKey => null;
 
-        public override string CollectionName => "Incidents";
+        protected override string CollectionName => "Incidents";
 
         public override ObjectId Id { get => id; set => id = value; }
 
